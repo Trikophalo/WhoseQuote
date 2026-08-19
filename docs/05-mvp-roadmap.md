@@ -20,7 +20,9 @@ Das MVP ist gebaut und spielbar. Was steht:
 | Pflichtseiten (FAQ, Impressum, Datenschutz, AGB, Bildnachweise) | ✅ Texte stehen, Betreiberdaten sind Platzhalter |
 | Validierung V1–V9 als Build-Gate | ✅ umgesetzt (`npm run validate`) |
 | Meldefunktion | ✅ als vorbefüllte E-Mail |
-| Avatare | ⚠️ generierte SVGs als Fallback; eigener Illustrationsstil = Stufe 2 |
+| Porträts | ✅ 55 eigene Federzeichnungen im Code, Fallback für neue Einträge |
+| Papier-Optik, Desktop-Layout | ✅ umgesetzt |
+| Veröffentlichung | ✅ GitHub-Pages-Workflow inkl. Content-Gate |
 | Redaktionelle Quellenprüfung (Pipeline-Schritt 3–5) | ❌ offen — Voraussetzung für Launch |
 | Anwaltliche Abnahme | ❌ offen — Voraussetzung für Launch |
 | Lebende Personen | ⏸ bewusst deaktiviert, ein Testfall steht auf `review` |

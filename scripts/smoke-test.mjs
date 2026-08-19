@@ -61,7 +61,7 @@ if (!up) {
 
 const executablePath = process.env.CHROMIUM_PATH
 const browser = await chromium.launch(executablePath ? { executablePath } : {})
-const page = await browser.newPage({ viewport: { width: 390, height: 844 } })
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } })
 
 const problems = []
 page.on('pageerror', (error) => problems.push(`pageerror: ${error.message}`))
@@ -78,23 +78,24 @@ try {
   console.log('\n🎮 Rauchtest\n')
 
   await page.goto(BASE, { waitUntil: 'networkidle' })
-  await page.waitForSelector("text=Los geht's")
-  ok('Startseite mit Erklärkarte')
+  await page.waitForSelector('text=Partie beginnen')
+  ok('Titelseite mit Regeln')
 
-  await page.click("text=Los geht's")
+  await page.click('text=Partie beginnen')
   await page.waitForSelector('blockquote')
 
-  // Rechtliche Kernanforderung: Badge darf die Lösung nicht verraten
-  const beforeAnswer = await page.textContent('body')
-  for (const badge of ['Belegt', 'Sinngemäß', 'Zugeschrieben', 'Fiktion']) {
-    if (beforeAnswer.includes(badge)) fail(`Kennzeichnung „${badge}" ist vor der Antwort sichtbar — verrät die Lösung`)
-  }
+  // Rechtliche Kernanforderung: Das Kennzeichnungs-Badge darf vor der Antwort
+  // nicht im DOM stehen — „Zugeschrieben" verriete sofort die reale Person.
+  // Geprüft wird das Badge-Element selbst, nicht der Seitentext: „Aus der
+  // Fiktion" ist die Kartenbeschriftung und soll sichtbar sein.
+  const badgesBefore = await page.locator('[data-source-badge]').count()
+  if (badgesBefore > 0) fail(`${badgesBefore} Kennzeichnung(en) vor der Antwort sichtbar — verrät die Lösung`)
   ok('Kennzeichnung bleibt während der Rate-Phase verborgen')
 
   await page.keyboard.press('ArrowLeft')
   await page.waitForSelector('text=/Gesagt hat es/')
   const afterAnswer = await page.textContent('body')
-  if (!/Belegt|Sinngemäß|Zugeschrieben|Fiktion/.test(afterAnswer)) fail('Auflösung ohne Kennzeichnung')
+  if ((await page.locator('[data-source-badge]').count()) !== 1) fail('Auflösung ohne Kennzeichnung')
   if (!afterAnswer.includes('Fundstelle:')) fail('Auflösung ohne Fundstelle')
   if (!afterAnswer.includes('Zitat melden')) fail('Auflösung ohne Meldeweg')
   ok('Auflösung zeigt Kennzeichnung, Fundstelle und Meldeweg')
@@ -109,7 +110,7 @@ try {
   let sawGameOver = false
   for (let i = 0; i < 40; i++) {
     const body = await page.textContent('body')
-    if (body.includes('Nochmal spielen')) {
+    if (body.includes('Noch eine Partie')) {
       sawGameOver = true
       break
     }
@@ -123,7 +124,7 @@ try {
   if (!sawGameOver) fail('Spielende nach 40 Interaktionen nicht erreicht')
   ok('Spielschleife bis zum Spielende')
 
-  await page.click('text=Nochmal spielen')
+  await page.click('text=Noch eine Partie')
   await page.waitForSelector('blockquote')
   ok('Neustart')
 
@@ -140,9 +141,46 @@ try {
   }
   ok('Alle fünf Pflichtseiten erreichbar')
 
+  // Bilder sind Pflicht: In jeder Runde muss auf beiden Seiten ein Porträt stehen.
+  await page.goto(BASE, { waitUntil: 'networkidle' })
+  let checked = 0
+  for (let step = 0; step < 40 && checked < 12; step++) {
+    // Erst den Endbildschirm abräumen — dort stehen zu Recht keine Porträts.
+    if ((await page.textContent('body')).includes('Noch eine Partie')) {
+      await page.click('text=Noch eine Partie')
+      await page.waitForSelector('blockquote')
+    }
+
+    const drawn = await page.evaluate(() =>
+      [...document.querySelectorAll('main svg[role="img"]')].map(
+        (svg) => svg.querySelectorAll('path, circle, ellipse, line').length,
+      ),
+    )
+    if (drawn.length !== 2) fail(`Runde ${checked + 1}: ${drawn.length} Porträt(s) statt 2`)
+    if (drawn.some((count) => count < 6)) fail(`Runde ${checked + 1}: ein Porträt ist fast leer (${drawn.join(', ')} Formen)`)
+    checked++
+
+    await page.keyboard.press('ArrowLeft')
+    await page.waitForSelector('text=/Gesagt hat es/')
+    await page.click('button:has-text("Weiter"), button:has-text("Ergebnis ansehen")')
+    await page.waitForTimeout(120)
+  }
+  if (checked < 12) fail(`Nur ${checked} Runden geprüft`)
+  ok(`${checked} Runden geprüft — überall beidseitig ein gezeichnetes Porträt`)
+
+  // Galerie: kein Eintrag ohne Bild
+  await page.goto(`${BASE}/#/portraets`, { waitUntil: 'networkidle' })
+  const gallery = await page.evaluate(() => {
+    const items = [...document.querySelectorAll('li')]
+    return { total: items.length, empty: items.filter((li) => !li.querySelector('svg')).length }
+  })
+  if (gallery.total < 50) fail(`Galerie zeigt nur ${gallery.total} Porträts`)
+  if (gallery.empty > 0) fail(`${gallery.empty} Einträge ohne Bild`)
+  ok(`Galerie vollständig: ${gallery.total} Porträts, keine Lücke`)
+
   const overflows = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1)
   if (overflows) fail('Seite scrollt horizontal')
-  ok('Kein horizontaler Überlauf auf 390 px')
+  ok('Kein horizontaler Überlauf')
 
   if (problems.length > 0) fail(`Browser-Fehler:\n     ${problems.join('\n     ')}`)
   ok('Keine Browser-Konsolenfehler')

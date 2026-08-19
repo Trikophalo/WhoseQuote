@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react'
 
-export const ROUTES = ['game', 'faq', 'impressum', 'datenschutz', 'nutzungsbedingungen', 'bildnachweise'] as const
+export const ROUTES = [
+  'game',
+  'faq',
+  'impressum',
+  'datenschutz',
+  'nutzungsbedingungen',
+  'bildnachweise',
+  // Kontrollblatt fuer die Redaktion, bewusst nicht im Footer verlinkt
+  'portraets',
+] as const
 export type Route = (typeof ROUTES)[number]
 
 function fromHash(): Route {

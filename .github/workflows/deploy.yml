@@ -1,0 +1,60 @@
+name: Deploy auf GitHub Pages
+
+on:
+  push:
+    branches: ['**']
+  # Erlaubt einen manuellen Start über den Actions-Tab — auch von einem anderen Branch
+  workflow_dispatch:
+
+# Rechte, die die Pages-Bereitstellung braucht
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Ein laufender Deploy wird nicht abgebrochen, Nachfolger warten
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # Veröffentlicht wird nur der Standard-Branch des Repositorys — egal wie er
+    # heißt. Ein fest verdrahtetes „main" würde hier nie auslösen, weil dieses
+    # Repository einen anderen Standard-Branch hat.
+    if: github.event_name == 'workflow_dispatch' || github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+
+      # Content-Gate: Ohne bestandene Regelprüfung wird nichts veröffentlicht.
+      - name: Content prüfen
+        run: npm run validate
+
+      - name: Build
+        run: npx vite build
+
+      # GitHub Pages liefert bei unbekannten Pfaden 404.html aus. Der Router
+      # arbeitet mit Hashes, deshalb genügt eine Kopie der index.html.
+      - name: SPA-Fallback anlegen
+        run: cp dist/index.html dist/404.html
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

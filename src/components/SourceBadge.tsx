@@ -3,9 +3,9 @@ import type { SourceType } from '../content/schema'
 import { SOURCE_LABELS } from '../content/labels'
 
 const TONE_STYLES: Record<'solid' | 'soft' | 'loose', string> = {
-  solid: 'border-emerald-500/40 bg-emerald-500/10 text-emerald-200',
-  soft: 'border-sky-500/40 bg-sky-500/10 text-sky-200',
-  loose: 'border-amber-500/40 bg-amber-500/10 text-amber-200',
+  solid: 'border-[color:var(--stamp-green)] text-[color:var(--stamp-green)]',
+  soft: 'border-[color:var(--ink-soft)] text-[color:var(--ink-soft)]',
+  loose: 'border-[color:var(--stamp-red)] text-[color:var(--stamp-red)]',
 }
 
 /**
@@ -33,12 +33,15 @@ export function SourceBadge({ sourceType, note }: { sourceType: SourceType; note
   }, [open])
 
   return (
-    <div className="relative inline-block">
+    <span className="relative inline-block">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition hover:brightness-125 ${TONE_STYLES[label.tone]}`}
+        // Marker für den Rauchtest: Er prüft, dass kein Badge vor der Antwort
+        // im DOM steht — es würde die Lösung verraten.
+        data-source-badge={sourceType}
+        className={`smallcaps inline-flex items-center gap-1.5 border px-2.5 py-1 text-[10px] transition hover:bg-[color:var(--paper-deep)] ${TONE_STYLES[label.tone]}`}
       >
         {label.badge}
         <span aria-hidden="true" className="opacity-70">
@@ -55,15 +58,15 @@ export function SourceBadge({ sourceType, note }: { sourceType: SourceType; note
             aria-label="Hinweis schließen"
             onClick={() => setOpen(false)}
           />
-          <div
+          <span
             role="tooltip"
-            className="animate-rise absolute left-1/2 z-20 mt-2 w-72 max-w-[80vw] -translate-x-1/2 rounded-xl border border-slate-700 bg-slate-900 p-3 text-left text-xs leading-relaxed text-slate-300 shadow-xl"
+            className="sheet animate-rise absolute left-1/2 z-20 mt-2 block w-72 max-w-[80vw] -translate-x-1/2 p-3 text-left font-sans text-xs leading-relaxed text-[color:var(--ink-soft)]"
           >
             {label.tooltip}
-            {note && <p className="mt-2 border-t border-slate-800 pt-2 text-slate-400">{note}</p>}
-          </div>
+            {note && <span className="mt-2 block border-t border-[color:var(--rule)] pt-2 text-[color:var(--ink-faint)]">{note}</span>}
+          </span>
         </>
       )}
-    </div>
+    </span>
   )
 }

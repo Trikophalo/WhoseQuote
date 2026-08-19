@@ -135,8 +135,8 @@ und die One-Piece-Rechteinhaber setzen ihre Rechte aktiv durch. Optionen:
 
 | Option | Bewertung |
 |---|---|
-| **Eigene stilisierte Avatare** (beauftragte oder selbst erstellte Original-Illustrationen: markante Silhouette, Farbpalette, Attribute — ohne 1:1-Kopie des Charakterdesigns) | **Empfehlung.** Einmalkosten (10–15 Motive fürs MVP), einheitlicher Look, echter Brand-USP, skaliert auf weitere Universen. Wichtig: eigenständige Schöpfung, nicht bloßes Nachzeichnen des Originals. |
-| Text-only (Name + Blurb + Initialen-Avatar) | Risikofrei, sofort machbar — gutes MVP-Fallback, bis Avatare vorliegen. |
+| **Eigene stilisierte Zeichnungen** (Original-Illustrationen: markante Silhouette, Attribute — ohne 1:1-Kopie des Charakterdesigns) | **Umgesetzt.** Die Porträts werden im Code aus einem Merkmalsvorrat zusammengesetzt (Dok 01) — keine Einmalkosten, einheitlicher Look, skaliert auf weitere Universen. Entscheidend: eigenständige Schöpfung, kein Nachzeichnen des Originals. |
+| Text-only (Name + Blurb + Initialen-Avatar) | Risikofrei, aber überholt: Die Zeichnungen leisten dasselbe und sehen besser aus. |
 | Offizielle Artworks lizenzieren | Für ein Indie-Projekt unrealistisch (Aufwand/Kosten). |
 | MAL-Bilder „einfach nutzen" | **Nein.** Abmahnrisiko, gerade bei kommerzieller Nutzung. |
 

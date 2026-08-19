@@ -32,7 +32,6 @@ export function Game() {
     setSelected(null)
   }, [])
 
-  // Erste Runde ziehen, sobald das Spiel startet
   useEffect(() => {
     if ((phase === 'playing' || phase === 'revealed') && round === null) nextRound(score)
   }, [phase, round, score, nextRound])
@@ -78,7 +77,7 @@ export function Game() {
     setPhase('playing')
   }, [])
 
-  // Tastatursteuerung: ← Anime, → reale Person, Enter/Leertaste weiter
+  // Tastatursteuerung: ← Fiktion, → Wirklichkeit, Enter/Leertaste weiter
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (phase === 'playing') {
@@ -112,11 +111,7 @@ export function Game() {
   }
 
   if (!round) {
-    return (
-      <div className="px-5 py-20 text-center text-slate-400">
-        <p>Keine spielbaren Zitate gefunden.</p>
-      </div>
-    )
+    return <p className="px-5 py-20 text-center text-[color:var(--ink-soft)]">Keine spielbaren Zitate gefunden.</p>
   }
 
   const revealed = phase === 'revealed'
@@ -124,38 +119,43 @@ export function Game() {
   const truth = round.answer
 
   return (
-    <div className="mx-auto w-full max-w-2xl px-4 pt-5 sm:px-5 sm:pt-8">
-      <Scoreboard score={score} highscore={highscore} poolSize={ROUNDS.length} seenCount={excluded.size} />
+    <div className="mx-auto w-full max-w-5xl px-4 pt-4 md:px-8 md:pt-7">
+      <Masthead score={score} highscore={highscore} poolSize={ROUNDS.length} seenCount={excluded.size} />
 
-      {/* Das Zitat — die Kennzeichnung erscheint bewusst erst in der Auflösung,
-          sonst würde das Badge die Antwort verraten (docs/04-recht.md, 4.2). */}
-      <blockquote key={round.id} className="animate-rise relative mt-5 rounded-2xl border border-slate-800 bg-slate-900/60 px-5 py-7 text-center sm:px-8 sm:py-9">
-        <span aria-hidden="true" className="absolute top-1 left-4 font-[Georgia] text-5xl leading-none text-slate-700 select-none">
-          „
-        </span>
-        <p className="font-[Georgia] text-lg leading-relaxed text-balance text-slate-100 sm:text-2xl">{round.text}</p>
-        {!revealed && (
-          <button
-            type="button"
-            onClick={() => navigate('faq')}
-            className="mt-4 text-[11px] text-slate-500 underline underline-offset-2 transition hover:text-slate-300"
-          >
-            ⓘ Zur Genauigkeit von Zitaten und Übersetzungen
-          </button>
-        )}
+      {/* Das Zitat. Die Kennzeichnung erscheint bewusst erst in der Auflösung,
+          sonst würde „Zugeschrieben" sofort die reale Person verraten
+          (docs/04-recht.md, 4.2). */}
+      <blockquote key={round.id} className="animate-rise mx-auto mt-7 max-w-3xl px-2 text-center md:mt-9">
+        <p className="font-serif text-2xl leading-[1.4] text-balance md:text-[2.1rem] md:leading-[1.35]">
+          <span aria-hidden="true" className="text-[color:var(--rule)]">
+            „
+          </span>
+          {round.text}
+          <span aria-hidden="true" className="text-[color:var(--rule)]">
+            “
+          </span>
+        </p>
       </blockquote>
 
-      <p className="mt-5 mb-3 text-center text-xs tracking-wide text-slate-500 uppercase">
-        {revealed ? (wasCorrect ? '✓ Richtig' : '✗ Leider falsch') : 'Wer hat das gesagt?'}
+      <p className="smallcaps mt-7 mb-4 text-center text-[11px] text-[color:var(--ink-soft)] md:mt-9 md:mb-5 md:text-xs">
+        {revealed ? (wasCorrect ? 'Richtig geraten' : 'Danebengetippt') : 'Wer hat das gesagt?'}
       </p>
 
-      <div className="grid grid-cols-2 gap-3 sm:gap-4">
+      <div className="grid grid-cols-2 items-stretch gap-3 md:grid-cols-[1fr_auto_1fr] md:gap-6">
         <ChoiceCard
           side={round.character}
           hotkey="←"
           state={!revealed ? 'idle' : truth === 'character' ? 'correct' : selected === 'character' ? 'wrong' : 'muted'}
           onSelect={!revealed ? () => answer('character') : undefined}
         />
+
+        {/* Trennachse mit „oder" — nur auf dem Desktop, auf dem Handy fehlt der Platz */}
+        <div className="hidden flex-col items-center justify-center gap-3 md:flex">
+          <span className="w-px flex-1 bg-[color:var(--rule)]" />
+          <span className="smallcaps text-[10px] text-[color:var(--ink-faint)]">oder</span>
+          <span className="w-px flex-1 bg-[color:var(--rule)]" />
+        </div>
+
         <ChoiceCard
           side={round.person}
           hotkey="→"
@@ -169,21 +169,29 @@ export function Game() {
   )
 }
 
-function Scoreboard({ score, highscore, poolSize, seenCount }: { score: number; highscore: number; poolSize: number; seenCount: number }) {
+/** Kopfzeile im Zeitungskopf-Stil. */
+function Masthead({ score, highscore, poolSize, seenCount }: { score: number; highscore: number; poolSize: number; seenCount: number }) {
   return (
-    <div className="flex items-center justify-between gap-3 text-sm">
+    <header className="rule-double flex items-end justify-between gap-4 py-2.5">
       <div className="flex items-baseline gap-2">
-        <span className="text-2xl font-bold text-white tabular-nums sm:text-3xl">{score}</span>
-        <span className="text-xs text-slate-500">in Folge</span>
+        <span className="font-serif text-3xl leading-none font-bold tabular-nums md:text-4xl">{score}</span>
+        <span className="smallcaps text-[10px] text-[color:var(--ink-soft)]">in Folge</span>
       </div>
-      <div className="flex items-center gap-3 text-xs text-slate-500">
-        <span title={`${poolSize} Zitat-Paare im Pool, ${seenCount} zuletzt gesehen`}>{poolSize} Paare</span>
-        <span className="text-slate-700">·</span>
-        <span>
-          Rekord <span className="font-semibold text-amber-300 tabular-nums">{highscore}</span>
+
+      <button
+        onClick={() => navigate('game')}
+        className="smallcaps hidden text-center text-xs text-[color:var(--ink)] md:block"
+      >
+        {SITE.name}
+      </button>
+
+      <div className="flex items-baseline gap-2">
+        <span className="smallcaps text-[10px] text-[color:var(--ink-soft)]" title={`${poolSize} Paare im Bestand, ${seenCount} zuletzt gezeigt`}>
+          Rekord
         </span>
+        <span className="font-serif text-3xl leading-none font-bold tabular-nums text-[color:var(--gold)] md:text-4xl">{highscore}</span>
       </div>
-    </div>
+    </header>
   )
 }
 
@@ -196,33 +204,50 @@ function Reveal({ round, onContinue, wasCorrect }: { round: Round; onContinue: (
     `Paarung: ${round.id}\nZitat: „${round.text}“\nZugeordnet an: ${speaker.name}\n\nMein Hinweis (bitte ausfüllen):\n`,
   )
 
-  // Auf hohen Karten liegt die Weiter-Schaltfläche sonst unter der Falz —
-  // die wichtigste Aktion darf nach der Antwort nicht erst gesucht werden.
+  // Auf schmalen Fenstern liegt die Weiter-Schaltfläche sonst unter der Falz.
+  // Auf dem Desktop passt meist alles — dann bleibt die Seite bewusst ruhig.
   useEffect(() => {
-    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+    const element = ref.current
+    if (!element) return
+    const { bottom } = element.getBoundingClientRect()
+    if (bottom > window.innerHeight) element.scrollIntoView({ behavior: 'smooth', block: 'end' })
   }, [])
 
   return (
-    <div ref={ref} className="animate-rise mt-5">
-      <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:p-5">
-        <div className="flex flex-wrap items-center justify-center gap-2 text-center">
-          <span className="text-sm text-slate-300">
-            Gesagt hat es <span className="font-semibold text-white">{speaker.name}</span>
+    <div ref={ref} className="animate-rise mt-5 md:mt-7">
+      <div className="sheet relative px-4 py-4 md:px-8 md:py-5">
+        <div
+          className={`animate-stamp smallcaps absolute -top-4 right-4 bg-[color:var(--paper)] text-[11px] font-bold md:right-8 md:text-xs stamp`}
+          style={{ color: wasCorrect ? 'var(--stamp-green)' : 'var(--stamp-red)' }}
+        >
+          {wasCorrect ? 'Richtig' : 'Falsch'}
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center">
+          <span className="font-serif text-base md:text-lg">
+            Gesagt hat es <span className="font-semibold">{speaker.name}</span>
           </span>
           <SourceBadge sourceType={round.sourceType} note={round.translationNote} />
         </div>
 
-        {round.sourceRef && <p className="mt-3 text-center text-xs leading-relaxed text-slate-500">Fundstelle: {round.sourceRef}</p>}
+        {round.sourceRef && (
+          <p className="mt-2.5 text-center text-xs leading-relaxed text-[color:var(--ink-soft)] md:text-sm">
+            Fundstelle: {round.sourceRef}
+          </p>
+        )}
 
-        <div className="mt-4 flex items-center justify-center gap-4">
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
           <a
             href={`mailto:${SITE.contactEmail}?subject=${reportSubject}&body=${reportBody}`}
-            className="text-[11px] text-slate-500 underline underline-offset-2 transition hover:text-slate-300"
+            className="text-[11px] text-[color:var(--ink-soft)] underline underline-offset-2 hover:text-[color:var(--ink)]"
           >
             Zitat melden
           </a>
-          <span className="text-[11px] text-slate-700">·</span>
-          <span className="text-[11px] text-slate-600">Schwierigkeit {'★'.repeat(round.difficulty)}</span>
+          <span className="text-[color:var(--rule)]">·</span>
+          <span className="smallcaps text-[10px] text-[color:var(--ink-faint)]">
+            Schwierigkeit {'✦'.repeat(round.difficulty)}
+            <span className="opacity-30">{'✦'.repeat(5 - round.difficulty)}</span>
+          </span>
         </div>
       </div>
 
@@ -230,11 +255,10 @@ function Reveal({ round, onContinue, wasCorrect }: { round: Round; onContinue: (
         type="button"
         onClick={onContinue}
         autoFocus
-        className={`animate-pop mt-4 w-full rounded-2xl px-6 py-4 text-base font-semibold text-white transition active:scale-[0.99] ${
-          wasCorrect ? 'bg-emerald-600 hover:bg-emerald-500' : 'bg-slate-700 hover:bg-slate-600'
-        }`}
+        className="mt-4 w-full border border-[color:var(--ink)] bg-[color:var(--ink)] px-6 py-3.5 font-serif text-base font-semibold text-[color:var(--paper)] transition hover:bg-[color:var(--ink-soft)] md:mx-auto md:block md:max-w-sm md:text-lg"
       >
         {wasCorrect ? 'Weiter' : 'Ergebnis ansehen'}
+        <span className="smallcaps ml-3 hidden text-[10px] opacity-60 md:inline">Enter</span>
       </button>
     </div>
   )
@@ -253,38 +277,42 @@ function GameOver({ score, highscore, isRecord, onRestart }: { score: number; hi
         setTimeout(() => setCopied(false), 2000)
       }
     } catch {
-      // Nutzer hat abgebrochen oder die API ist nicht verfügbar — kein Fehlerfall.
+      // Abbruch durch die Nutzerin oder API nicht verfügbar — kein Fehlerfall.
     }
   }
 
   return (
-    <div className="animate-rise mx-auto w-full max-w-md px-5 pt-14 text-center">
-      <p className="text-sm tracking-wide text-slate-500 uppercase">Vorbei</p>
-      <p className="mt-3 text-6xl font-bold text-white tabular-nums">{score}</p>
-      <p className="mt-1 text-sm text-slate-400">{score === 1 ? 'Zitat richtig zugeordnet' : 'Zitate richtig zugeordnet'}</p>
+    <div className="animate-rise mx-auto w-full max-w-lg px-5 pt-12 text-center md:pt-20">
+      <div className="sheet px-8 py-10">
+        <p className="smallcaps text-[11px] text-[color:var(--ink-soft)]">Partie beendet</p>
+        <p className="mt-4 font-serif text-7xl leading-none font-bold tabular-nums md:text-8xl">{score}</p>
+        <p className="mt-3 font-serif text-sm text-[color:var(--ink-soft)]">
+          {score === 1 ? 'Zitat richtig zugeordnet' : 'Zitate richtig zugeordnet'}
+        </p>
 
-      {isRecord ? (
-        <p className="mt-5 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-200">
-          Neuer persönlicher Rekord!
-        </p>
-      ) : (
-        <p className="mt-5 text-sm text-slate-500">
-          Dein Rekord: <span className="font-semibold text-amber-300 tabular-nums">{highscore}</span>
-        </p>
-      )}
+        <span className="mx-auto mt-6 block h-px w-24 bg-[color:var(--rule)]" />
+
+        {isRecord ? (
+          <p className="smallcaps mt-6 text-xs text-[color:var(--gold)]">Neuer persönlicher Rekord</p>
+        ) : (
+          <p className="mt-6 text-sm text-[color:var(--ink-soft)]">
+            Dein Rekord: <span className="font-semibold text-[color:var(--gold)] tabular-nums">{highscore}</span>
+          </p>
+        )}
+      </div>
 
       <button
         type="button"
         onClick={onRestart}
         autoFocus
-        className="mt-7 w-full rounded-2xl bg-emerald-600 px-6 py-4 text-base font-semibold text-white transition hover:bg-emerald-500 active:scale-[0.99]"
+        className="mt-6 w-full border border-[color:var(--ink)] bg-[color:var(--ink)] px-6 py-3.5 font-serif text-lg font-semibold text-[color:var(--paper)] transition hover:bg-[color:var(--ink-soft)]"
       >
-        Nochmal spielen
+        Noch eine Partie
       </button>
       <button
         type="button"
         onClick={share}
-        className="mt-3 w-full rounded-2xl border border-slate-700 px-6 py-3 text-sm text-slate-300 transition hover:border-slate-500 hover:text-white"
+        className="mt-3 w-full border border-[color:var(--rule)] px-6 py-3 font-serif text-sm text-[color:var(--ink-soft)] transition hover:border-[color:var(--ink-soft)] hover:text-[color:var(--ink)]"
       >
         {copied ? 'In die Zwischenablage kopiert' : 'Ergebnis teilen'}
       </button>

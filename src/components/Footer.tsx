@@ -15,19 +15,20 @@ const LINKS: { route: Route; label: string }[] = [
  */
 export function Footer() {
   return (
-    <footer className="mx-auto mt-10 w-full max-w-2xl px-5 pb-10 text-center">
-      <p className="mb-4 text-[11px] leading-relaxed text-slate-500">
+    <footer className="mx-auto mt-12 w-full max-w-3xl px-5 pb-8 text-center">
+      <span className="mx-auto mb-4 block h-px w-full max-w-xs bg-[color:var(--rule)]" />
+      <p className="mb-3 text-[11px] leading-relaxed text-[color:var(--ink-faint)]">
         {FOOTER_DISCLAIMER}{' '}
-        <button onClick={() => navigate('faq')} className="underline underline-offset-2 transition hover:text-slate-300">
+        <button onClick={() => navigate('faq')} className="underline underline-offset-2 hover:text-[color:var(--ink-soft)]">
           Mehr dazu
         </button>
       </p>
-      <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+      <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
         {LINKS.map((link) => (
           <button
             key={link.route}
             onClick={() => navigate(link.route)}
-            className="text-[11px] text-slate-400 underline underline-offset-2 transition hover:text-slate-200"
+            className="smallcaps text-[10px] text-[color:var(--ink-soft)] transition hover:text-[color:var(--ink)]"
           >
             {link.label}
           </button>

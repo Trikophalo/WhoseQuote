@@ -1,7 +1,30 @@
 @import 'tailwindcss';
 
+/**
+ * Papier-Optik: gealtertes Büttenpapier, Tinte, Serifen.
+ *
+ * Bewusst keine Web-Fonts von fremden Servern (Google Fonts & Co.): Das würde
+ * bei jedem Seitenaufruf die IP der Spielenden an Dritte übertragen und damit
+ * die datenarme Linie aus docs/04-recht.md, 4.6 aufgeben. Stattdessen ein
+ * System-Serifen-Stack, der auf allen Plattformen nach Buchsatz aussieht.
+ */
+
 @theme {
-  --font-display: 'Georgia', 'Times New Roman', serif;
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', 'URW Palladio L', Georgia, serif;
+  --font-sans: 'Optima', 'Candara', 'Gill Sans', 'Trebuchet MS', system-ui, sans-serif;
+}
+
+:root {
+  --paper: #f3ead8;
+  --paper-deep: #e9dcc3;
+  --paper-shade: #ded0b4;
+  --ink: #2b2620;
+  --ink-soft: #6a6053;
+  --ink-faint: #9a8f7d;
+  --rule: #c9b795;
+  --stamp-red: #9d3b2c;
+  --stamp-green: #4e6b3d;
+  --gold: #8a6a2f;
 }
 
 html {
@@ -10,27 +33,66 @@ html {
 
 body {
   margin: 0;
-  background-color: #020617;
-  color: #e2e8f0;
-  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  background-color: var(--paper);
+  /* Papierfaser als feines Rauschen — reine SVG-Textur, kein externes Bild */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23f)' opacity='0.055'/%3E%3C/svg%3E");
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* Hintergrund-Stimmung: zwei weiche Farbfelder für die beiden Welten */
+/* Vergilbte Ränder — nimmt dem Hintergrund die digitale Gleichmäßigkeit */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  pointer-events: none;
   z-index: -1;
+  pointer-events: none;
   background:
-    radial-gradient(60% 50% at 15% 0%, rgba(56, 189, 248, 0.1), transparent 70%),
-    radial-gradient(60% 50% at 85% 0%, rgba(244, 114, 182, 0.09), transparent 70%);
+    radial-gradient(120% 90% at 50% 0%, transparent 55%, rgba(154, 122, 63, 0.16) 100%),
+    radial-gradient(80% 60% at 12% 88%, rgba(154, 122, 63, 0.12), transparent 70%);
 }
 
 button {
   font-family: inherit;
+}
+
+/* --------------------------------------------------------------- Bausteine */
+
+/* Papierblatt mit weicher Kante und Schlagschatten */
+.sheet {
+  background-color: var(--paper);
+  background-image: linear-gradient(175deg, rgba(255, 255, 255, 0.5), transparent 40%);
+  border: 1px solid var(--rule);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 8px 18px -10px rgba(60, 45, 20, 0.35);
+}
+
+/* Doppellinie wie im Buchsatz */
+.rule-double {
+  border-top: 1px solid var(--rule);
+  border-bottom: 3px double var(--rule);
+}
+
+/* Stempel-Optik für Richtig/Falsch */
+.stamp {
+  font-family: var(--font-sans);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 3px solid currentColor;
+  border-radius: 4px;
+  padding: 0.3rem 1.1rem;
+  transform: rotate(-6deg);
+  opacity: 0.9;
+}
+
+/* Kapitälchen für Auszeichnungen */
+.smallcaps {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -45,7 +107,7 @@ button {
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -54,21 +116,24 @@ button {
 }
 
 .animate-rise {
-  animation: rise 0.35s ease-out both;
+  animation: rise 0.3s ease-out both;
 }
 
-@keyframes pop {
+@keyframes stampIn {
   0% {
-    transform: scale(0.94);
+    opacity: 0;
+    transform: rotate(-6deg) scale(1.6);
   }
-  60% {
-    transform: scale(1.03);
+  70% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(0.94);
   }
   100% {
-    transform: scale(1);
+    opacity: 0.9;
+    transform: rotate(-6deg) scale(1);
   }
 }
 
-.animate-pop {
-  animation: pop 0.28s ease-out both;
+.animate-stamp {
+  animation: stampIn 0.32s ease-out both;
 }

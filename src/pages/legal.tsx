@@ -322,12 +322,15 @@ export function NutzungsbedingungenPage() {
 export function BildnachweisePage() {
   return (
     <LegalLayout title="Bildnachweise">
-      <h2 className={h2}>Aktueller Stand: eigene Avatare statt fremder Artworks</h2>
+      <h2 className={h2}>Aktueller Stand: eigene Zeichnungen statt fremder Artworks</h2>
       <p className={p}>
-        Alle Figuren- und Personendarstellungen in diesem Spiel sind derzeit{' '}
-        <strong className={strong}>selbst generierte, abstrakte SVG-Avatare</strong> – Initialen auf
-        einem Farbverlauf, im Code erzeugt. Es sind also keine Bilder Dritter im Einsatz, und es
-        gibt an dieser Stelle noch nichts zu attribuieren.
+        Alle Figuren- und Personendarstellungen in diesem Spiel sind{' '}
+        <strong className={strong}>eigene, im Code gezeichnete Federzeichnungen</strong>. Sie werden
+        aus einem festen Merkmalsvorrat zusammengesetzt – Kopfform, Frisur, Bart, Kopfbedeckung,
+        Beiwerk – und sollen über die Silhouette erkennbar sein, etwa über einen Strohhut, einen
+        Zweispitz oder einen Lorbeerkranz. Sie sind ausdrücklich keine Nachzeichnungen von
+        Originalentwürfen und keine Porträtfotos. Es sind also keine Bilder Dritter im Einsatz, und
+        es gibt an dieser Stelle nichts zu attribuieren.
       </p>
       <p className={p}>
         Bewusst verwenden wir <strong className={strong}>keine Artworks aus MyAnimeList oder der
@@ -355,8 +358,8 @@ export function BildnachweisePage() {
         Bilddaten erzeugte Liste der Bildnachweise – bis dahin bleibt sie leer.
       </p>
       <p className={p}>
-        Wo kein Bild verfügbar oder die Lizenzlage ungeklärt ist, bleibt es beim Initialen-Avatar.
-        Lieber kein Bild als ein ungeklärtes.
+        Wo kein Foto verfügbar oder die Lizenzlage ungeklärt ist, bleibt es bei der Zeichnung.
+        Lieber eine eigene Darstellung als ein ungeklärtes Bild.
       </p>
 
       <h2 className={h2}>Verwendete Lizenzen</h2>

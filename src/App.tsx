@@ -2,6 +2,7 @@ import { Game } from './components/Game'
 import { Footer } from './components/Footer'
 import { useRoute } from './router'
 import { BildnachweisePage, DatenschutzPage, FaqPage, ImpressumPage, NutzungsbedingungenPage } from './pages/legal'
+import { PortraitGalleryPage } from './pages/PortraitGallery'
 
 export default function App() {
   const route = useRoute()
@@ -15,6 +16,7 @@ export default function App() {
         {route === 'datenschutz' && <DatenschutzPage />}
         {route === 'nutzungsbedingungen' && <NutzungsbedingungenPage />}
         {route === 'bildnachweise' && <BildnachweisePage />}
+        {route === 'portraets' && <PortraitGalleryPage />}
       </main>
       <Footer />
     </div>

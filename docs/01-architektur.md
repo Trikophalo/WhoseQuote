@@ -18,12 +18,46 @@ gebraucht wird.
 | State | React-State + `localStorage` | Score, Highscore, „gesehene Paare" (No-Repeat-Fenster) lokal — keine personenbezogenen Daten, keine Cookies, minimale DSGVO-Fläche. |
 | Content | **Statisches JSON im Repo** (`content/*.json`), zur Build-Zeit validiert | Content-as-Code: Jede Zitat-Änderung ist ein Git-Commit/PR → Review-Prozess und Audit-Trail gratis (wichtig für die rechtliche Dokumentation, siehe Dok 03/04). |
 | Validierung | Zod-Schema + CI-Check | Build **bricht ab**, wenn ein Datensatz die Content-Regeln verletzt (z. B. lebende Person + nicht belegtes Zitat, fehlender Bildnachweis). Das macht die rechtlichen Leitplanken technisch durchsetzbar. |
-| Hosting | Cloudflare Pages (alternativ Netlify/Vercel) | Statisch, kostenlos, CDN, Custom Domain. Cloudflare hat großzügige Free-Limits und später Workers/D1 für das Leaderboard im selben Ökosystem. |
+| Hosting | **GitHub Pages** (umgesetzt), alternativ Cloudflare Pages | Statisch, kostenlos, direkt aus dem Repository. Der Workflow prüft vor jedem Deploy den Content. Relative Pfade (`base: './'`) und Hash-Routing, damit das Spiel auch im Unterverzeichnis eines Projekt-Pages läuft. |
 | Analytics | Zunächst keine, später Plausible/Umami (cookielos) | Hält Datenschutzerklärung minimal; cookielose Tools brauchen kein Consent-Banner. |
 
 **Warum kein Next.js/SSR im MVP?** Es gibt nichts zu rendern, was SEO braucht,
 außer der Landingpage — die ist statisch. SSR bringt hier nur Betriebs- und
 Deploykomplexität.
+
+## Gestaltung: Papier statt Bildschirm (umgesetzt)
+
+Das Spiel ist als **Desktop-Weberlebnis** gebaut und sieht aus wie eine alte
+Zitatensammlung: Büttenpapier-Ton, Tinte, Serifensatz, Doppellinien im
+Zeitungskopf, ein Stempel für Richtig/Falsch. Zwei Entscheidungen dahinter:
+
+- **Keine Web-Fonts von fremden Servern.** Google Fonts & Co. würden bei jedem
+  Aufruf die IP der Spielenden an Dritte übertragen — das gäbe die datenarme
+  Linie aus Dok 04, 4.6 auf. Stattdessen ein System-Serifen-Stack.
+- **Papierfaser als SVG-Rauschen**, inline als Data-URI. Keine Bilddatei, kein
+  zusätzlicher Request.
+
+Layout: zweispaltig ab `md` mit einer Trennachse zwischen den Karten, Zitat
+groß über beiden. Auf schmalen Fenstern fallen Trennachse und Tastenhinweise
+weg, die Karten rücken nebeneinander.
+
+## Porträts: gezeichnet statt geliehen (umgesetzt)
+
+Jede Figur und jede Person bekommt eine im Code erzeugte Federzeichnung
+(`src/art/`). Aufbau:
+
+- `vocabulary.ts` — Merkmalsvorrat (Kopfform, Frisur, Bart, Kopfbedeckung,
+  Brille, Beiwerk, Kleidung) plus ein deterministischer Fallback aus der ID.
+- `Portrait.tsx` — Zeichenroutinen, in festen Ebenen von hinten nach vorn:
+  Beiwerk hinten → Kleidung → Haar hinten → Hals → Kopf (deckend) → Ohren →
+  Schraffur → Haar vorn → Gesichtszüge → Bart → Kopfbedeckung → Brille →
+  Beiwerk vorn. Der Kopf ist bewusst deckend gefüllt, sonst scheinen Hals- und
+  Haarlinien durchs Gesicht.
+- `specs.ts` — Merkmale je Figur und Person.
+
+**Es entsteht immer ein Bild:** Fehlt eine Merkmalsliste, greift der Fallback.
+Der Rauchtest prüft über zwölf Runden und in der Galerie (`#/portraets`), dass
+auf beiden Seiten ein Porträt mit genug Formen steht.
 
 ## Bild-Handling (technisch — Lizenzfragen in Dok 04)
 
@@ -111,8 +145,9 @@ clientseitiges Spiel kann jeden Score POSTen. Mindestmaßnahmen:
 
 ## Nicht-funktionale Anforderungen
 
-- **Mobile-first:** Das Spielformat ist ein klassisches „Handy in der Bahn"-
-  Spiel; Zielauflösung 360×740 zuerst, Desktop ist die Anpassung.
+- **Desktop zuerst:** Gespielt wird am PC im Browser; Zielauflösung 1440×900,
+  alles ohne Scrollen erreichbar. Schmale Fenster bleiben bedienbar (die Karten
+  rücken zusammen, Trennachse und Tastenhinweise entfallen).
 - **Performance:** Statisch + Preloading → Time-to-Interactive < 2 s auf 3G.
 - **Barrierefreiheit:** Antwort per Tastatur (←/→), ausreichende Kontraste,
   Bilder mit Alt-Texten; Farbwahl nie alleiniger Informationsträger.
