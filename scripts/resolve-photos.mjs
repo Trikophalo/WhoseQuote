@@ -100,20 +100,39 @@ async function fetchGraphql(url, body, attempts = 3) {
   throw lastError
 }
 
-/** Primärquelle: AniList — stabil auch von Cloud-IPs, wo Jikan mit 504 abweist. */
-async function resolveCharacterAniList(searchName) {
+const words = (value) => String(value ?? '').toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean)
+
+/**
+ * Primärquelle: AniList — stabil auch von Cloud-IPs, wo Jikan mit 504 abweist.
+ *
+ * Zwei Lehren aus dem ersten Lauf sind hier eingebaut:
+ *  - Der Treffer MUSS aus der erwarteten Serie stammen (media-Titel), sonst
+ *    gewinnt der beliebteste Namensvetter einer anderen Serie („Nami“ →
+ *    Kento Nanami). Lieber kein Bild als das falsche Gesicht.
+ *  - Namens-Vergleich auf Ganzwort-Basis — „Enel“ steckt sonst als Teilwort
+ *    in „Penelope“.
+ */
+async function resolveCharacterAniList(searchName, franchise) {
   const data = await fetchGraphql('https://graphql.anilist.co', {
     query:
-      'query($search:String){Page(perPage:8){characters(search:$search,sort:FAVOURITES_DESC){name{full}image{large}siteUrl favourites}}}',
+      'query($search:String){Page(perPage:10){characters(search:$search,sort:FAVOURITES_DESC){name{full}image{large}siteUrl favourites media(perPage:4){nodes{title{romaji english}}}}}}',
     variables: { search: searchName },
   })
-  const candidates = (data.data?.Page?.characters ?? []).filter((c) => c.image?.large)
+  const want = franchise.toLowerCase()
+  const candidates = (data.data?.Page?.characters ?? [])
+    .filter((c) => c.image?.large)
+    .filter((c) =>
+      (c.media?.nodes ?? []).some((node) => {
+        const title = `${node.title?.romaji ?? ''} ${node.title?.english ?? ''}`.toLowerCase()
+        return title.includes(want)
+      }),
+    )
   if (candidates.length === 0) return null
 
-  const tokens = searchName.toLowerCase().split(/\s+/)
+  const queryTokens = words(searchName).filter((t) => t.length > 2)
   const exact = candidates.find((c) => {
-    const name = (c.name?.full ?? '').toLowerCase()
-    return tokens.every((t) => name.includes(t))
+    const nameWords = new Set(words(c.name?.full))
+    return queryTokens.every((t) => nameWords.has(t))
   })
   const pick = exact ?? candidates[0]
   return {
@@ -125,6 +144,7 @@ async function resolveCharacterAniList(searchName) {
     license: null,
     licenseUrl: null,
     ts: 0,
+    v: 2,
     matched: Boolean(exact),
   }
 }
@@ -143,10 +163,10 @@ async function resolveCharacterJikan(searchName) {
   })
   if (candidates.length === 0) return null
 
-  const tokens = searchName.toLowerCase().split(/\s+/)
+  const queryTokens = words(searchName).filter((t) => t.length > 2)
   const exact = candidates.find((c) => {
-    const name = (c.name ?? '').toLowerCase()
-    return tokens.every((t) => name.includes(t))
+    const nameWords = new Set(words(c.name))
+    return queryTokens.every((t) => nameWords.has(t))
   })
   const pick = exact ?? candidates[0]
   return {
@@ -256,9 +276,14 @@ for (const person of persons) {
   await sleep(700)
 }
 
+const universes = JSON.parse(readFileSync(resolve(root, 'content/universes.json'), 'utf8'))
+const universeName = new Map(universes.map((u) => [u.id, u.name]))
+
 for (const character of characters) {
   if (!character.search_name) continue
-  if (manifest[character.id]?.src) {
+  // v2-Eintraege sind serien-verifiziert; alles Aeltere wird neu aufgeloest,
+  // damit die Fehlgriffe des ersten Laufs aus dem Manifest verschwinden.
+  if (manifest[character.id]?.src && manifest[character.id]?.v >= 2) {
     okChars++
     continue
   }
@@ -267,8 +292,10 @@ for (const character of characters) {
     continue
   }
   try {
-    let credit = await resolveCharacterAniList(character.search_name).catch(() => null)
+    const franchise = universeName.get(character.universe_id) ?? 'One Piece'
+    let credit = await resolveCharacterAniList(character.search_name, franchise).catch(() => null)
     if (!credit) credit = await resolveCharacterJikan(character.search_name)
+    if (credit && !credit.v) delete manifest[character.id]
     if (credit) {
       const { matched, ...entry } = credit
       manifest[character.id] = entry

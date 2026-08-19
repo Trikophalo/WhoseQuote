@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { SITE } from '../config'
-import { characterById, personById, type Side } from '../content'
+import { characterById, personById, universeById, type Side } from '../content'
 
 /**
  * Laufzeit-Abruf echter Bilder aus öffentlichen Quellen — Betreiber-Entscheidung
@@ -32,8 +32,10 @@ export type PhotoCredit = {
   ts: number
 }
 
-const CACHE_PREFIX = 'wq.photo.'
-const MISS_PREFIX = 'wq.photomiss.'
+// Prefix-Version 2: räumt fehlerhafte Alt-Einträge (Namensvetter-Fehlgriffe
+// der ersten Suchlogik) aus allen Browser-Caches.
+const CACHE_PREFIX = 'wq.photo2.'
+const MISS_PREFIX = 'wq.photomiss2.'
 const CACHE_TTL = 7 * 24 * 3600 * 1000
 const MISS_TTL = 3600 * 1000
 
@@ -128,30 +130,48 @@ type AniListCharacter = {
   image?: { large?: string }
   siteUrl?: string
   favourites?: number
+  media?: { nodes?: { title?: { romaji?: string; english?: string } }[] }
 }
+
+const words = (value: string | null | undefined): string[] =>
+  String(value ?? '')
+    .toLowerCase()
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter(Boolean)
 
 /**
  * Primärquelle für Charakterbilder: die AniList-GraphQL-API — CORS-offen,
  * stabil und ohne die Cloud-IP-Sperren, an denen Jikan regelmäßig scheitert.
  */
-async function loadCharacterPhotoAniList(searchName: string): Promise<PhotoCredit | null> {
+async function loadCharacterPhotoAniList(searchName: string, franchise: string): Promise<PhotoCredit | null> {
   const data = (await fetchJson('https://graphql.anilist.co', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({
       query:
-        'query($search:String){Page(perPage:8){characters(search:$search,sort:FAVOURITES_DESC){name{full}image{large}siteUrl favourites}}}',
+        'query($search:String){Page(perPage:10){characters(search:$search,sort:FAVOURITES_DESC){name{full}image{large}siteUrl favourites media(perPage:4){nodes{title{romaji english}}}}}}',
       variables: { search: searchName },
     }),
   })) as { data?: { Page?: { characters?: AniListCharacter[] } } }
 
-  const candidates = (data.data?.Page?.characters ?? []).filter((c) => c.image?.large)
+  // Nur Treffer aus der erwarteten Serie — sonst gewinnt der beliebteste
+  // Namensvetter einer anderen Serie („Nami“ → Kento Nanami).
+  const want = franchise.toLowerCase()
+  const candidates = (data.data?.Page?.characters ?? [])
+    .filter((c) => c.image?.large)
+    .filter((c) =>
+      (c.media?.nodes ?? []).some((node) => {
+        const title = `${node.title?.romaji ?? ''} ${node.title?.english ?? ''}`.toLowerCase()
+        return title.includes(want)
+      }),
+    )
   if (candidates.length === 0) return null
 
-  const tokens = searchName.toLowerCase().split(/\s+/)
+  // Ganzwort-Vergleich — „Enel“ steckt sonst als Teilwort in „Penelope“.
+  const queryTokens = words(searchName).filter((t) => t.length > 2)
   const exact = candidates.find((c) => {
-    const name = (c.name?.full ?? '').toLowerCase()
-    return tokens.every((t) => name.includes(t))
+    const nameWords = new Set(words(c.name?.full))
+    return queryTokens.every((t) => nameWords.has(t))
   })
   const pick = exact ?? candidates[0]
 
@@ -183,10 +203,10 @@ async function loadCharacterPhotoJikan(searchName: string): Promise<PhotoCredit 
   // Bevorzugt den Treffer, dessen Name alle Suchwörter enthält — bei sehr
   // generischen Namen („Brook“) entscheidet sonst die Beliebtheit, und die
   // One-Piece-Figuren führen diese Sortierung ohnehin an.
-  const tokens = searchName.toLowerCase().split(/\s+/)
+  const queryTokens = words(searchName).filter((t) => t.length > 2)
   const exact = candidates.find((c) => {
-    const name = (c.name ?? '').toLowerCase()
-    return tokens.every((t) => name.includes(t))
+    const nameWords = new Set(words(c.name))
+    return queryTokens.every((t) => nameWords.has(t))
   })
   const pick = exact ?? candidates[0]
 
@@ -271,9 +291,11 @@ export async function loadPhoto(side: Pick<Side, 'kind' | 'id'>): Promise<PhotoC
   try {
     let credit: PhotoCredit | null = null
     if (side.kind === 'character') {
-      const searchName = characterById.get(side.id)?.search_name
+      const character = characterById.get(side.id)
+      const searchName = character?.search_name
       if (searchName) {
-        credit = await loadCharacterPhotoAniList(searchName).catch(() => null)
+        const franchise = (character && universeById.get(character.universe_id)?.name) ?? 'One Piece'
+        credit = await loadCharacterPhotoAniList(searchName, franchise).catch(() => null)
         if (!credit) credit = await loadCharacterPhotoJikan(searchName).catch(() => null)
       }
     } else {
