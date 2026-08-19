@@ -63,7 +63,73 @@ async function fetchJson(url, attempts = 4) {
   throw lastError
 }
 
-async function resolveCharacter(searchName) {
+async function fetchGraphql(url, body, attempts = 3) {
+  const backoff = [2000, 5000]
+  let lastError
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), 15000)
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        signal: controller.signal,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'User-Agent': 'WhoseQuote-Build/0.1 (Zitate-Quiz; Bildmanifest; Kontakt siehe Repo)',
+        },
+        body: JSON.stringify(body),
+      })
+      if (res.ok) return await res.json()
+      lastError = new Error(`HTTP ${res.status}`)
+      if (res.status === 429) {
+        const retryAfter = Number(res.headers.get('retry-after')) * 1000
+        await sleep(Math.max(retryAfter || 0, backoff[Math.min(attempt, backoff.length - 1)]))
+      } else if (res.status >= 500) {
+        await sleep(backoff[Math.min(attempt, backoff.length - 1)])
+      } else {
+        throw lastError
+      }
+    } catch (error) {
+      lastError = error
+      await sleep(backoff[Math.min(attempt, backoff.length - 1)])
+    } finally {
+      clearTimeout(timer)
+    }
+  }
+  throw lastError
+}
+
+/** Primärquelle: AniList — stabil auch von Cloud-IPs, wo Jikan mit 504 abweist. */
+async function resolveCharacterAniList(searchName) {
+  const data = await fetchGraphql('https://graphql.anilist.co', {
+    query:
+      'query($search:String){Page(perPage:8){characters(search:$search,sort:FAVOURITES_DESC){name{full}image{large}siteUrl favourites}}}',
+    variables: { search: searchName },
+  })
+  const candidates = (data.data?.Page?.characters ?? []).filter((c) => c.image?.large)
+  if (candidates.length === 0) return null
+
+  const tokens = searchName.toLowerCase().split(/\s+/)
+  const exact = candidates.find((c) => {
+    const name = (c.name?.full ?? '').toLowerCase()
+    return tokens.every((t) => name.includes(t))
+  })
+  const pick = exact ?? candidates[0]
+  return {
+    src: pick.image.large,
+    name: pick.name?.full ?? searchName,
+    pageUrl: pick.siteUrl ?? 'https://anilist.co',
+    sourceLabel: 'AniList',
+    artist: null,
+    license: null,
+    licenseUrl: null,
+    ts: 0,
+    matched: Boolean(exact),
+  }
+}
+
+async function resolveCharacterJikan(searchName) {
   // Bewusst ohne order_by: sortierte Jikan-Suchen provozieren 504er.
   // Nach Beliebtheit sortieren wir selbst.
   const url = `https://api.jikan.moe/v4/characters?q=${encodeURIComponent(searchName)}&limit=15`
@@ -163,35 +229,6 @@ const missing = []
 
 console.log(`\n🖼  Bildmanifest: ${characters.length} Figuren (Jikan), ${persons.length} Personen (Wikipedia)\n`)
 
-for (const character of characters) {
-  if (!character.search_name) continue
-  if (manifest[character.id]?.src) {
-    okChars++
-    continue
-  }
-  if (outOfTime()) {
-    missing.push(character.id)
-    continue
-  }
-  try {
-    const credit = await resolveCharacter(character.search_name)
-    if (credit) {
-      const { matched, ...entry } = credit
-      manifest[character.id] = entry
-      okChars++
-      console.log(`   ✓ ${character.id} → „${entry.name}“${matched ? '' : ' (bester Treffer, Name weicht ab — prüfen!)'}`)
-    } else {
-      missing.push(character.id)
-      console.log(`   ✗ ${character.id}: kein brauchbares Bild gefunden`)
-    }
-  } catch (error) {
-    missing.push(character.id)
-    console.log(`   ⚠ ${character.id}: ${error.message}`)
-  }
-  // Jikan erlaubt 3 Anfragen/Sekunde — großzügig drosseln.
-  await sleep(1300)
-}
-
 for (const person of persons) {
   if (!person.wiki_title) continue
   if (manifest[person.id]?.src) {
@@ -217,6 +254,36 @@ for (const person of persons) {
     console.log(`   ⚠ ${person.id}: ${error.message}`)
   }
   await sleep(700)
+}
+
+for (const character of characters) {
+  if (!character.search_name) continue
+  if (manifest[character.id]?.src) {
+    okChars++
+    continue
+  }
+  if (outOfTime()) {
+    missing.push(character.id)
+    continue
+  }
+  try {
+    let credit = await resolveCharacterAniList(character.search_name).catch(() => null)
+    if (!credit) credit = await resolveCharacterJikan(character.search_name)
+    if (credit) {
+      const { matched, ...entry } = credit
+      manifest[character.id] = entry
+      okChars++
+      console.log(`   ✓ ${character.id} → „${entry.name}“${matched ? '' : ' (bester Treffer, Name weicht ab — prüfen!)'}`)
+    } else {
+      missing.push(character.id)
+      console.log(`   ✗ ${character.id}: kein brauchbares Bild gefunden`)
+    }
+  } catch (error) {
+    missing.push(character.id)
+    console.log(`   ⚠ ${character.id}: ${error.message}`)
+  }
+  // AniList erlaubt derzeit ~30 Anfragen/Minute — 2,2 s Takt bleibt darunter.
+  await sleep(2200)
 }
 
 writeFileSync(OUT, JSON.stringify(manifest, null, 2) + '\n')

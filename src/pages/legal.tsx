@@ -91,8 +91,8 @@ export function FaqPage() {
 
       <h3 className={h3}>Woher kommen die Bilder?</h3>
       <p className={p}>
-        Bilder von Anime-Figuren stammen aus der Charakterdatenbank von MyAnimeList (über die
-        Jikan-Schnittstelle), Fotos realer Personen aus dem jeweiligen Artikel der deutschen
+        Bilder von Anime-Figuren stammen aus den Charakterdatenbanken von AniList und
+        MyAnimeList (über deren öffentliche Schnittstellen), Fotos realer Personen aus dem jeweiligen Artikel der deutschen
         Wikipedia – dort sind nur frei lizenzierte Bilder zulässig. Die Bilder werden beim Spielen
         direkt von den Quell-Servern geladen; Quelle, Urheber und Lizenz stehen in der Auflösung
         jeder Runde und gesammelt auf der Seite „Bildnachweise“. Ist eine Quelle nicht erreichbar,
@@ -227,8 +227,8 @@ export function DatenschutzPage() {
       <h2 className={h2}>4. Bilder aus öffentlichen Quellen (Drittserver)</h2>
       <p className={p}>
         Die Porträtbilder im Spiel werden direkt in deinem Browser von den Servern der jeweiligen
-        Quelle geladen: Bilder von Anime-Figuren über die Jikan-Schnittstelle bzw. das CDN von
-        MyAnimeList, Fotos realer Personen von den Servern der Wikimedia Foundation
+        Quelle geladen: Bilder von Anime-Figuren über die öffentlichen Schnittstellen von AniList
+        bzw. MyAnimeList (Jikan) und deren Bildserver, Fotos realer Personen von den Servern der Wikimedia Foundation
         (Wikipedia/Wikimedia Commons). Beim Laden dieser Bilder erhalten die genannten Anbieter
         technisch bedingt deine IP-Adresse und die üblichen Browser-Angaben – so, als hättest du
         deren Seiten selbst aufgerufen. Rechtsgrundlage ist unser berechtigtes Interesse an der
@@ -359,13 +359,17 @@ export function BildnachweisePage() {
       </p>
       <ul className={ul}>
         <li>
-          <strong className={strong}>Anime-Figuren:</strong> Charakterbilder aus der Datenbank von{' '}
+          <strong className={strong}>Anime-Figuren:</strong> Charakterbilder aus den Datenbanken von{' '}
+          <a className="underline" href="https://anilist.co" target="_blank" rel="noreferrer">
+            AniList
+          </a>{' '}
+          und{' '}
           <a className="underline" href="https://myanimelist.net" target="_blank" rel="noreferrer">
             MyAnimeList
           </a>
-          , abgerufen über die Jikan-Schnittstelle. Diese Artworks sind urheberrechtlich geschützte
-          Werke der jeweiligen Studios und Verlage; die Rechte verbleiben vollständig bei ihren
-          Inhabern. Die Darstellung dient allein der Bebilderung des Quiz.
+          , abgerufen über deren öffentliche Schnittstellen. Diese Artworks sind urheberrechtlich
+          geschützte Werke der jeweiligen Studios und Verlage; die Rechte verbleiben vollständig bei
+          ihren Inhabern. Die Darstellung dient allein der Bebilderung des Quiz.
         </li>
         <li>
           <strong className={strong}>Reale Personen:</strong> das Artikelbild des jeweiligen

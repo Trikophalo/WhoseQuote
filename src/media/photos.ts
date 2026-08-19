@@ -25,7 +25,7 @@ export type PhotoCredit = {
   name: string
   /** Seite bei der Quelle (MAL-Charakterseite bzw. Commons-Dateiseite). */
   pageUrl: string
-  sourceLabel: 'MyAnimeList' | 'Wikimedia Commons'
+  sourceLabel: 'AniList' | 'MyAnimeList' | 'Wikimedia Commons'
   artist: string | null
   license: string | null
   licenseUrl: string | null
@@ -94,11 +94,11 @@ function loadManifest(): Promise<Record<string, PhotoCredit>> {
   return manifestPromise
 }
 
-async function fetchJson(url: string): Promise<unknown> {
+async function fetchJson(url: string, init?: RequestInit): Promise<unknown> {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), 8000)
   try {
-    const response = await fetch(url, { signal: controller.signal })
+    const response = await fetch(url, { ...init, signal: controller.signal })
     if (!response.ok) throw new Error(`HTTP ${response.status}`)
     return await response.json()
   } finally {
@@ -123,7 +123,51 @@ type JikanCharacter = {
   images?: { jpg?: { image_url?: string } }
 }
 
-async function loadCharacterPhoto(searchName: string): Promise<PhotoCredit | null> {
+type AniListCharacter = {
+  name?: { full?: string }
+  image?: { large?: string }
+  siteUrl?: string
+  favourites?: number
+}
+
+/**
+ * Primärquelle für Charakterbilder: die AniList-GraphQL-API — CORS-offen,
+ * stabil und ohne die Cloud-IP-Sperren, an denen Jikan regelmäßig scheitert.
+ */
+async function loadCharacterPhotoAniList(searchName: string): Promise<PhotoCredit | null> {
+  const data = (await fetchJson('https://graphql.anilist.co', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      query:
+        'query($search:String){Page(perPage:8){characters(search:$search,sort:FAVOURITES_DESC){name{full}image{large}siteUrl favourites}}}',
+      variables: { search: searchName },
+    }),
+  })) as { data?: { Page?: { characters?: AniListCharacter[] } } }
+
+  const candidates = (data.data?.Page?.characters ?? []).filter((c) => c.image?.large)
+  if (candidates.length === 0) return null
+
+  const tokens = searchName.toLowerCase().split(/\s+/)
+  const exact = candidates.find((c) => {
+    const name = (c.name?.full ?? '').toLowerCase()
+    return tokens.every((t) => name.includes(t))
+  })
+  const pick = exact ?? candidates[0]
+
+  return {
+    src: pick.image!.large!,
+    name: pick.name?.full ?? searchName,
+    pageUrl: pick.siteUrl ?? 'https://anilist.co',
+    sourceLabel: 'AniList',
+    artist: null,
+    license: null,
+    licenseUrl: null,
+    ts: Date.now(),
+  }
+}
+
+async function loadCharacterPhotoJikan(searchName: string): Promise<PhotoCredit | null> {
   // Ohne order_by: sortierte Jikan-Suchen sind langsam und neigen zu 504ern.
   const url = `https://api.jikan.moe/v4/characters?q=${encodeURIComponent(searchName)}&limit=15`
   const data = (await queueJikan(() => fetchJson(url))) as { data?: JikanCharacter[] }
@@ -228,7 +272,10 @@ export async function loadPhoto(side: Pick<Side, 'kind' | 'id'>): Promise<PhotoC
     let credit: PhotoCredit | null = null
     if (side.kind === 'character') {
       const searchName = characterById.get(side.id)?.search_name
-      if (searchName) credit = await loadCharacterPhoto(searchName)
+      if (searchName) {
+        credit = await loadCharacterPhotoAniList(searchName).catch(() => null)
+        if (!credit) credit = await loadCharacterPhotoJikan(searchName).catch(() => null)
+      }
     } else {
       const wikiTitle = personById.get(side.id)?.wiki_title
       if (wikiTitle) credit = await loadPersonPhoto(wikiTitle)
