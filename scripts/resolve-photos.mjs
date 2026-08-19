@@ -23,6 +23,10 @@ import { fileURLToPath } from 'node:url'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = resolve(root, 'public/photos.json')
+// Zeitbudget: lieber ein Teil-Manifest ausliefern als den Deploy zu blockieren.
+// Fehlende Einträge holt der nächste (auch der tägliche) Lauf nach.
+const DEADLINE = Date.now() + Number(process.env.RESOLVE_BUDGET_MS ?? 8 * 60 * 1000)
+const outOfTime = () => Date.now() > DEADLINE
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 const stripHtml = (v) => String(v ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
 
@@ -165,6 +169,10 @@ for (const character of characters) {
     okChars++
     continue
   }
+  if (outOfTime()) {
+    missing.push(character.id)
+    continue
+  }
   try {
     const credit = await resolveCharacter(character.search_name)
     if (credit) {
@@ -188,6 +196,10 @@ for (const person of persons) {
   if (!person.wiki_title) continue
   if (manifest[person.id]?.src) {
     okPersons++
+    continue
+  }
+  if (outOfTime()) {
+    missing.push(person.id)
     continue
   }
   try {
