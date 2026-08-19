@@ -124,9 +124,13 @@ type JikanCharacter = {
 }
 
 async function loadCharacterPhoto(searchName: string): Promise<PhotoCredit | null> {
-  const url = `https://api.jikan.moe/v4/characters?q=${encodeURIComponent(searchName)}&order_by=favorites&sort=desc&limit=10`
+  // Ohne order_by: sortierte Jikan-Suchen sind langsam und neigen zu 504ern.
+  const url = `https://api.jikan.moe/v4/characters?q=${encodeURIComponent(searchName)}&limit=15`
   const data = (await queueJikan(() => fetchJson(url))) as { data?: JikanCharacter[] }
-  const candidates = (data.data ?? []).filter((c) => {
+  const candidates = (data.data ?? [])
+    .slice()
+    .sort((a, b) => (b.favorites ?? 0) - (a.favorites ?? 0))
+    .filter((c) => {
     const img = c.images?.jpg?.image_url ?? ''
     return img && !img.includes('questionmark') && !img.includes('icon-')
   })

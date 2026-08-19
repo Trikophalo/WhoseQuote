@@ -26,25 +26,48 @@ const OUT = resolve(root, 'public/photos.json')
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 const stripHtml = (v) => String(v ?? '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
 
-async function fetchJson(url) {
-  const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), 12000)
-  try {
-    const res = await fetch(url, {
-      signal: controller.signal,
-      headers: { 'User-Agent': 'WhoseQuote-Build/0.1 (Zitate-Quiz; Bildmanifest)' },
-    })
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    return await res.json()
-  } finally {
-    clearTimeout(timer)
+async function fetchJson(url, attempts = 4) {
+  // Jikan antwortet von Cloud-IPs oft mit sporadischen 504ern, Wikimedia
+  // drosselt sie mit 429 — beides ist mit Geduld überwindbar.
+  const backoff = [2000, 5000, 12000]
+  let lastError
+  for (let attempt = 0; attempt < attempts; attempt++) {
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), 15000)
+    try {
+      const res = await fetch(url, {
+        signal: controller.signal,
+        headers: { 'User-Agent': 'WhoseQuote-Build/0.1 (Zitate-Quiz; Bildmanifest; Kontakt siehe Repo)' },
+      })
+      if (res.ok) return await res.json()
+      lastError = new Error(`HTTP ${res.status}`)
+      if (res.status === 429) {
+        const retryAfter = Number(res.headers.get('retry-after')) * 1000
+        await sleep(Math.max(retryAfter || 0, backoff[Math.min(attempt, backoff.length - 1)]))
+      } else if (res.status >= 500) {
+        await sleep(backoff[Math.min(attempt, backoff.length - 1)])
+      } else {
+        throw lastError
+      }
+    } catch (error) {
+      lastError = error
+      await sleep(backoff[Math.min(attempt, backoff.length - 1)])
+    } finally {
+      clearTimeout(timer)
+    }
   }
+  throw lastError
 }
 
 async function resolveCharacter(searchName) {
-  const url = `https://api.jikan.moe/v4/characters?q=${encodeURIComponent(searchName)}&order_by=favorites&sort=desc&limit=10`
+  // Bewusst ohne order_by: sortierte Jikan-Suchen provozieren 504er.
+  // Nach Beliebtheit sortieren wir selbst.
+  const url = `https://api.jikan.moe/v4/characters?q=${encodeURIComponent(searchName)}&limit=15`
   const data = await fetchJson(url)
-  const candidates = (data.data ?? []).filter((c) => {
+  const candidates = (data.data ?? [])
+    .slice()
+    .sort((a, b) => (b.favorites ?? 0) - (a.favorites ?? 0))
+    .filter((c) => {
     const img = c.images?.jpg?.image_url ?? ''
     return img && !img.includes('questionmark') && !img.includes('icon-')
   })
@@ -113,7 +136,23 @@ async function resolvePerson(wikiTitle) {
 const characters = JSON.parse(readFileSync(resolve(root, 'content/characters.json'), 'utf8'))
 const persons = JSON.parse(readFileSync(resolve(root, 'content/persons.json'), 'utf8'))
 
-const manifest = {}
+// Basis: das zuletzt veröffentlichte Manifest. So konvergiert die Bildliste
+// über Deploys hinweg — ein schlechter API-Tag wirft keine Treffer weg.
+let manifest = {}
+const repoSlug = process.env.GITHUB_REPOSITORY ?? ''
+if (repoSlug.includes('/')) {
+  const [owner, repo] = repoSlug.split('/')
+  const liveUrl = `https://${owner.toLowerCase()}.github.io/${repo}/photos.json`
+  try {
+    const previous = await fetchJson(liveUrl, 2)
+    if (previous && typeof previous === 'object') {
+      manifest = previous
+      console.log(`   Basis: ${Object.keys(manifest).length} Einträge aus dem letzten Deploy (${liveUrl})`)
+    }
+  } catch {
+    console.log('   Kein vorheriges Manifest erreichbar — starte leer.')
+  }
+}
 let okChars = 0
 let okPersons = 0
 const missing = []
@@ -122,6 +161,10 @@ console.log(`\n🖼  Bildmanifest: ${characters.length} Figuren (Jikan), ${perso
 
 for (const character of characters) {
   if (!character.search_name) continue
+  if (manifest[character.id]?.src) {
+    okChars++
+    continue
+  }
   try {
     const credit = await resolveCharacter(character.search_name)
     if (credit) {
@@ -138,11 +181,15 @@ for (const character of characters) {
     console.log(`   ⚠ ${character.id}: ${error.message}`)
   }
   // Jikan erlaubt 3 Anfragen/Sekunde — großzügig drosseln.
-  await sleep(700)
+  await sleep(1300)
 }
 
 for (const person of persons) {
   if (!person.wiki_title) continue
+  if (manifest[person.id]?.src) {
+    okPersons++
+    continue
+  }
   try {
     const credit = await resolvePerson(person.wiki_title)
     if (credit) {
@@ -157,7 +204,7 @@ for (const person of persons) {
     missing.push(person.id)
     console.log(`   ⚠ ${person.id}: ${error.message}`)
   }
-  await sleep(200)
+  await sleep(700)
 }
 
 writeFileSync(OUT, JSON.stringify(manifest, null, 2) + '\n')
