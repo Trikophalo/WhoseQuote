@@ -127,6 +127,18 @@ nicht**, weil es auf den Gesamteindruck beim Publikum ankommt. Deshalb:
 
 ## 4.5 Bilder
 
+> **Betreiber-Entscheidung vom 19.08.2026:** Der Betreiber hat sich entschieden,
+> im Spiel echte Bilder zu zeigen — Anime-Artworks über die Jikan/MyAnimeList-
+> Schnittstelle und Personenfotos über Wikipedia/Wikimedia Commons, jeweils zur
+> Laufzeit im Browser der Spielenden geladen. Die nachfolgend beschriebene
+> Risikolage bleibt bestehen und wurde dem Betreiber transparent gemacht; das
+> Restrisiko trägt der Betreiber. Umgesetzte Gegenmaßnahmen:
+> sichtbare Quellen-/Lizenzangabe in jeder Auflösung, generierte
+> Bildnachweis-Liste, Beanstandungsprozess mit umgehender Entfernung und ein
+> zentraler Kill-Switch (`SITE.useRealImages`), der das Spiel sofort auf die
+> eigenen Federzeichnungen zurückschaltet. Die Zeichnungen bleiben als
+> dauerhafter Fallback in jeder Runde bestehen.
+
 ### Anime-Charaktere — die unbequeme Wahrheit
 Jikan ist nur ein API-Wrapper um MyAnimeList; die ausgelieferten Bilder sind
 **urheberrechtlich geschützte Artworks** (Toei Animation/Shueisha bzw.

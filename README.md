@@ -71,25 +71,30 @@ scripts/            Content-Gate, Bild-Sync, End-to-End-Rauchtest
 docs/               Die vollständige Projektplanung
 ```
 
-## Bilder: gezeichnet statt geliehen
+## Bilder: echte Quellen mit gezeichnetem Fallback
 
-Jede Figur und jede Person bekommt ein **im Code gezeichnetes Porträt** — eine
-Federzeichnung, die aus einem Merkmalsvorrat zusammengesetzt wird (Kopfform,
-Frisur, Bart, Kopfbedeckung, Beiwerk). Erkennbar wird sie über die Silhouette:
-Strohhut, Zweispitz, Lorbeerkranz, Walrossbart.
+Das Spiel zeigt **echte Bilder aus öffentlichen Quellen**, geladen zur Laufzeit
+im Browser der Spielenden (`src/media/photos.ts`):
 
-Das ist bewusst so und kein Notbehelf: MyAnimeList bzw. die Jikan-API liefern
-urheberrechtlich geschützte Artworks, und eine öffentlich abrufbare API räumt
-keine Nutzungsrechte ein. Die Zeichnungen sind eigene Abstraktionen, keine
-Nachzeichnungen der Originalentwürfe.
+- **Anime-Figuren:** Charakter-Artworks aus MyAnimeList über die Jikan-API
+  (Suche per Romaji-Name aus `content/characters.json`, gedrosselt und
+  gecacht).
+- **Reale Personen:** das Artikelbild der deutschen Wikipedia (`wiki_title` in
+  `content/persons.json`) — dort sind nur frei lizenzierte Bilder zulässig;
+  Urheber und Lizenz kommen von Wikimedia Commons und stehen in der Auflösung
+  jeder Runde sowie auf der Bildnachweis-Seite.
 
-Wer in [`src/art/specs.ts`](src/art/specs.ts) keine eigene Merkmalsliste hat,
-bekommt automatisch ein aus der Kennung abgeleitetes Porträt — **es erscheint
-also nie ein Platzhalter**. Der Rauchtest prüft genau das: über zwölf Runden
-und in der Galerie muss auf jeder Seite ein gezeichnetes Porträt stehen.
+Darunter liegt immer ein **im Code gezeichnetes Porträt** — eine Federzeichnung
+aus einem Merkmalsvorrat (Strohhut, Zweispitz, Lorbeerkranz, Walrossbart …).
+Sie rendert sofort und bleibt stehen, wenn eine Bildquelle nicht antwortet:
+**Es erscheint also nie ein Platzhalter.** Der Rauchtest prüft genau das über
+zwölf Runden und in der Galerie (`#/portraets`).
 
-Alle Porträts auf einen Blick: `#/portraets` (nicht im Menü verlinkt, gedacht
-als Kontrollblatt für die Redaktion).
+Rechtlicher Rahmen: Die MAL-Artworks bleiben geschützte Werke ihrer
+Rechteinhaber — diese bewusste Betreiber-Entscheidung samt Risikoabwägung und
+Gegenmaßnahmen ist in [Dok 04](docs/04-recht.md), 4.5 dokumentiert. Der
+Kill-Switch `useRealImages` in [`src/config.ts`](src/config.ts) schaltet das
+Spiel jederzeit vollständig auf die eigenen Zeichnungen zurück.
 
 ## Die rechtlichen Leitplanken sind Code, nicht Konvention
 

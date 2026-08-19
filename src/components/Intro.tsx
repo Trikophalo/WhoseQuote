@@ -1,8 +1,8 @@
 import { CONTENT_STATS } from '../content'
 import { SITE } from '../config'
 import { navigate } from '../router'
-import { Portrait } from '../art/Portrait'
-import { PORTRAIT_SPECS } from '../art/specs'
+import { SidePicture } from './SidePicture'
+import { characterById, personById, universeById, type Side } from '../content'
 
 /**
  * Titelseite vor der ersten Runde (docs/04-recht.md, 4.3).
@@ -37,6 +37,15 @@ const RULES: { mark: string; text: React.ReactNode }[] = [
   },
 ]
 
+function exampleSide(kind: 'character' | 'person', id: string): Side {
+  if (kind === 'character') {
+    const c = characterById.get(id)!
+    return { kind, id: c.id, name: c.name, blurb: c.blurb, hue: c.hue, universe: universeById.get(c.universe_id)?.name }
+  }
+  const p = personById.get(id)!
+  return { kind, id: p.id, name: p.name, blurb: p.blurb, hue: p.hue }
+}
+
 export function Intro({ onStart }: { onStart: () => void }) {
   return (
     <div className="animate-rise mx-auto w-full max-w-3xl px-5 pt-8 md:pt-14">
@@ -53,14 +62,14 @@ export function Intro({ onStart }: { onStart: () => void }) {
         <div className="mt-7 flex items-end justify-center gap-6 md:gap-12">
           <figure className="w-24 md:w-32">
             <span className="block border border-[color:var(--rule)] bg-[color:var(--paper-deep)] p-1.5">
-              <Portrait id="one-piece/luffy" spec={PORTRAIT_SPECS['one-piece/luffy']} className="block h-auto w-full" />
+              <SidePicture side={exampleSide('character', 'one-piece/luffy')} />
             </span>
             <figcaption className="smallcaps mt-2 text-[9px] text-[color:var(--ink-faint)]">Fiktion</figcaption>
           </figure>
           <span className="smallcaps pb-8 text-xs text-[color:var(--ink-faint)]">oder</span>
           <figure className="w-24 md:w-32">
             <span className="block border border-[color:var(--rule)] bg-[color:var(--paper-deep)] p-1.5">
-              <Portrait id="marc-aurel" spec={PORTRAIT_SPECS['marc-aurel']} className="block h-auto w-full" />
+              <SidePicture side={exampleSide('person', 'marc-aurel')} />
             </span>
             <figcaption className="smallcaps mt-2 text-[9px] text-[color:var(--ink-faint)]">Wirklichkeit</figcaption>
           </figure>

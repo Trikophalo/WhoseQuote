@@ -11,9 +11,16 @@ gelöst" stimmt für **Metadaten**, aber nicht für **Anime-Bilder**: Jikan ist
 nur ein Wrapper um MyAnimeList, und die Bilder dort sind geschützte Artworks
 (Toei/Shueisha). Eine öffentliche API erteilt keine Nutzungsrechte — und
 gerade die One-Piece-Rechteinhaber gehen aktiv gegen unlizenzierte Nutzung
-vor. **Konsequenz:** eigener Avatar-Stil bzw. Text-Fallback (Dok 04, 4.5).
-Das ist die teuerste Einzelabweichung vom Wunschkonzept, aber nicht
-verhandelbar, wenn „rechtlich sauber" das Ziel ist.
+vor. **Konsequenz (ursprüngliche Empfehlung):** eigener Avatar-Stil bzw.
+Text-Fallback (Dok 04, 4.5).
+
+**Status-Update 19.08.2026:** Der Betreiber hat sich nach Abwägung für
+Echtbilder entschieden (MAL/Jikan-Artworks und Wikipedia/Commons-Fotos,
+geladen zur Laufzeit im Browser der Spielenden). Das hier beschriebene
+Risiko besteht damit fort und wird vom Betreiber getragen.
+Gegenmaßnahmen: Quellen-/Lizenzangaben in jeder Runde, Meldeprozess mit
+umgehender Entfernung, Kill-Switch `SITE.useRealImages` und die eigenen
+Federzeichnungen als dauerhafter Fallback (Details in Dok 04, 4.5).
 
 ## 2. „Sinngemäß plausibel" funktioniert nicht für lebende Personen
 

@@ -18,6 +18,13 @@ export const SITE = {
   hostingProvider: 'TODO — Hosting-Anbieter (z. B. Cloudflare Pages)',
   /** Beta-Kennzeichnung, solange die menschliche Quellenprüfung läuft. */
   isBeta: true,
+  /**
+   * Kill-Switch für die Echtbilder (Jikan/MyAnimeList, Wikipedia/Commons).
+   * Auf false stellen, und das Spiel zeigt ausschließlich die eigenen
+   * Zeichnungen — z. B. wenn ein Rechteinhaber eine Nutzung beanstandet.
+   * Hintergrund und Risikoabwägung: docs/04-recht.md, 4.5.
+   */
+  useRealImages: true,
 } as const
 
 /** Ist das Impressum vollständig ausgefüllt? Steuert den Launch-Blocker-Hinweis. */

@@ -1,5 +1,6 @@
 import { LegalLayout, h2, h3, p, ul, strong } from '../components/LegalLayout'
 import { SITE, hasOperatorData } from '../config'
+import { listCachedPhotos } from '../media/photos'
 
 /* -------------------------------------------------------------------------- */
 /* FAQ                                                                         */
@@ -88,6 +89,18 @@ export function FaqPage() {
         vergleichen, gleichsetzen oder bewerten.
       </p>
 
+      <h3 className={h3}>Woher kommen die Bilder?</h3>
+      <p className={p}>
+        Bilder von Anime-Figuren stammen aus der Charakterdatenbank von MyAnimeList (über die
+        Jikan-Schnittstelle), Fotos realer Personen aus dem jeweiligen Artikel der deutschen
+        Wikipedia – dort sind nur frei lizenzierte Bilder zulässig. Die Bilder werden beim Spielen
+        direkt von den Quell-Servern geladen; Quelle, Urheber und Lizenz stehen in der Auflösung
+        jeder Runde und gesammelt auf der Seite „Bildnachweise“. Ist eine Quelle nicht erreichbar,
+        zeigt das Spiel ersatzweise eine eigene Federzeichnung. Die Rechte an den Werken und
+        Bildern liegen bei ihren Inhabern; Rechteinhaber, die eine Nutzung nicht wünschen, erreichen
+        uns über {SITE.contactEmail} – beanstandete Bilder werden umgehend entfernt.
+      </p>
+
       <h3 className={h3}>Ein Zitat ist falsch zugeordnet oder verletzt Rechte – was tun?</h3>
       <p className={p}>
         Nutze „Zitat melden“ direkt an der Runde oder schreib an {SITE.contactEmail}. Wir prüfen
@@ -172,7 +185,8 @@ export function DatenschutzPage() {
         {SITE.name} ist bewusst datenarm gebaut: Es gibt{' '}
         <strong className={strong}>kein Tracking, keine Analyse-Werkzeuge, keine Werbenetzwerke und
         keine Cookies</strong>. Dein Punktestand bleibt auf deinem Gerät. Eine Anmeldung oder ein
-        Nutzerkonto gibt es nicht.
+        Nutzerkonto gibt es nicht. Einzige Verbindung zu Dritten: Die Porträtbilder werden von den
+        Servern der Bildquellen (MyAnimeList, Wikimedia) geladen – Details in Abschnitt 4.
       </p>
 
       <h2 className={h2}>1. Verantwortlicher</h2>
@@ -210,14 +224,28 @@ export function DatenschutzPage() {
         </li>
       </ul>
 
-      <h2 className={h2}>4. Kein Tracking, keine Cookies</h2>
+      <h2 className={h2}>4. Bilder aus öffentlichen Quellen (Drittserver)</h2>
+      <p className={p}>
+        Die Porträtbilder im Spiel werden direkt in deinem Browser von den Servern der jeweiligen
+        Quelle geladen: Bilder von Anime-Figuren über die Jikan-Schnittstelle bzw. das CDN von
+        MyAnimeList, Fotos realer Personen von den Servern der Wikimedia Foundation
+        (Wikipedia/Wikimedia Commons). Beim Laden dieser Bilder erhalten die genannten Anbieter
+        technisch bedingt deine IP-Adresse und die üblichen Browser-Angaben – so, als hättest du
+        deren Seiten selbst aufgerufen. Rechtsgrundlage ist unser berechtigtes Interesse an der
+        bebilderten Darstellung des Quiz (Art. 6 Abs. 1 lit. f DSGVO). Wir übertragen dabei keine
+        Angaben über dich an diese Anbieter; es wird lediglich das Bild abgerufen. Kann ein Bild
+        nicht geladen werden, zeigt das Spiel stattdessen eine eigene, lokal erzeugte Zeichnung –
+        dabei findet kein Kontakt zu Drittservern statt.
+      </p>
+
+      <h2 className={h2}>5. Kein Tracking, keine Cookies</h2>
       <p className={p}>
         Wir setzen keine Cookies, keine Analyse- oder Reichweitenmessung, keine Werbe-IDs und keine
         Social-Media-Plugins ein. Es findet kein geräteübergreifendes Wiedererkennen und kein
         Profiling statt.
       </p>
 
-      <h2 className={h2}>5. Kontaktaufnahme und Meldungen</h2>
+      <h2 className={h2}>6. Kontaktaufnahme und Meldungen</h2>
       <p className={p}>
         Wenn du uns über {SITE.contactEmail} schreibst – etwa um ein Zitat zu melden –, verarbeiten
         wir deine E-Mail-Adresse und die Inhalte deiner Nachricht ausschließlich, um die Anfrage zu
@@ -226,7 +254,7 @@ export function DatenschutzPage() {
         keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
       </p>
 
-      <h2 className={h2}>6. Globales Leaderboard – derzeit nicht aktiv</h2>
+      <h2 className={h2}>7. Globales Leaderboard – derzeit nicht aktiv</h2>
       <p className={p}>
         Ein serverseitiges, globales Leaderboard gibt es aktuell{' '}
         <strong className={strong}>nicht</strong>. Es werden also keine Anzeigenamen, Punktestände
@@ -235,7 +263,7 @@ export function DatenschutzPage() {
         die Rechtsgrundlage, die Speicherdauer und den Löschweg erweitert.
       </p>
 
-      <h2 className={h2}>7. Deine Rechte</h2>
+      <h2 className={h2}>8. Deine Rechte</h2>
       <p className={p}>Dir stehen nach der DSGVO insbesondere folgende Rechte zu:</p>
       <ul className={ul}>
         <li>Auskunft über die zu deiner Person verarbeiteten Daten (Art. 15 DSGVO)</li>
@@ -320,49 +348,72 @@ export function NutzungsbedingungenPage() {
 /* -------------------------------------------------------------------------- */
 
 export function BildnachweisePage() {
+  const cached = listCachedPhotos()
+
   return (
     <LegalLayout title="Bildnachweise">
-      <h2 className={h2}>Aktueller Stand: eigene Zeichnungen statt fremder Artworks</h2>
+      <h2 className={h2}>Woher die Bilder stammen</h2>
       <p className={p}>
-        Alle Figuren- und Personendarstellungen in diesem Spiel sind{' '}
-        <strong className={strong}>eigene, im Code gezeichnete Federzeichnungen</strong>. Sie werden
-        aus einem festen Merkmalsvorrat zusammengesetzt – Kopfform, Frisur, Bart, Kopfbedeckung,
-        Beiwerk – und sollen über die Silhouette erkennbar sein, etwa über einen Strohhut, einen
-        Zweispitz oder einen Lorbeerkranz. Sie sind ausdrücklich keine Nachzeichnungen von
-        Originalentwürfen und keine Porträtfotos. Es sind also keine Bilder Dritter im Einsatz, und
-        es gibt an dieser Stelle nichts zu attribuieren.
+        Das Spiel zeigt echte Bilder aus zwei öffentlichen Quellen, geladen direkt in deinem
+        Browser von den Servern der Quelle:
       </p>
+      <ul className={ul}>
+        <li>
+          <strong className={strong}>Anime-Figuren:</strong> Charakterbilder aus der Datenbank von{' '}
+          <a className="underline" href="https://myanimelist.net" target="_blank" rel="noreferrer">
+            MyAnimeList
+          </a>
+          , abgerufen über die Jikan-Schnittstelle. Diese Artworks sind urheberrechtlich geschützte
+          Werke der jeweiligen Studios und Verlage; die Rechte verbleiben vollständig bei ihren
+          Inhabern. Die Darstellung dient allein der Bebilderung des Quiz.
+        </li>
+        <li>
+          <strong className={strong}>Reale Personen:</strong> das Artikelbild des jeweiligen
+          Eintrags der deutschen Wikipedia. Die deutsche Wikipedia lässt ausschließlich frei
+          lizenzierte Bilder zu (Public Domain, CC0, CC BY, CC BY-SA); Urheber und Lizenz beziehen
+          wir von{' '}
+          <a className="underline" href="https://commons.wikimedia.org/" target="_blank" rel="noreferrer">
+            Wikimedia Commons
+          </a>{' '}
+          und zeigen sie in der Auflösung der Runde sowie in der Liste unten.
+        </li>
+      </ul>
       <p className={p}>
-        Bewusst verwenden wir <strong className={strong}>keine Artworks aus MyAnimeList oder der
-        Jikan-API</strong>. Diese Bilder sind urheberrechtlich geschützte Werke der jeweiligen
-        Studios und Verlage beziehungsweise Fan-Uploads davon. Dass eine API öffentlich abrufbar
-        ist, räumt keinerlei Nutzungsrechte ein – eine offene Schnittstelle ist keine Lizenz.
-        Deshalb bleibt es bis auf Weiteres bei eigenen Darstellungen.
-      </p>
-
-      <h2 className={h2}>Wie Fotos realer Personen künftig eingebunden werden</h2>
-      <p className={p}>
-        Fotos realer Personen werden ausschließlich aus{' '}
-        <a
-          className="underline"
-          href="https://commons.wikimedia.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Wikimedia Commons
-        </a>{' '}
-        übernommen, und auch dort nur unter freien Lizenzen: Public Domain, CC0, CC BY oder CC BY-SA.
-        Zu jedem Bild nennen wir dann Urheberin oder Urheber, die Lizenz mit Link auf den
-        Lizenztext sowie einen Hinweis auf Bearbeitungen (zum Beispiel „zugeschnitten“). Sobald das
-        erste Foto im Spiel ist, erscheint an dieser Stelle die vollständige, automatisch aus den
-        Bilddaten erzeugte Liste der Bildnachweise – bis dahin bleibt sie leer.
-      </p>
-      <p className={p}>
-        Wo kein Foto verfügbar oder die Lizenzlage ungeklärt ist, bleibt es bei der Zeichnung.
-        Lieber eine eigene Darstellung als ein ungeklärtes Bild.
+        Kann ein Bild nicht geladen werden, zeigt das Spiel ersatzweise eine{' '}
+        <strong className={strong}>eigene, im Code gezeichnete Federzeichnung</strong> — dadurch ist
+        jede Runde bebildert, auch offline. Die Zeichnungen sind eigene Abstraktionen, keine
+        Nachzeichnungen fremder Entwürfe.
       </p>
 
-      <h2 className={h2}>Verwendete Lizenzen</h2>
+      <h2 className={h2}>Geladene Bilder in diesem Browser</h2>
+      {cached.length === 0 ? (
+        <p className={p}>
+          Diese Liste füllt sich beim Spielen: Für jedes geladene Bild erscheint hier Quelle,
+          Urheber und Lizenz. Aktuell wurden in diesem Browser noch keine Bilder geladen.
+        </p>
+      ) : (
+        <ul className={ul}>
+          {cached.map(({ id, credit }) => (
+            <li key={id}>
+              <a className="underline" href={credit.pageUrl} target="_blank" rel="noreferrer">
+                {credit.name}
+              </a>
+              {' — '}
+              {credit.artist ? `${credit.artist}, ` : ''}
+              {credit.licenseUrl && credit.license ? (
+                <a className="underline" href={credit.licenseUrl} target="_blank" rel="noreferrer">
+                  {credit.license}
+                </a>
+              ) : (
+                credit.license ?? 'Rechte beim Rechteinhaber'
+              )}
+              {`, via ${credit.sourceLabel}`}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <h2 className={h2}>Verwendete freie Lizenzen</h2>
       <ul className={ul}>
         <li>
           <a
@@ -396,10 +447,12 @@ export function BildnachweisePage() {
         </li>
       </ul>
 
+      <h2 className={h2}>Beanstandungen</h2>
       <p className={p}>
-        Sollte trotz dieser Sorgfalt ein Bild oder eine Darstellung Rechte verletzen, melde es bitte
-        an {SITE.contactEmail}. Wir prüfen jede Meldung zeitnah und entfernen beanstandete Inhalte
-        bei berechtigten Einwänden.
+        Rechteinhaber, die mit der Darstellung eines Bildes nicht einverstanden sind, erreichen uns
+        unter {SITE.contactEmail}. Beanstandete Bilder werden umgehend entfernt — technisch ist die
+        Bild-Einbindung zentral abschaltbar, das Spiel läuft dann vollständig mit den eigenen
+        Zeichnungen weiter. Gleiches gilt für alle anderen Hinweise auf mögliche Rechtsverletzungen.
       </p>
     </LegalLayout>
   )

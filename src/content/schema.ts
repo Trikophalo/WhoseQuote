@@ -45,6 +45,12 @@ export const characterSchema = z.object({
   media_id: slug.nullable().default(null),
   /** Akzentfarbe für den generierten Avatar (HSL-Hue 0-360). */
   hue: z.number().int().min(0).max(360),
+  /**
+   * Romaji-Name für die MyAnimeList-Suche (Jikan). Die Anzeige-Namen sind
+   * deutsche Lokalisierungen („Lorenor Zorro“), die MAL nicht kennt.
+   * null ⇒ kein Foto-Abruf, es bleibt bei der gezeichneten Darstellung.
+   */
+  search_name: z.string().nullable().default(null),
 })
 
 export const personSchema = z.object({
@@ -60,6 +66,12 @@ export const personSchema = z.object({
   hue: z.number().int().min(0).max(360),
   /** Dokumentierte Einzelfreigabe — Voraussetzung für Klasse D (Regel V5). */
   legal_signoff: z.string().nullable().default(null),
+  /**
+   * Artikeltitel in der deutschen Wikipedia — Quelle für das Porträtfoto
+   * (die deutsche Wikipedia hostet ausschließlich frei lizenzierte Bilder).
+   * null ⇒ kein Foto-Abruf, es bleibt bei der gezeichneten Darstellung.
+   */
+  wiki_title: z.string().nullable().default(null),
 })
 
 export const quoteSchema = z.object({

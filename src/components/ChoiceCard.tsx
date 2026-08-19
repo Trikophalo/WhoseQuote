@@ -1,6 +1,5 @@
 import type { Side } from '../content'
-import { Portrait } from '../art/Portrait'
-import { PORTRAIT_SPECS } from '../art/specs'
+import { SidePicture } from './SidePicture'
 
 type State = 'idle' | 'correct' | 'wrong' | 'muted'
 
@@ -43,11 +42,7 @@ export function ChoiceCard({
         className="mt-3 block w-full max-w-[190px] border border-[color:var(--rule)] bg-[color:var(--paper-deep)] p-1.5 md:max-w-[165px]"
         style={{ boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.45)' }}
       >
-        <Portrait
-          id={side.id}
-          spec={PORTRAIT_SPECS[side.id]}
-          className="block h-auto w-full"
-        />
+        <SidePicture side={side} />
       </span>
 
       <span className="mt-3 font-serif text-lg leading-tight font-semibold text-[color:var(--ink)] md:text-xl">{side.name}</span>

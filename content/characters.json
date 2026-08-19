@@ -7,7 +7,8 @@
     "blurb": "Kapitän der Strohhutbande, will König der Piraten werden",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 355
+    "hue": 355,
+    "search_name": "Monkey D. Luffy"
   },
   {
     "id": "one-piece/zoro",
@@ -17,7 +18,8 @@
     "blurb": "Schwertkämpfer der Strohhutbande, will der stärkste der Welt werden",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 130
+    "hue": 130,
+    "search_name": "Roronoa Zoro"
   },
   {
     "id": "one-piece/sanji",
@@ -27,7 +29,8 @@
     "blurb": "Schiffskoch der Strohhutbande, sucht das legendäre All Blue",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 45
+    "hue": 45,
+    "search_name": "Vinsmoke Sanji"
   },
   {
     "id": "one-piece/nico-robin",
@@ -37,7 +40,8 @@
     "blurb": "Archäologin der Strohhutbande, letzte Überlebende von Ohara",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 285
+    "hue": 285,
+    "search_name": "Nico Robin"
   },
   {
     "id": "one-piece/usopp",
@@ -47,7 +51,8 @@
     "blurb": "Schütze und notorischer Aufschneider der Strohhutbande",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 25
+    "hue": 25,
+    "search_name": "Usopp"
   },
   {
     "id": "one-piece/jinbe",
@@ -57,7 +62,8 @@
     "blurb": "Fischmensch, ehemaliger Samurai der Meere, Steuermann der Strohhutbande",
     "popularity": "known",
     "media_id": null,
-    "hue": 200
+    "hue": 200,
+    "search_name": "Jinbei"
   },
   {
     "id": "one-piece/hiluluk",
@@ -67,7 +73,8 @@
     "blurb": "Quacksalber aus dem Königreich Drumm, Ziehvater von Chopper",
     "popularity": "known",
     "media_id": null,
-    "hue": 330
+    "hue": 330,
+    "search_name": "Hiriluk"
   },
   {
     "id": "one-piece/whitebeard",
@@ -77,7 +84,8 @@
     "blurb": "Genannt Whitebeard, einer der Vier Kaiser der Meere",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 190
+    "hue": 190,
+    "search_name": "Edward Newgate"
   },
   {
     "id": "one-piece/gol-d-roger",
@@ -87,7 +95,8 @@
     "blurb": "Der König der Piraten, dessen Hinrichtung das große Zeitalter der Piraten auslöste",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 15
+    "hue": 15,
+    "search_name": "Gol D. Roger"
   },
   {
     "id": "one-piece/doflamingo",
@@ -97,7 +106,8 @@
     "blurb": "Ehemaliger Samurai der Meere und Herrscher über Dressrosa",
     "popularity": "known",
     "media_id": null,
-    "hue": 318
+    "hue": 318,
+    "search_name": "Donquixote Doflamingo"
   },
   {
     "id": "one-piece/shanks",
@@ -107,7 +117,8 @@
     "blurb": "Kapitän der Roten Piratenbande, einer der Vier Kaiser",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 5
+    "hue": 5,
+    "search_name": "Shanks"
   },
   {
     "id": "one-piece/rayleigh",
@@ -117,7 +128,8 @@
     "blurb": "Erster Maat von Rogers Crew, genannt „Der dunkle König“",
     "popularity": "known",
     "media_id": null,
-    "hue": 225
+    "hue": 225,
+    "search_name": "Silvers Rayleigh"
   },
   {
     "id": "one-piece/ace",
@@ -127,7 +139,8 @@
     "blurb": "Ruffys Ziehbruder, Kommandant der zweiten Division der Whitebeard-Piraten",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 30
+    "hue": 30,
+    "search_name": "Portgas D. Ace"
   },
   {
     "id": "one-piece/crocodile",
@@ -137,7 +150,8 @@
     "blurb": "Ehemaliger Samurai der Meere, Drahtzieher hinter der Rebellion in Alabasta",
     "popularity": "known",
     "media_id": null,
-    "hue": 40
+    "hue": 40,
+    "search_name": "Crocodile"
   },
   {
     "id": "one-piece/kuzan",
@@ -147,7 +161,8 @@
     "blurb": "Genannt Aokiji, ehemaliger Admiral der Marine",
     "popularity": "known",
     "media_id": null,
-    "hue": 210
+    "hue": 210,
+    "search_name": "Kuzan"
   },
   {
     "id": "one-piece/law",
@@ -157,7 +172,8 @@
     "blurb": "Kapitän der Herzpiraten, genannt „Der Chirurg des Todes“",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 250
+    "hue": 250,
+    "search_name": "Trafalgar Law"
   },
   {
     "id": "one-piece/vivi",
@@ -167,7 +183,8 @@
     "blurb": "Prinzessin von Alabasta",
     "popularity": "known",
     "media_id": null,
-    "hue": 195
+    "hue": 195,
+    "search_name": "Nefertari Vivi"
   },
   {
     "id": "one-piece/bellemere",
@@ -177,7 +194,8 @@
     "blurb": "Ehemalige Marinesoldatin, Ziehmutter von Nami und Nojiko",
     "popularity": "deep-cut",
     "media_id": null,
-    "hue": 345
+    "hue": 345,
+    "search_name": "Bellemere"
   },
   {
     "id": "one-piece/kaido",
@@ -187,7 +205,8 @@
     "blurb": "Einer der Vier Kaiser, genannt „das stärkste Wesen der Welt“",
     "popularity": "known",
     "media_id": null,
-    "hue": 265
+    "hue": 265,
+    "search_name": "Kaidou"
   },
   {
     "id": "one-piece/rob-lucci",
@@ -197,7 +216,8 @@
     "blurb": "Agent der Geheimorganisation CP-0, Verfechter der „dunklen Gerechtigkeit“",
     "popularity": "deep-cut",
     "media_id": null,
-    "hue": 300
+    "hue": 300,
+    "search_name": "Rob Lucci"
   },
   {
     "id": "one-piece/chopper",
@@ -207,7 +227,8 @@
     "blurb": "Schiffsarzt der Strohhutbande, ein Rentier mit Teufelskraft",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 350
+    "hue": 350,
+    "search_name": "Tony Tony Chopper"
   },
   {
     "id": "one-piece/brook",
@@ -217,6 +238,7 @@
     "blurb": "Musiker der Strohhutbande, wartete 50 Jahre als Skelett auf ein Versprechen",
     "popularity": "mainstream",
     "media_id": null,
-    "hue": 165
+    "hue": 165,
+    "search_name": "Brook"
   }
 ]

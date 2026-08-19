@@ -10,7 +10,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 35,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Mark Aurel"
   },
   {
     "id": "seneca",
@@ -23,7 +24,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 20,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Seneca"
   },
   {
     "id": "sunzi",
@@ -36,7 +38,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 350,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Sunzi"
   },
   {
     "id": "laozi",
@@ -49,7 +52,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 150,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Laozi"
   },
   {
     "id": "konfuzius",
@@ -62,7 +66,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 15,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Konfuzius"
   },
   {
     "id": "sokrates",
@@ -75,7 +80,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 200,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Sokrates"
   },
   {
     "id": "julius-caesar",
@@ -88,7 +94,8 @@
     "controversy_note": "Feldherr mit Eroberungskriegen — Blurb bewusst neutral, keine Heroisierung.",
     "media_id": null,
     "hue": 5,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Gaius Iulius Caesar"
   },
   {
     "id": "dschingis-khan",
@@ -101,7 +108,8 @@
     "controversy_note": "Eroberer mit Massakern. Nur chronikalisch überlieferte Aussagen, tone_flags gesetzt, keine heroisierende Paarung.",
     "media_id": null,
     "hue": 25,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Dschingis Khan"
   },
   {
     "id": "miyamoto-musashi",
@@ -114,7 +122,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 120,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Miyamoto Musashi"
   },
   {
     "id": "machiavelli",
@@ -127,7 +136,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 310,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Niccolò Machiavelli"
   },
   {
     "id": "voltaire",
@@ -140,7 +150,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 45,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Voltaire"
   },
   {
     "id": "robespierre",
@@ -153,7 +164,8 @@
     "controversy_note": "Verantwortlich für die Terreur. Zitat wird nur mit Kontext und tone_flags gespielt; keine Paarung, die Gewalt verharmlost.",
     "media_id": null,
     "hue": 355,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Maximilien de Robespierre"
   },
   {
     "id": "kant",
@@ -166,7 +178,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 220,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Immanuel Kant"
   },
   {
     "id": "napoleon",
@@ -179,7 +192,8 @@
     "controversy_note": "Eroberungskriege mit Millionen Toten. Neutraler Blurb, keine Heldenpaarung.",
     "media_id": null,
     "hue": 240,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Napoleon Bonaparte"
   },
   {
     "id": "goethe",
@@ -192,7 +206,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 55,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Johann Wolfgang von Goethe"
   },
   {
     "id": "karl-marx",
@@ -205,7 +220,8 @@
     "controversy_note": "Politisch polarisierend — Zitate rein philosophisch, keine Wertung durch das Spiel.",
     "media_id": null,
     "hue": 0,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Karl Marx"
   },
   {
     "id": "dostojewski",
@@ -218,7 +234,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 265,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Fjodor Michailowitsch Dostojewski"
   },
   {
     "id": "frederick-douglass",
@@ -231,7 +248,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 30,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Frederick Douglass"
   },
   {
     "id": "nietzsche",
@@ -244,7 +262,8 @@
     "controversy_note": "Werk wurde posthum politisch missbraucht — Zitate im Original belegt, keine ideologische Rahmung.",
     "media_id": null,
     "hue": 285,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Friedrich Nietzsche"
   },
   {
     "id": "mark-twain",
@@ -257,7 +276,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 190,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Mark Twain"
   },
   {
     "id": "rosa-luxemburg",
@@ -270,7 +290,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 340,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Rosa Luxemburg"
   },
   {
     "id": "gandhi",
@@ -283,7 +304,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 75,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Mohandas Karamchand Gandhi"
   },
   {
     "id": "al-capone",
@@ -296,7 +318,8 @@
     "controversy_note": "Schwerverbrecher. Zitat ist zeitgenössisch überliefert, tone_flags: gewalt. Keine Verklärung im Blurb.",
     "media_id": null,
     "hue": 210,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Al Capone"
   },
   {
     "id": "churchill",
@@ -309,7 +332,8 @@
     "controversy_note": "Kolonialpolitik ist umstritten — Blurb bleibt bei belegbaren Rollen.",
     "media_id": null,
     "hue": 225,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Winston Churchill"
   },
   {
     "id": "malcolm-x",
@@ -322,7 +346,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 15,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Malcolm X"
   },
   {
     "id": "che-guevara",
@@ -335,7 +360,8 @@
     "controversy_note": "Stark polarisierende Figur, an Erschießungen beteiligt. Nur belegte Aussagen, tone_flags: politik-sensibel, neutraler Blurb.",
     "media_id": null,
     "hue": 100,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Che Guevara"
   },
   {
     "id": "martin-luther-king",
@@ -348,7 +374,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 45,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Martin Luther King"
   },
   {
     "id": "bruce-lee",
@@ -361,7 +388,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 60,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Bruce Lee"
   },
   {
     "id": "hannah-arendt",
@@ -374,7 +402,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 275,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Hannah Arendt"
   },
   {
     "id": "steve-jobs",
@@ -387,7 +416,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 205,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Steve Jobs"
   },
   {
     "id": "nelson-mandela",
@@ -400,7 +430,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 135,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Nelson Mandela"
   },
   {
     "id": "muhammad-ali",
@@ -413,7 +444,8 @@
     "controversy_note": null,
     "media_id": null,
     "hue": 175,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Muhammad Ali"
   },
   {
     "id": "elon-musk",
@@ -426,6 +458,7 @@
     "controversy_note": "LEBEND (Klasse C). Nur verified/translated mit zwei unabhängigen Quellen und Vier-Augen-Freigabe. Steht bewusst auf Review — dient als Testfall für den Legal-Check-Prozess und geht erst nach menschlicher Quellenprüfung live.",
     "media_id": null,
     "hue": 195,
-    "legal_signoff": null
+    "legal_signoff": null,
+    "wiki_title": "Elon Musk"
   }
 ]

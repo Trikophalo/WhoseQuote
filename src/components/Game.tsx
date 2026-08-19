@@ -7,6 +7,7 @@ import { ChoiceCard } from './ChoiceCard'
 import { SourceBadge } from './SourceBadge'
 import { Intro } from './Intro'
 import { navigate } from '../router'
+import { getCachedPhoto, type PhotoCredit } from '../media/photos'
 
 type Phase = 'intro' | 'playing' | 'revealed' | 'gameover'
 type Answer = 'character' | 'person'
@@ -249,6 +250,8 @@ function Reveal({ round, onContinue, wasCorrect }: { round: Round; onContinue: (
             <span className="opacity-30">{'✦'.repeat(5 - round.difficulty)}</span>
           </span>
         </div>
+
+        <ImageCredits round={round} />
       </div>
 
       <button
@@ -261,6 +264,37 @@ function Reveal({ round, onContinue, wasCorrect }: { round: Round; onContinue: (
         <span className="smallcaps ml-3 hidden text-[10px] opacity-60 md:inline">Enter</span>
       </button>
     </div>
+  )
+}
+
+/**
+ * Bildquellen der aktuellen Runde (docs/04-recht.md, 4.5): Wer das Bild
+ * geliefert hat, steht sichtbar in der Auflösung — mit Link auf die Quellseite
+ * und, bei Commons-Fotos, mit Urheber und Lizenz. Die vollständige Liste
+ * aller geladenen Bilder führt die Bildnachweis-Seite.
+ */
+function ImageCredits({ round }: { round: Round }) {
+  const credits = [
+    { side: round.character, credit: getCachedPhoto(round.character.id) },
+    { side: round.person, credit: getCachedPhoto(round.person.id) },
+  ].filter((entry): entry is { side: Round['character']; credit: PhotoCredit } => entry.credit !== null)
+
+  if (credits.length === 0) return null
+
+  return (
+    <p className="mt-2 text-center text-[10px] leading-relaxed text-[color:var(--ink-faint)]">
+      {'Bildquellen: '}
+      {credits.map(({ side, credit }, index) => (
+        <span key={side.id}>
+          {index > 0 && ' · '}
+          <a href={credit.pageUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[color:var(--ink-soft)]">
+            {side.name}: {credit.artist ? `${credit.artist}, ` : ''}
+            {credit.license ? `${credit.license}, ` : ''}
+            {credit.sourceLabel}
+          </a>
+        </span>
+      ))}
+    </p>
   )
 }
 

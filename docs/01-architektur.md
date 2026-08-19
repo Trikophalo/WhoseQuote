@@ -59,6 +59,28 @@ Jede Figur und jede Person bekommt eine im Code erzeugte Federzeichnung
 Der Rauchtest prüft über zwölf Runden und in der Galerie (`#/portraets`), dass
 auf beiden Seiten ein Porträt mit genug Formen steht.
 
+## Echtbilder zur Laufzeit (Betreiber-Entscheidung, umgesetzt)
+
+Über den Zeichnungen lädt das Spiel echte Bilder — im Browser der Spielenden,
+direkt von den Quell-Servern (`src/media/photos.ts`):
+
+- **Anime-Figuren:** Jikan-Suche (`/v4/characters?q=…`, sortiert nach
+  Beliebtheit) mit dem Romaji-`search_name` aus `content/characters.json`;
+  Anfragen sequenziell mit Abstand (Jikan erlaubt 3/s).
+- **Reale Personen:** Artikelbild der deutschen Wikipedia (`pageimages` mit
+  Weiterleitungen) über den `wiki_title` aus `content/persons.json` — die
+  deutsche Wikipedia hostet nur frei lizenzierte Bilder. Urheber/Lizenz kommen
+  per `extmetadata` von Commons und erscheinen als Bildnachweis.
+- **Cache:** Ergebnisse (auch Fehlschläge) liegen im `localStorage`
+  (7 Tage / 1 Stunde) — die Bildnachweis-Seite generiert daraus ihre Liste.
+- **Fallback-Garantie:** Die Federzeichnung rendert sofort und bleibt stehen,
+  bis ein Foto geladen ist; scheitert der Abruf, bleibt sie. Kein Bild-Ausfall,
+  egal was die Quellen tun.
+- **Kill-Switch:** `SITE.useRealImages` in `src/config.ts` — auf `false` läuft
+  das Spiel wieder komplett mit Zeichnungen (z. B. nach einer Beanstandung).
+- Diese Sandbox erreicht Jikan/Wikimedia nicht (Netzwerk-Policy) — lokal
+  erscheinen deshalb die Zeichnungen; auf GitHub Pages laden die Fotos.
+
 ## Bild-Handling (technisch — Lizenzfragen in Dok 04)
 
 Grundprinzip: **Niemals zur Laufzeit gegen fremde APIs/CDNs laden.**
