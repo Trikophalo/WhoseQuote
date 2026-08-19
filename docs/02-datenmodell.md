@@ -153,9 +153,11 @@ draft → sourced → review → (legal_check) → approved → live → retired
 
 ## MVP-Umsetzung vs. Stufe 2
 
-- **MVP:** alles als JSON-Dateien in `content/` (Beispiel:
-  [`content/beispiel-daten.json`](../content/beispiel-daten.json)), Zod-Schema
-  in `scripts/validate-content.ts`, Review via Pull Request.
+- **MVP (umgesetzt):** alles als JSON-Dateien in
+  [`content/`](../content/) — je eine Datei pro Entität —, Zod-Schema und
+  Regelwerk in [`src/content/schema.ts`](../src/content/schema.ts), ausgeführt
+  von [`scripts/validate-content.ts`](../scripts/validate-content.ts) vor jedem
+  Build. Review via Pull Request.
 - **Stufe 2 (Supabase/Postgres):** gleiche Entitäten als Tabellen
   (`universes`, `characters`, `persons`, `quotes`, `pairings`, `media_assets`,
   `runs`, `answers`); Enums als Postgres-Enums, damit die Regeln V3–V6 als

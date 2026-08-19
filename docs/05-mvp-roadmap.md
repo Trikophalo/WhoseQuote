@@ -8,6 +8,26 @@ den Verwechslungs-Reiz erzeugt — bei von Tag 1 an sauberer Kennzeichnung.
 Alles, was skaliert (Backend, CMS, weitere Universen), kommt erst, wenn die
 Wette aufgeht.
 
+## Umsetzungsstand (Stand: aktueller Branch)
+
+Das MVP ist gebaut und spielbar. Was steht:
+
+| Bereich | Stand |
+|---|---|
+| Kernloop, Schwierigkeitskurve, No-Repeat-Fenster, Rekord | ✅ umgesetzt |
+| Content | ✅ 68 Paarungen, 22 Figuren, 33 Personen — über dem Zielkorridor von 50–60 |
+| Kennzeichnung am Zitat (Badge, Tooltip, Fundstelle) | ✅ umgesetzt, per Rauchtest abgesichert |
+| Pflichtseiten (FAQ, Impressum, Datenschutz, AGB, Bildnachweise) | ✅ Texte stehen, Betreiberdaten sind Platzhalter |
+| Validierung V1–V9 als Build-Gate | ✅ umgesetzt (`npm run validate`) |
+| Meldefunktion | ✅ als vorbefüllte E-Mail |
+| Avatare | ⚠️ generierte SVGs als Fallback; eigener Illustrationsstil = Stufe 2 |
+| Redaktionelle Quellenprüfung (Pipeline-Schritt 3–5) | ❌ offen — Voraussetzung für Launch |
+| Anwaltliche Abnahme | ❌ offen — Voraussetzung für Launch |
+| Lebende Personen | ⏸ bewusst deaktiviert, ein Testfall steht auf `review` |
+
+Damit sind die Wochen 1–3 der Roadmap unten erledigt; der nächste Schritt ist
+Woche 4 (Politur + anwaltliche Prüfung) bzw. der Redaktionsdurchlauf.
+
 ## MVP (Stufe 1) — „One Piece, 50 Paare, kein Backend"
 
 **Inhalt**

@@ -1,0 +1,222 @@
+[
+  {
+    "id": "one-piece/luffy",
+    "universe_id": "one-piece",
+    "name": "Monkey D. Ruffy",
+    "mal_character_id": null,
+    "blurb": "Kapitän der Strohhutbande, will König der Piraten werden",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 355
+  },
+  {
+    "id": "one-piece/zoro",
+    "universe_id": "one-piece",
+    "name": "Lorenor Zorro",
+    "mal_character_id": null,
+    "blurb": "Schwertkämpfer der Strohhutbande, will der stärkste der Welt werden",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 130
+  },
+  {
+    "id": "one-piece/sanji",
+    "universe_id": "one-piece",
+    "name": "Sanji",
+    "mal_character_id": null,
+    "blurb": "Schiffskoch der Strohhutbande, sucht das legendäre All Blue",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 45
+  },
+  {
+    "id": "one-piece/nico-robin",
+    "universe_id": "one-piece",
+    "name": "Nico Robin",
+    "mal_character_id": null,
+    "blurb": "Archäologin der Strohhutbande, letzte Überlebende von Ohara",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 285
+  },
+  {
+    "id": "one-piece/usopp",
+    "universe_id": "one-piece",
+    "name": "Lysop",
+    "mal_character_id": null,
+    "blurb": "Schütze und notorischer Aufschneider der Strohhutbande",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 25
+  },
+  {
+    "id": "one-piece/jinbe",
+    "universe_id": "one-piece",
+    "name": "Jinbei",
+    "mal_character_id": null,
+    "blurb": "Fischmensch, ehemaliger Samurai der Meere, Steuermann der Strohhutbande",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 200
+  },
+  {
+    "id": "one-piece/hiluluk",
+    "universe_id": "one-piece",
+    "name": "Dr. Hiluluk",
+    "mal_character_id": null,
+    "blurb": "Quacksalber aus dem Königreich Drumm, Ziehvater von Chopper",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 330
+  },
+  {
+    "id": "one-piece/whitebeard",
+    "universe_id": "one-piece",
+    "name": "Edward Newgate",
+    "mal_character_id": null,
+    "blurb": "Genannt Whitebeard, einer der Vier Kaiser der Meere",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 190
+  },
+  {
+    "id": "one-piece/gol-d-roger",
+    "universe_id": "one-piece",
+    "name": "Gol D. Roger",
+    "mal_character_id": null,
+    "blurb": "Der König der Piraten, dessen Hinrichtung das große Zeitalter der Piraten auslöste",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 15
+  },
+  {
+    "id": "one-piece/doflamingo",
+    "universe_id": "one-piece",
+    "name": "Donquixote Doflamingo",
+    "mal_character_id": null,
+    "blurb": "Ehemaliger Samurai der Meere und Herrscher über Dressrosa",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 318
+  },
+  {
+    "id": "one-piece/shanks",
+    "universe_id": "one-piece",
+    "name": "Shanks",
+    "mal_character_id": null,
+    "blurb": "Kapitän der Roten Piratenbande, einer der Vier Kaiser",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 5
+  },
+  {
+    "id": "one-piece/rayleigh",
+    "universe_id": "one-piece",
+    "name": "Silvers Rayleigh",
+    "mal_character_id": null,
+    "blurb": "Erster Maat von Rogers Crew, genannt „Der dunkle König“",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 225
+  },
+  {
+    "id": "one-piece/ace",
+    "universe_id": "one-piece",
+    "name": "Portgas D. Ace",
+    "mal_character_id": null,
+    "blurb": "Ruffys Ziehbruder, Kommandant der zweiten Division der Whitebeard-Piraten",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 30
+  },
+  {
+    "id": "one-piece/crocodile",
+    "universe_id": "one-piece",
+    "name": "Sir Crocodile",
+    "mal_character_id": null,
+    "blurb": "Ehemaliger Samurai der Meere, Drahtzieher hinter der Rebellion in Alabasta",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 40
+  },
+  {
+    "id": "one-piece/kuzan",
+    "universe_id": "one-piece",
+    "name": "Kuzan",
+    "mal_character_id": null,
+    "blurb": "Genannt Aokiji, ehemaliger Admiral der Marine",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 210
+  },
+  {
+    "id": "one-piece/law",
+    "universe_id": "one-piece",
+    "name": "Trafalgar Law",
+    "mal_character_id": null,
+    "blurb": "Kapitän der Herzpiraten, genannt „Der Chirurg des Todes“",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 250
+  },
+  {
+    "id": "one-piece/vivi",
+    "universe_id": "one-piece",
+    "name": "Nefeltari Vivi",
+    "mal_character_id": null,
+    "blurb": "Prinzessin von Alabasta",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 195
+  },
+  {
+    "id": "one-piece/bellemere",
+    "universe_id": "one-piece",
+    "name": "Bell-mère",
+    "mal_character_id": null,
+    "blurb": "Ehemalige Marinesoldatin, Ziehmutter von Nami und Nojiko",
+    "popularity": "deep-cut",
+    "media_id": null,
+    "hue": 345
+  },
+  {
+    "id": "one-piece/kaido",
+    "universe_id": "one-piece",
+    "name": "Kaido",
+    "mal_character_id": null,
+    "blurb": "Einer der Vier Kaiser, genannt „das stärkste Wesen der Welt“",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 265
+  },
+  {
+    "id": "one-piece/rob-lucci",
+    "universe_id": "one-piece",
+    "name": "Rob Lucci",
+    "mal_character_id": null,
+    "blurb": "Agent der Geheimorganisation CP-0, Verfechter der „dunklen Gerechtigkeit“",
+    "popularity": "deep-cut",
+    "media_id": null,
+    "hue": 300
+  },
+  {
+    "id": "one-piece/chopper",
+    "universe_id": "one-piece",
+    "name": "Tony Chopper",
+    "mal_character_id": null,
+    "blurb": "Schiffsarzt der Strohhutbande, ein Rentier mit Teufelskraft",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 350
+  },
+  {
+    "id": "one-piece/brook",
+    "universe_id": "one-piece",
+    "name": "Brook",
+    "mal_character_id": null,
+    "blurb": "Musiker der Strohhutbande, wartete 50 Jahre als Skelett auf ein Versprechen",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 165
+  }
+]

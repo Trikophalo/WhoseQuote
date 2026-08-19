@@ -1,0 +1,5 @@
+[
+  { "id": "one-piece", "name": "One Piece", "mal_id": 21, "status": "active" },
+  { "id": "naruto", "name": "Naruto", "mal_id": 20, "status": "planned" },
+  { "id": "attack-on-titan", "name": "Attack on Titan", "mal_id": 16498, "status": "planned" }
+]

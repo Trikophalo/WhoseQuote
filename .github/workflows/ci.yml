@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+
+      # Content-Gate: Regeln V1–V9 aus docs/02-datenmodell.md.
+      # Bricht ab, wenn ein Datensatz die rechtlichen Leitplanken verletzt —
+      # etwa ein unbelegtes Zitat einer lebenden Person.
+      - name: Content prüfen
+        run: npm run validate
+
+      - name: Typen prüfen
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npx vite build
+
+      - name: Browser für den Rauchtest
+        run: npx playwright install --with-deps chromium
+
+      - name: Rauchtest
+        run: npm run test:e2e
