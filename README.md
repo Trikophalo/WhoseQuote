@@ -16,15 +16,21 @@ Launch (siehe [Vor dem Launch](#vor-dem-launch)).
 ## Auf GitHub Pages veröffentlichen
 
 Der Workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
-baut und veröffentlicht automatisch. Einmalig einzurichten:
+baut und veröffentlicht automatisch. **Ein Schritt muss von Hand passieren**,
+weil der Workflow-Token keine Pages-Site anlegen darf:
 
-1. **Pages aktivieren:** Repository → *Settings* → *Pages* → unter *Build and
-   deployment* als **Source** `GitHub Actions` wählen.
+1. **Pages aktivieren** (einmalig, ohne diesen Schritt schlägt jeder Deploy
+   fehl): Repository → *Settings* → *Pages* → unter *Build and deployment* als
+   **Source** `GitHub Actions` wählen.
 2. **Deploy auslösen** — entweder durch einen Push auf den Standard-Branch des
    Repositorys, oder manuell über *Actions* → *Deploy auf GitHub Pages* →
    *Run workflow* (dort lässt sich auch ein anderer Branch wählen).
 3. Die URL erscheint danach im Actions-Log und unter *Settings → Pages*, in der
    Form `https://<benutzername>.github.io/WhoseQuote/`.
+
+Solange Schritt 1 fehlt, bricht der Workflow gleich zu Beginn mit dem Hinweis
+„GitHub Pages ist noch nicht aktiviert" ab — statt später mit einer kryptischen
+Fehlermeldung aus `configure-pages`.
 
 Der Workflow prüft vor jeder Veröffentlichung den Content gegen die Regeln
 V1–V9 — ein Datensatz, der die rechtlichen Leitplanken verletzt, wird nicht
