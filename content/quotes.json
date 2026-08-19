@@ -3,12 +3,18 @@
     "id": "q-op-hiluluk-vergessen",
     "speaker_type": "character",
     "speaker_id": "one-piece/hiluluk",
-    "text": { "de": "Wann stirbt ein Mensch? Nicht, wenn ihn eine Kugel trifft — sondern dann, wenn er vergessen wird." },
+    "text": {
+      "de": "Wann stirbt ein Mensch? Nicht, wenn ihn eine Kugel trifft — sondern dann, wenn er vergessen wird."
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "One Piece, Kapitel 145 / Episode 90 — Hiluluks letzte Worte",
     "source_urls": [],
-    "themes": ["tod", "erinnerung", "verlust"],
+    "themes": [
+      "tod",
+      "erinnerung",
+      "verlust"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene sinngemäße Übersetzung; bewusst nicht der Wortlaut der offiziellen deutschen Fassung.",
     "status": "live",
@@ -21,12 +27,18 @@
     "id": "q-op-roger-schatz",
     "speaker_type": "character",
     "speaker_id": "one-piece/gol-d-roger",
-    "text": { "de": "Mein Schatz? Wenn ihr ihn wollt, dann nehmt ihn euch. Sucht ihn — ich habe alles an einem Ort zurückgelassen." },
+    "text": {
+      "de": "Mein Schatz? Wenn ihr ihn wollt, dann nehmt ihn euch. Sucht ihn — ich habe alles an einem Ort zurückgelassen."
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "One Piece, Kapitel 1 / Episode 1 — Rogers Hinrichtung",
     "source_urls": [],
-    "themes": ["gier", "freiheit", "traeume"],
+    "themes": [
+      "gier",
+      "freiheit",
+      "traeume"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene sinngemäße Übersetzung aus dem Japanischen.",
     "status": "live",
@@ -39,12 +51,18 @@
     "id": "q-op-doflamingo-sieger",
     "speaker_type": "character",
     "speaker_id": "one-piece/doflamingo",
-    "text": { "de": "Wer gewinnt, entscheidet, was Gerechtigkeit ist." },
+    "text": {
+      "de": "Wer gewinnt, entscheidet, was Gerechtigkeit ist."
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "One Piece, Marineford-Arc — Doflamingo über Sieger und Gerechtigkeit",
     "source_urls": [],
-    "themes": ["macht", "gerechtigkeit", "krieg"],
+    "themes": [
+      "macht",
+      "gerechtigkeit",
+      "krieg"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene sinngemäße Übersetzung.",
     "status": "live",
@@ -57,12 +75,17 @@
     "id": "q-op-luffy-freiheit",
     "speaker_type": "character",
     "speaker_id": "one-piece/luffy",
-    "text": { "de": "Der König der Piraten ist der Mensch mit der größten Freiheit auf diesem Meer." },
+    "text": {
+      "de": "Der König der Piraten ist der Mensch mit der größten Freiheit auf diesem Meer."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece — Ruffys wiederkehrende Definition seines Ziels",
     "source_urls": [],
-    "themes": ["freiheit", "traeume"],
+    "themes": [
+      "freiheit",
+      "traeume"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung mehrerer Szenen, kein Einzelzitat.",
     "status": "live",
@@ -75,12 +98,18 @@
     "id": "q-op-zoro-narben",
     "speaker_type": "character",
     "speaker_id": "one-piece/zoro",
-    "text": { "de": "Narben auf dem Rücken sind die Schande eines Schwertkämpfers." },
+    "text": {
+      "de": "Narben auf dem Rücken sind die Schande eines Schwertkämpfers."
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "One Piece, Kapitel 51 / Episode 24 — Zorro gegen Falkenauge",
     "source_urls": [],
-    "themes": ["ehre", "mut", "stolz"],
+    "themes": [
+      "ehre",
+      "mut",
+      "stolz"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene sinngemäße Übersetzung.",
     "status": "live",
@@ -93,12 +122,18 @@
     "id": "q-op-robin-geschichte",
     "speaker_type": "character",
     "speaker_id": "one-piece/nico-robin",
-    "text": { "de": "Man kann die Geschichte nicht auslöschen, solange ein Einziger sie weiterträgt." },
+    "text": {
+      "de": "Man kann die Geschichte nicht auslöschen, solange ein Einziger sie weiterträgt."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Ohara-Rückblende — Professor Clover und die Poneglyphen",
     "source_urls": [],
-    "themes": ["geschichte", "wahrheit", "erinnerung"],
+    "themes": [
+      "geschichte",
+      "wahrheit",
+      "erinnerung"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung des Ohara-Motivs.",
     "status": "live",
@@ -111,12 +146,18 @@
     "id": "q-op-robin-leben",
     "speaker_type": "character",
     "speaker_id": "one-piece/nico-robin",
-    "text": { "de": "Ich will leben! Bringt mich mit euch aufs Meer!" },
+    "text": {
+      "de": "Ich will leben! Bringt mich mit euch aufs Meer!"
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "One Piece, Kapitel 398 / Episode 278 — Enies Lobby",
     "source_urls": [],
-    "themes": ["leben", "hoffnung", "verzweiflung"],
+    "themes": [
+      "leben",
+      "hoffnung",
+      "verzweiflung"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene sinngemäße Übersetzung.",
     "status": "live",
@@ -129,12 +170,18 @@
     "id": "q-op-jinbe-stuetzen",
     "speaker_type": "character",
     "speaker_id": "one-piece/jinbe",
-    "text": { "de": "Es ist keine Schande, sich auf andere zu stützen. Schande wäre nur, allein zu zerbrechen." },
+    "text": {
+      "de": "Es ist keine Schande, sich auf andere zu stützen. Schande wäre nur, allein zu zerbrechen."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Kapitel 594 — Jinbei tröstet Ruffy auf der Amazon Lily",
     "source_urls": [],
-    "themes": ["freundschaft", "stolz", "schwaeche"],
+    "themes": [
+      "freundschaft",
+      "stolz",
+      "schwaeche"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Wiedergabe.",
     "status": "live",
@@ -147,12 +194,17 @@
     "id": "q-op-jinbe-hass",
     "speaker_type": "character",
     "speaker_id": "one-piece/jinbe",
-    "text": { "de": "Der Hass frisst den, der ihn trägt, schneller auf als den, dem er gilt." },
+    "text": {
+      "de": "Der Hass frisst den, der ihn trägt, schneller auf als den, dem er gilt."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Fischmenscheninsel-Arc — Jinbeis Rede über den Kreislauf des Hasses",
     "source_urls": [],
-    "themes": ["hass", "rache"],
+    "themes": [
+      "hass",
+      "rache"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung des Motivs.",
     "status": "live",
@@ -165,12 +217,18 @@
     "id": "q-op-ace-geliebt",
     "speaker_type": "character",
     "speaker_id": "one-piece/ace",
-    "text": { "de": "Ich bereue nichts. Danke, dass ihr mich geliebt habt." },
+    "text": {
+      "de": "Ich bereue nichts. Danke, dass ihr mich geliebt habt."
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "One Piece, Kapitel 574 / Episode 483 — Aces letzte Worte",
     "source_urls": [],
-    "themes": ["tod", "familie", "dankbarkeit"],
+    "themes": [
+      "tod",
+      "familie",
+      "dankbarkeit"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene sinngemäße Übersetzung.",
     "status": "live",
@@ -183,12 +241,17 @@
     "id": "q-op-whitebeard-existiert",
     "speaker_type": "character",
     "speaker_id": "one-piece/whitebeard",
-    "text": { "de": "Der Schatz? Natürlich existiert er!" },
+    "text": {
+      "de": "Der Schatz? Natürlich existiert er!"
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "One Piece, Kapitel 576 / Episode 485 — Whitebeards letzte Worte",
     "source_urls": [],
-    "themes": ["traeume", "erbe"],
+    "themes": [
+      "traeume",
+      "erbe"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene sinngemäße Übersetzung.",
     "status": "live",
@@ -201,12 +264,18 @@
     "id": "q-op-usopp-schwach",
     "speaker_type": "character",
     "speaker_id": "one-piece/usopp",
-    "text": { "de": "Ich weiß, dass ich schwach bin. Genau deshalb muss ich stark werden." },
+    "text": {
+      "de": "Ich weiß, dass ich schwach bin. Genau deshalb muss ich stark werden."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Water-Seven-Arc — Lysops Selbstzweifel",
     "source_urls": [],
-    "themes": ["schwaeche", "mut", "staerke"],
+    "themes": [
+      "schwaeche",
+      "mut",
+      "staerke"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -219,12 +288,17 @@
     "id": "q-op-sanji-essen",
     "speaker_type": "character",
     "speaker_id": "one-piece/sanji",
-    "text": { "de": "Wer Essen wegwirft, hat noch nie wirklich gehungert." },
+    "text": {
+      "de": "Wer Essen wegwirft, hat noch nie wirklich gehungert."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Baratie-Arc — Sanjis Küchenregel",
     "source_urls": [],
-    "themes": ["hunger", "mitgefuehl"],
+    "themes": [
+      "hunger",
+      "mitgefuehl"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -237,12 +311,18 @@
     "id": "q-op-crocodile-vertrauen",
     "speaker_type": "character",
     "speaker_id": "one-piece/crocodile",
-    "text": { "de": "Vertrauen ist ein Luxus für Menschen, die nichts zu verlieren haben." },
+    "text": {
+      "de": "Vertrauen ist ein Luxus für Menschen, die nichts zu verlieren haben."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Alabasta-Arc — Crocodiles Umgang mit Verbündeten",
     "source_urls": [],
-    "themes": ["verrat", "vertrauen", "macht"],
+    "themes": [
+      "verrat",
+      "vertrauen",
+      "macht"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung der Figurenhaltung.",
     "status": "live",
@@ -255,12 +335,17 @@
     "id": "q-op-kuzan-gerechtigkeit",
     "speaker_type": "character",
     "speaker_id": "one-piece/kuzan",
-    "text": { "de": "Wer die Gerechtigkeit für absolut hält, endet irgendwann im Wahnsinn." },
+    "text": {
+      "de": "Wer die Gerechtigkeit für absolut hält, endet irgendwann im Wahnsinn."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece — Kuzans Kritik an der „absoluten Gerechtigkeit“ der Marine",
     "source_urls": [],
-    "themes": ["gerechtigkeit", "macht"],
+    "themes": [
+      "gerechtigkeit",
+      "macht"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -273,12 +358,18 @@
     "id": "q-op-law-weiterleben",
     "speaker_type": "character",
     "speaker_id": "one-piece/law",
-    "text": { "de": "Sterben ist einfach. Die eigentliche Strafe ist das Weiterleben." },
+    "text": {
+      "de": "Sterben ist einfach. Die eigentliche Strafe ist das Weiterleben."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Dressrosa-Arc — Law über Cora-sans Tod",
     "source_urls": [],
-    "themes": ["tod", "schuld", "verlust"],
+    "themes": [
+      "tod",
+      "schuld",
+      "verlust"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -291,12 +382,18 @@
     "id": "q-op-shanks-freunde",
     "speaker_type": "character",
     "speaker_id": "one-piece/shanks",
-    "text": { "de": "Auf mich kann man spucken, das ist mir gleich. Aber wer meine Freunde angreift, dem verzeihe ich nie." },
+    "text": {
+      "de": "Auf mich kann man spucken, das ist mir gleich. Aber wer meine Freunde angreift, dem verzeihe ich nie."
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "One Piece, Kapitel 1 / Episode 4 — Shanks gegen die Bergbanditen",
     "source_urls": [],
-    "themes": ["freundschaft", "zorn", "treue"],
+    "themes": [
+      "freundschaft",
+      "zorn",
+      "treue"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene sinngemäße Übersetzung.",
     "status": "live",
@@ -309,12 +406,17 @@
     "id": "q-op-rayleigh-meer",
     "speaker_type": "character",
     "speaker_id": "one-piece/rayleigh",
-    "text": { "de": "Niemand besitzt das Meer. Man kann es nur befahren." },
+    "text": {
+      "de": "Niemand besitzt das Meer. Man kann es nur befahren."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Sabaody-Arc — Rayleigh über Rogers Zeitalter",
     "source_urls": [],
-    "themes": ["freiheit", "macht"],
+    "themes": [
+      "freiheit",
+      "macht"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -327,12 +429,18 @@
     "id": "q-op-vivi-sterben",
     "speaker_type": "character",
     "speaker_id": "one-piece/vivi",
-    "text": { "de": "Ich bin bereit, für dieses Land zu sterben. Aber niemand hier soll für mich sterben." },
+    "text": {
+      "de": "Ich bin bereit, für dieses Land zu sterben. Aber niemand hier soll für mich sterben."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Alabasta-Arc — Vivis Appell an die Rebellen",
     "source_urls": [],
-    "themes": ["opfer", "pflicht", "fuehrung"],
+    "themes": [
+      "opfer",
+      "pflicht",
+      "fuehrung"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -345,12 +453,17 @@
     "id": "q-op-bellemere-blut",
     "speaker_type": "character",
     "speaker_id": "one-piece/bellemere",
-    "text": { "de": "Blut allein macht noch keine Familie." },
+    "text": {
+      "de": "Blut allein macht noch keine Familie."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Arlong-Park-Arc — Bell-mères Rückblende",
     "source_urls": [],
-    "themes": ["familie", "treue"],
+    "themes": [
+      "familie",
+      "treue"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -363,12 +476,18 @@
     "id": "q-op-kaido-tod",
     "speaker_type": "character",
     "speaker_id": "one-piece/kaido",
-    "text": { "de": "Wer den Tod nicht fürchtet, kennt keine Grenzen." },
+    "text": {
+      "de": "Wer den Tod nicht fürchtet, kennt keine Grenzen."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Wano-Arc — Kaidos Haltung zum Sterben",
     "source_urls": [],
-    "themes": ["mut", "tod", "macht"],
+    "themes": [
+      "mut",
+      "tod",
+      "macht"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -381,13 +500,21 @@
     "id": "q-op-lucci-waffe",
     "speaker_type": "character",
     "speaker_id": "one-piece/rob-lucci",
-    "text": { "de": "Wer ohne Waffe auf dieses Meer hinausfährt, hat bereits entschieden, wie er stirbt." },
+    "text": {
+      "de": "Wer ohne Waffe auf dieses Meer hinausfährt, hat bereits entschieden, wie er stirbt."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Water-Seven-Arc — Lucci über Stärke und Überleben",
     "source_urls": [],
-    "themes": ["krieg", "gewalt", "schicksal"],
-    "tone_flags": ["gewalt"],
+    "themes": [
+      "krieg",
+      "gewalt",
+      "schicksal"
+    ],
+    "tone_flags": [
+      "gewalt"
+    ],
     "translation_note": "Sinngemäße Verdichtung der Figurenhaltung.",
     "status": "live",
     "created_by": "ki-vorstufe",
@@ -399,12 +526,18 @@
     "id": "q-op-chopper-nuetzlich",
     "speaker_type": "character",
     "speaker_id": "one-piece/chopper",
-    "text": { "de": "Ich muss nicht der Stärkste sein. Ich will nur da sein für die, die mich brauchen." },
+    "text": {
+      "de": "Ich muss nicht der Stärkste sein. Ich will nur da sein für die, die mich brauchen."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Drumm-Arc — Choppers Motivation als Arzt",
     "source_urls": [],
-    "themes": ["freundschaft", "mitgefuehl", "schwaeche"],
+    "themes": [
+      "freundschaft",
+      "mitgefuehl",
+      "schwaeche"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -417,12 +550,18 @@
     "id": "q-op-brook-versprechen",
     "speaker_type": "character",
     "speaker_id": "one-piece/brook",
-    "text": { "de": "Ein Versprechen kann länger halten als ein Leben." },
+    "text": {
+      "de": "Ein Versprechen kann länger halten als ein Leben."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Thriller-Bark-Arc — Brooks Versprechen an Laboon",
     "source_urls": [],
-    "themes": ["treue", "versprechen", "zeit"],
+    "themes": [
+      "treue",
+      "versprechen",
+      "zeit"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -435,12 +574,17 @@
     "id": "q-op-luffy-allein",
     "speaker_type": "character",
     "speaker_id": "one-piece/luffy",
-    "text": { "de": "Ich kann nichts allein. Genau deshalb brauche ich euch." },
+    "text": {
+      "de": "Ich kann nichts allein. Genau deshalb brauche ich euch."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Arlong-Park-Arc — Ruffy über seine Crew",
     "source_urls": [],
-    "themes": ["freundschaft", "schwaeche"],
+    "themes": [
+      "freundschaft",
+      "schwaeche"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -453,12 +597,18 @@
     "id": "q-op-zoro-aufgeben",
     "speaker_type": "character",
     "speaker_id": "one-piece/zoro",
-    "text": { "de": "Verlieren ist erlaubt. Aufgeben nicht." },
+    "text": {
+      "de": "Verlieren ist erlaubt. Aufgeben nicht."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece — Zorros Schwur nach der Niederlage gegen Falkenauge",
     "source_urls": [],
-    "themes": ["mut", "scheitern", "staerke"],
+    "themes": [
+      "mut",
+      "scheitern",
+      "staerke"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -471,12 +621,18 @@
     "id": "q-op-doflamingo-frieden",
     "speaker_type": "character",
     "speaker_id": "one-piece/doflamingo",
-    "text": { "de": "Frieden ist nur der Name, den die Sieger ihrer Ordnung geben." },
+    "text": {
+      "de": "Frieden ist nur der Name, den die Sieger ihrer Ordnung geben."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Dressrosa-Arc — Doflamingo über die Weltordnung",
     "source_urls": [],
-    "themes": ["macht", "ordnung", "krieg"],
+    "themes": [
+      "macht",
+      "ordnung",
+      "krieg"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung der Figurenhaltung.",
     "status": "live",
@@ -489,12 +645,18 @@
     "id": "q-op-roger-unsterblich",
     "speaker_type": "character",
     "speaker_id": "one-piece/gol-d-roger",
-    "text": { "de": "Wir sind nicht unsterblich. Also leben wir, solange wir es können." },
+    "text": {
+      "de": "Wir sind nicht unsterblich. Also leben wir, solange wir es können."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Rückblenden zu Rogers letzter Fahrt",
     "source_urls": [],
-    "themes": ["tod", "leben", "zeit"],
+    "themes": [
+      "tod",
+      "leben",
+      "zeit"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung.",
     "status": "live",
@@ -507,12 +669,18 @@
     "id": "q-op-whitebeard-name",
     "speaker_type": "character",
     "speaker_id": "one-piece/whitebeard",
-    "text": { "de": "Ein Name überdauert den Mann, der ihn getragen hat." },
+    "text": {
+      "de": "Ein Name überdauert den Mann, der ihn getragen hat."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "One Piece, Marineford-Arc — Whitebeard über Erbe und Willen",
     "source_urls": [],
-    "themes": ["erbe", "erinnerung", "tod"],
+    "themes": [
+      "erbe",
+      "erinnerung",
+      "tod"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung des „Willen des D.“-Motivs.",
     "status": "live",
@@ -521,17 +689,22 @@
     "approved_by": null,
     "last_checked_at": "2026-08-19"
   },
-
   {
     "id": "q-aurel-rache",
     "speaker_type": "person",
     "speaker_id": "marc-aurel",
-    "text": { "de": "Die beste Art der Rache ist, nicht so zu werden wie der, der dir Unrecht getan hat." },
+    "text": {
+      "de": "Die beste Art der Rache ist, nicht so zu werden wie der, der dir Unrecht getan hat."
+    },
     "original_lang": "grc",
     "source_type": "paraphrased",
     "source_ref": "Selbstbetrachtungen, Buch VI, 6",
     "source_urls": [],
-    "themes": ["rache", "gerechtigkeit", "charakter"],
+    "themes": [
+      "rache",
+      "gerechtigkeit",
+      "charakter"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Wiedergabe; die Übersetzungen der Selbstbetrachtungen unterscheiden sich erheblich.",
     "status": "live",
@@ -544,12 +717,18 @@
     "id": "q-aurel-geist",
     "speaker_type": "person",
     "speaker_id": "marc-aurel",
-    "text": { "de": "Du hast Macht über deinen Geist, nicht über die Ereignisse. Erkenne das, und du findest Kraft." },
+    "text": {
+      "de": "Du hast Macht über deinen Geist, nicht über die Ereignisse. Erkenne das, und du findest Kraft."
+    },
     "original_lang": "grc",
     "source_type": "paraphrased",
     "source_ref": "Selbstbetrachtungen — stoisches Kernmotiv, u. a. Buch VIII",
     "source_urls": [],
-    "themes": ["macht", "staerke", "selbsterkenntnis"],
+    "themes": [
+      "macht",
+      "staerke",
+      "selbsterkenntnis"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung eines wiederkehrenden Gedankens, kein wörtliches Einzelzitat.",
     "status": "live",
@@ -562,12 +741,17 @@
     "id": "q-seneca-zeit",
     "speaker_type": "person",
     "speaker_id": "seneca",
-    "text": { "de": "Wir haben nicht zu wenig Zeit — wir vergeuden nur zu viel davon." },
+    "text": {
+      "de": "Wir haben nicht zu wenig Zeit — wir vergeuden nur zu viel davon."
+    },
     "original_lang": "la",
     "source_type": "translated",
     "source_ref": "De brevitate vitae (Von der Kürze des Lebens), Kap. 1",
     "source_urls": [],
-    "themes": ["zeit", "leben"],
+    "themes": [
+      "zeit",
+      "leben"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Lateinischen; Formulierung weicht von gängigen Ausgaben ab.",
     "status": "live",
@@ -580,12 +764,17 @@
     "id": "q-seneca-leiden",
     "speaker_type": "person",
     "speaker_id": "seneca",
-    "text": { "de": "Wir leiden häufiger in der Vorstellung als in der Wirklichkeit." },
+    "text": {
+      "de": "Wir leiden häufiger in der Vorstellung als in der Wirklichkeit."
+    },
     "original_lang": "la",
     "source_type": "paraphrased",
     "source_ref": "Epistulae morales ad Lucilium, Brief 13",
     "source_urls": [],
-    "themes": ["angst", "leiden"],
+    "themes": [
+      "angst",
+      "leiden"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Wiedergabe.",
     "status": "live",
@@ -598,12 +787,18 @@
     "id": "q-sunzi-feind",
     "speaker_type": "person",
     "speaker_id": "sunzi",
-    "text": { "de": "Wer den Feind kennt und sich selbst, muss den Ausgang von hundert Schlachten nicht fürchten." },
+    "text": {
+      "de": "Wer den Feind kennt und sich selbst, muss den Ausgang von hundert Schlachten nicht fürchten."
+    },
     "original_lang": "zh",
     "source_type": "translated",
     "source_ref": "Die Kunst des Krieges, Kapitel 3",
     "source_urls": [],
-    "themes": ["krieg", "macht", "selbsterkenntnis"],
+    "themes": [
+      "krieg",
+      "macht",
+      "selbsterkenntnis"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung; deutsche Ausgaben formulieren unterschiedlich.",
     "status": "live",
@@ -616,12 +811,17 @@
     "id": "q-sunzi-ohne-kampf",
     "speaker_type": "person",
     "speaker_id": "sunzi",
-    "text": { "de": "Die höchste Kunst des Krieges ist es, den Feind ohne Kampf zu bezwingen." },
+    "text": {
+      "de": "Die höchste Kunst des Krieges ist es, den Feind ohne Kampf zu bezwingen."
+    },
     "original_lang": "zh",
     "source_type": "translated",
     "source_ref": "Die Kunst des Krieges, Kapitel 3",
     "source_urls": [],
-    "themes": ["krieg", "macht"],
+    "themes": [
+      "krieg",
+      "macht"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Chinesischen.",
     "status": "live",
@@ -634,12 +834,18 @@
     "id": "q-machiavelli-gefuerchtet",
     "speaker_type": "person",
     "speaker_id": "machiavelli",
-    "text": { "de": "Es ist sicherer, gefürchtet zu werden als geliebt, wenn man nicht beides zugleich sein kann." },
+    "text": {
+      "de": "Es ist sicherer, gefürchtet zu werden als geliebt, wenn man nicht beides zugleich sein kann."
+    },
     "original_lang": "it",
     "source_type": "translated",
     "source_ref": "Der Fürst (Il Principe), Kapitel 17",
     "source_urls": [],
-    "themes": ["macht", "furcht", "fuehrung"],
+    "themes": [
+      "macht",
+      "furcht",
+      "fuehrung"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Italienischen.",
     "status": "live",
@@ -652,12 +858,17 @@
     "id": "q-machiavelli-schein",
     "speaker_type": "person",
     "speaker_id": "machiavelli",
-    "text": { "de": "Jeder sieht, was du zu sein scheinst. Wenige spüren, was du bist." },
+    "text": {
+      "de": "Jeder sieht, was du zu sein scheinst. Wenige spüren, was du bist."
+    },
     "original_lang": "it",
     "source_type": "translated",
     "source_ref": "Der Fürst (Il Principe), Kapitel 18",
     "source_urls": [],
-    "themes": ["taeuschung", "macht"],
+    "themes": [
+      "taeuschung",
+      "macht"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Italienischen.",
     "status": "live",
@@ -670,12 +881,17 @@
     "id": "q-napoleon-hoffnung",
     "speaker_type": "person",
     "speaker_id": "napoleon",
-    "text": { "de": "Ein Anführer ist ein Händler der Hoffnung." },
+    "text": {
+      "de": "Ein Anführer ist ein Händler der Hoffnung."
+    },
     "original_lang": "fr",
     "source_type": "attributed",
     "source_ref": "Napoleon häufig zugeschrieben; ein zeitgenössischer Erstbeleg ist nicht gesichert",
     "source_urls": [],
-    "themes": ["fuehrung", "hoffnung"],
+    "themes": [
+      "fuehrung",
+      "hoffnung"
+    ],
     "tone_flags": [],
     "translation_note": "Zuschreibung ohne gesicherten Erstbeleg — im Spiel entsprechend als „zugeschrieben“ gekennzeichnet.",
     "status": "live",
@@ -688,12 +904,18 @@
     "id": "q-napoleon-geschichte",
     "speaker_type": "person",
     "speaker_id": "napoleon",
-    "text": { "de": "Geschichte ist eine Reihe von Lügen, auf die man sich geeinigt hat." },
+    "text": {
+      "de": "Geschichte ist eine Reihe von Lügen, auf die man sich geeinigt hat."
+    },
     "original_lang": "fr",
     "source_type": "attributed",
     "source_ref": "Napoleon weit verbreitet zugeschrieben; Erstbeleg umstritten",
     "source_urls": [],
-    "themes": ["geschichte", "wahrheit", "taeuschung"],
+    "themes": [
+      "geschichte",
+      "wahrheit",
+      "taeuschung"
+    ],
     "tone_flags": [],
     "translation_note": "Zuschreibung ohne gesicherten Erstbeleg.",
     "status": "live",
@@ -706,12 +928,18 @@
     "id": "q-nietzsche-ungeheuer",
     "speaker_type": "person",
     "speaker_id": "nietzsche",
-    "text": { "de": "Wer mit Ungeheuern kämpft, mag zusehn, dass er nicht dabei zum Ungeheuer wird." },
+    "text": {
+      "de": "Wer mit Ungeheuern kämpft, mag zusehn, dass er nicht dabei zum Ungeheuer wird."
+    },
     "original_lang": "de",
     "source_type": "verified",
     "source_ref": "Jenseits von Gut und Böse, Aphorismus 146",
     "source_urls": [],
-    "themes": ["rache", "macht", "moral"],
+    "themes": [
+      "rache",
+      "macht",
+      "moral"
+    ],
     "tone_flags": [],
     "translation_note": null,
     "status": "live",
@@ -724,12 +952,17 @@
     "id": "q-nietzsche-staerker",
     "speaker_type": "person",
     "speaker_id": "nietzsche",
-    "text": { "de": "Was mich nicht umbringt, macht mich stärker." },
+    "text": {
+      "de": "Was mich nicht umbringt, macht mich stärker."
+    },
     "original_lang": "de",
     "source_type": "verified",
     "source_ref": "Götzen-Dämmerung, Sprüche und Pfeile 8",
     "source_urls": [],
-    "themes": ["staerke", "leiden"],
+    "themes": [
+      "staerke",
+      "leiden"
+    ],
     "tone_flags": [],
     "translation_note": null,
     "status": "live",
@@ -742,12 +975,17 @@
     "id": "q-goethe-sklave",
     "speaker_type": "person",
     "speaker_id": "goethe",
-    "text": { "de": "Niemand ist mehr Sklave, als der sich für frei hält, ohne es zu sein." },
+    "text": {
+      "de": "Niemand ist mehr Sklave, als der sich für frei hält, ohne es zu sein."
+    },
     "original_lang": "de",
     "source_type": "verified",
     "source_ref": "Die Wahlverwandtschaften, Zweiter Teil, Aus Ottiliens Tagebuche",
     "source_urls": [],
-    "themes": ["freiheit", "taeuschung"],
+    "themes": [
+      "freiheit",
+      "taeuschung"
+    ],
     "tone_flags": [],
     "translation_note": null,
     "status": "live",
@@ -760,12 +998,18 @@
     "id": "q-kant-mut",
     "speaker_type": "person",
     "speaker_id": "kant",
-    "text": { "de": "Habe Mut, dich deines eigenen Verstandes zu bedienen!" },
+    "text": {
+      "de": "Habe Mut, dich deines eigenen Verstandes zu bedienen!"
+    },
     "original_lang": "de",
     "source_type": "verified",
     "source_ref": "Beantwortung der Frage: Was ist Aufklärung? (1784)",
     "source_urls": [],
-    "themes": ["mut", "freiheit", "wahrheit"],
+    "themes": [
+      "mut",
+      "freiheit",
+      "wahrheit"
+    ],
     "tone_flags": [],
     "translation_note": null,
     "status": "live",
@@ -778,12 +1022,17 @@
     "id": "q-konfuzius-graeber",
     "speaker_type": "person",
     "speaker_id": "konfuzius",
-    "text": { "de": "Wer Rache plant, grabe zwei Gräber." },
+    "text": {
+      "de": "Wer Rache plant, grabe zwei Gräber."
+    },
     "original_lang": "zh",
     "source_type": "attributed",
     "source_ref": "Konfuzius verbreitet zugeschrieben; in den Analekten nicht nachweisbar",
     "source_urls": [],
-    "themes": ["rache", "gerechtigkeit"],
+    "themes": [
+      "rache",
+      "gerechtigkeit"
+    ],
     "tone_flags": [],
     "translation_note": "Bekannte Zuschreibung ohne Quellennachweis im überlieferten Werk — im Spiel als „zugeschrieben“ gekennzeichnet.",
     "status": "live",
@@ -796,12 +1045,18 @@
     "id": "q-laozi-selbst",
     "speaker_type": "person",
     "speaker_id": "laozi",
-    "text": { "de": "Wer andere besiegt, ist stark. Wer sich selbst besiegt, ist mächtig." },
+    "text": {
+      "de": "Wer andere besiegt, ist stark. Wer sich selbst besiegt, ist mächtig."
+    },
     "original_lang": "zh",
     "source_type": "translated",
     "source_ref": "Daodejing, Kapitel 33",
     "source_urls": [],
-    "themes": ["macht", "staerke", "selbsterkenntnis"],
+    "themes": [
+      "macht",
+      "staerke",
+      "selbsterkenntnis"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung; deutsche Ausgaben des Daodejing weichen stark voneinander ab.",
     "status": "live",
@@ -814,12 +1069,18 @@
     "id": "q-sokrates-nichts",
     "speaker_type": "person",
     "speaker_id": "sokrates",
-    "text": { "de": "Ich weiß, dass ich nichts weiß." },
+    "text": {
+      "de": "Ich weiß, dass ich nichts weiß."
+    },
     "original_lang": "grc",
     "source_type": "attributed",
     "source_ref": "Geflügelte Verkürzung einer Passage aus Platons Apologie",
     "source_urls": [],
-    "themes": ["wahrheit", "demut", "selbsterkenntnis"],
+    "themes": [
+      "wahrheit",
+      "demut",
+      "selbsterkenntnis"
+    ],
     "tone_flags": [],
     "translation_note": "Die geläufige Fassung ist eine spätere Zuspitzung, kein wörtliches Platon-Zitat.",
     "status": "live",
@@ -832,12 +1093,17 @@
     "id": "q-caesar-wunsch",
     "speaker_type": "person",
     "speaker_id": "julius-caesar",
-    "text": { "de": "Die Menschen glauben am liebsten das, was sie sich wünschen." },
+    "text": {
+      "de": "Die Menschen glauben am liebsten das, was sie sich wünschen."
+    },
     "original_lang": "la",
     "source_type": "translated",
     "source_ref": "De bello Gallico, Buch III, 18",
     "source_urls": [],
-    "themes": ["taeuschung", "wahrheit"],
+    "themes": [
+      "taeuschung",
+      "wahrheit"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Lateinischen.",
     "status": "live",
@@ -850,12 +1116,17 @@
     "id": "q-dostojewski-gewoehnung",
     "speaker_type": "person",
     "speaker_id": "dostojewski",
-    "text": { "de": "Der Mensch gewöhnt sich an alles — das ist wohl seine beste und zugleich seine schlimmste Eigenschaft." },
+    "text": {
+      "de": "Der Mensch gewöhnt sich an alles — das ist wohl seine beste und zugleich seine schlimmste Eigenschaft."
+    },
     "original_lang": "ru",
     "source_type": "translated",
     "source_ref": "Aufzeichnungen aus einem Totenhaus (1862)",
     "source_urls": [],
-    "themes": ["leiden", "menschlichkeit"],
+    "themes": [
+      "leiden",
+      "menschlichkeit"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Russischen.",
     "status": "live",
@@ -868,12 +1139,17 @@
     "id": "q-twain-taeuschung",
     "speaker_type": "person",
     "speaker_id": "mark-twain",
-    "text": { "de": "Es ist leichter, Menschen zu täuschen, als sie davon zu überzeugen, dass sie getäuscht wurden." },
+    "text": {
+      "de": "Es ist leichter, Menschen zu täuschen, als sie davon zu überzeugen, dass sie getäuscht wurden."
+    },
     "original_lang": "en",
     "source_type": "attributed",
     "source_ref": "Mark Twain verbreitet zugeschrieben; ein Beleg im Werk fehlt",
     "source_urls": [],
-    "themes": ["taeuschung", "wahrheit"],
+    "themes": [
+      "taeuschung",
+      "wahrheit"
+    ],
     "tone_flags": [],
     "translation_note": "Zuschreibung ohne Werkbeleg — Twain werden viele Aphorismen nachträglich zugeschrieben.",
     "status": "live",
@@ -886,12 +1162,18 @@
     "id": "q-douglass-macht",
     "speaker_type": "person",
     "speaker_id": "frederick-douglass",
-    "text": { "de": "Macht gibt nichts freiwillig ab. Das hat sie nie getan, und das wird sie nie tun." },
+    "text": {
+      "de": "Macht gibt nichts freiwillig ab. Das hat sie nie getan, und das wird sie nie tun."
+    },
     "original_lang": "en",
     "source_type": "translated",
     "source_ref": "Rede „West India Emancipation“, Canandaigua, 1857",
     "source_urls": [],
-    "themes": ["macht", "freiheit", "gerechtigkeit"],
+    "themes": [
+      "macht",
+      "freiheit",
+      "gerechtigkeit"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Englischen.",
     "status": "live",
@@ -904,12 +1186,17 @@
     "id": "q-luxemburg-freiheit",
     "speaker_type": "person",
     "speaker_id": "rosa-luxemburg",
-    "text": { "de": "Freiheit ist immer die Freiheit des Andersdenkenden." },
+    "text": {
+      "de": "Freiheit ist immer die Freiheit des Andersdenkenden."
+    },
     "original_lang": "de",
     "source_type": "verified",
     "source_ref": "Zur russischen Revolution (1918, postum veröffentlicht 1922)",
     "source_urls": [],
-    "themes": ["freiheit", "gerechtigkeit"],
+    "themes": [
+      "freiheit",
+      "gerechtigkeit"
+    ],
     "tone_flags": [],
     "translation_note": null,
     "status": "live",
@@ -922,13 +1209,20 @@
     "id": "q-marx-veraendern",
     "speaker_type": "person",
     "speaker_id": "karl-marx",
-    "text": { "de": "Die Philosophen haben die Welt nur verschieden interpretiert; es kommt aber darauf an, sie zu verändern." },
+    "text": {
+      "de": "Die Philosophen haben die Welt nur verschieden interpretiert; es kommt aber darauf an, sie zu verändern."
+    },
     "original_lang": "de",
     "source_type": "verified",
     "source_ref": "Thesen über Feuerbach, These XI (1845)",
     "source_urls": [],
-    "themes": ["veraenderung", "wahrheit"],
-    "tone_flags": ["politik-sensibel"],
+    "themes": [
+      "veraenderung",
+      "wahrheit"
+    ],
+    "tone_flags": [
+      "politik-sensibel"
+    ],
     "translation_note": null,
     "status": "live",
     "created_by": "ki-vorstufe",
@@ -940,12 +1234,18 @@
     "id": "q-musashi-bereuen",
     "speaker_type": "person",
     "speaker_id": "miyamoto-musashi",
-    "text": { "de": "Bereue nichts von dem, was du getan hast." },
+    "text": {
+      "de": "Bereue nichts von dem, was du getan hast."
+    },
     "original_lang": "ja",
     "source_type": "translated",
     "source_ref": "Dokkodo (Der Weg des allein Beschrittenen), 1645",
     "source_urls": [],
-    "themes": ["ehre", "weg", "charakter"],
+    "themes": [
+      "ehre",
+      "weg",
+      "charakter"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Japanischen.",
     "status": "live",
@@ -958,12 +1258,18 @@
     "id": "q-musashi-weg",
     "speaker_type": "person",
     "speaker_id": "miyamoto-musashi",
-    "text": { "de": "Der Weg zeigt sich im Üben, nicht im Reden." },
+    "text": {
+      "de": "Der Weg zeigt sich im Üben, nicht im Reden."
+    },
     "original_lang": "ja",
     "source_type": "paraphrased",
     "source_ref": "Buch der fünf Ringe (Gorin no Sho), 1645 — Kernmotiv des Erdbuchs",
     "source_urls": [],
-    "themes": ["ehre", "weg", "staerke"],
+    "themes": [
+      "ehre",
+      "weg",
+      "staerke"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
     "status": "live",
@@ -976,12 +1282,17 @@
     "id": "q-gandhi-veraenderung",
     "speaker_type": "person",
     "speaker_id": "gandhi",
-    "text": { "de": "Sei du selbst die Veränderung, die du dir für diese Welt wünschst." },
+    "text": {
+      "de": "Sei du selbst die Veränderung, die du dir für diese Welt wünschst."
+    },
     "original_lang": "en",
     "source_type": "attributed",
     "source_ref": "Populäre Verdichtung eines Gandhi-Gedankens; in dieser Form nicht belegt",
     "source_urls": [],
-    "themes": ["veraenderung", "verantwortung"],
+    "themes": [
+      "veraenderung",
+      "verantwortung"
+    ],
     "tone_flags": [],
     "translation_note": "Bekanntes Beispiel einer nachträglichen Zuspitzung — Gandhi hat diesen Satz so nicht überliefert gesagt.",
     "status": "live",
@@ -994,13 +1305,21 @@
     "id": "q-capone-waffe",
     "speaker_type": "person",
     "speaker_id": "al-capone",
-    "text": { "de": "Mit einem freundlichen Wort und einer Waffe kommt man weiter als mit einem freundlichen Wort allein." },
+    "text": {
+      "de": "Mit einem freundlichen Wort und einer Waffe kommt man weiter als mit einem freundlichen Wort allein."
+    },
     "original_lang": "en",
     "source_type": "attributed",
     "source_ref": "Al Capone zeitgenössisch zugeschrieben; Erstbeleg nicht gesichert",
     "source_urls": [],
-    "themes": ["macht", "gewalt", "taeuschung"],
-    "tone_flags": ["gewalt"],
+    "themes": [
+      "macht",
+      "gewalt",
+      "taeuschung"
+    ],
+    "tone_flags": [
+      "gewalt"
+    ],
     "translation_note": "Zuschreibung ohne gesicherten Erstbeleg. Wird als Aussage einer historischen Verbrecherfigur gezeigt, nicht als Empfehlung.",
     "status": "live",
     "created_by": "ki-vorstufe",
@@ -1012,13 +1331,22 @@
     "id": "q-dschingis-strafe",
     "speaker_type": "person",
     "speaker_id": "dschingis-khan",
-    "text": { "de": "Ich bin die Strafe Gottes. Hättet ihr keine schweren Sünden begangen, hätte er mich nicht über euch gesandt." },
+    "text": {
+      "de": "Ich bin die Strafe Gottes. Hättet ihr keine schweren Sünden begangen, hätte er mich nicht über euch gesandt."
+    },
     "original_lang": "mn",
     "source_type": "attributed",
     "source_ref": "Chronikalisch überliefert (u. a. bei Ibn al-Athir zur Eroberung von Buchara); Wortlaut nicht gesichert",
     "source_urls": [],
-    "themes": ["macht", "schicksal", "gewalt"],
-    "tone_flags": ["gewalt", "politik-sensibel"],
+    "themes": [
+      "macht",
+      "schicksal",
+      "gewalt"
+    ],
+    "tone_flags": [
+      "gewalt",
+      "politik-sensibel"
+    ],
     "translation_note": "Chronikalische Überlieferung aus zweiter Hand — historische Wortgenauigkeit ist nicht belegbar.",
     "status": "live",
     "created_by": "ki-vorstufe",
@@ -1030,13 +1358,22 @@
     "id": "q-robespierre-terror",
     "speaker_type": "person",
     "speaker_id": "robespierre",
-    "text": { "de": "Der Terror ist nichts anderes als schnelle, strenge und unbeugsame Gerechtigkeit." },
+    "text": {
+      "de": "Der Terror ist nichts anderes als schnelle, strenge und unbeugsame Gerechtigkeit."
+    },
     "original_lang": "fr",
     "source_type": "translated",
     "source_ref": "Rede vor dem Nationalkonvent, 5. Februar 1794",
     "source_urls": [],
-    "themes": ["gerechtigkeit", "gewalt", "macht"],
-    "tone_flags": ["gewalt", "politik-sensibel"],
+    "themes": [
+      "gerechtigkeit",
+      "gewalt",
+      "macht"
+    ],
+    "tone_flags": [
+      "gewalt",
+      "politik-sensibel"
+    ],
     "translation_note": "Eigene Übersetzung aus dem Französischen. Historisches Dokument der Schreckensherrschaft — Darstellung ohne Zustimmung.",
     "status": "live",
     "created_by": "ki-vorstufe",
@@ -1048,12 +1385,18 @@
     "id": "q-voltaire-recht",
     "speaker_type": "person",
     "speaker_id": "voltaire",
-    "text": { "de": "Es ist gefährlich, recht zu haben, wenn die Regierung unrecht hat." },
+    "text": {
+      "de": "Es ist gefährlich, recht zu haben, wenn die Regierung unrecht hat."
+    },
     "original_lang": "fr",
     "source_type": "attributed",
     "source_ref": "Voltaire zugeschrieben; Erstbeleg umstritten",
     "source_urls": [],
-    "themes": ["wahrheit", "macht", "freiheit"],
+    "themes": [
+      "wahrheit",
+      "macht",
+      "freiheit"
+    ],
     "tone_flags": [],
     "translation_note": "Zuschreibung ohne gesicherten Werkbeleg.",
     "status": "live",
@@ -1066,12 +1409,17 @@
     "id": "q-churchill-mut",
     "speaker_type": "person",
     "speaker_id": "churchill",
-    "text": { "de": "Erfolg ist nicht endgültig, Scheitern ist nicht tödlich. Es zählt der Mut, weiterzumachen." },
+    "text": {
+      "de": "Erfolg ist nicht endgültig, Scheitern ist nicht tödlich. Es zählt der Mut, weiterzumachen."
+    },
     "original_lang": "en",
     "source_type": "attributed",
     "source_ref": "Churchill weit verbreitet zugeschrieben; ein Beleg in seinen Reden fehlt",
     "source_urls": [],
-    "themes": ["mut", "scheitern"],
+    "themes": [
+      "mut",
+      "scheitern"
+    ],
     "tone_flags": [],
     "translation_note": "Zuschreibung ohne Quellennachweis — der Satz taucht erst deutlich nach Churchills Zeit auf.",
     "status": "live",
@@ -1084,12 +1432,17 @@
     "id": "q-malcolm-x-stehen",
     "speaker_type": "person",
     "speaker_id": "malcolm-x",
-    "text": { "de": "Wer für nichts einsteht, fällt auf alles herein." },
+    "text": {
+      "de": "Wer für nichts einsteht, fällt auf alles herein."
+    },
     "original_lang": "en",
     "source_type": "attributed",
     "source_ref": "Malcolm X häufig zugeschrieben; der Sinnspruch ist älter als seine Verwendung",
     "source_urls": [],
-    "themes": ["ueberzeugung", "charakter"],
+    "themes": [
+      "ueberzeugung",
+      "charakter"
+    ],
     "tone_flags": [],
     "translation_note": "Zuschreibung ohne gesicherten Erstbeleg.",
     "status": "live",
@@ -1102,12 +1455,17 @@
     "id": "q-mlk-unrecht",
     "speaker_type": "person",
     "speaker_id": "martin-luther-king",
-    "text": { "de": "Unrecht an einem Ort bedroht die Gerechtigkeit an allen Orten." },
+    "text": {
+      "de": "Unrecht an einem Ort bedroht die Gerechtigkeit an allen Orten."
+    },
     "original_lang": "en",
     "source_type": "translated",
     "source_ref": "Brief aus dem Gefängnis in Birmingham, April 1963",
     "source_urls": [],
-    "themes": ["gerechtigkeit", "verantwortung"],
+    "themes": [
+      "gerechtigkeit",
+      "verantwortung"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Englischen.",
     "status": "live",
@@ -1120,13 +1478,21 @@
     "id": "q-che-unmoegliche",
     "speaker_type": "person",
     "speaker_id": "che-guevara",
-    "text": { "de": "Seien wir realistisch — versuchen wir das Unmögliche." },
+    "text": {
+      "de": "Seien wir realistisch — versuchen wir das Unmögliche."
+    },
     "original_lang": "es",
     "source_type": "attributed",
     "source_ref": "Che Guevara zugeschrieben; die Losung stammt aus dem Umfeld von 1968",
     "source_urls": [],
-    "themes": ["traeume", "revolution", "mut"],
-    "tone_flags": ["politik-sensibel"],
+    "themes": [
+      "traeume",
+      "revolution",
+      "mut"
+    ],
+    "tone_flags": [
+      "politik-sensibel"
+    ],
     "translation_note": "Zuschreibung ohne gesicherten Erstbeleg.",
     "status": "live",
     "created_by": "ki-vorstufe",
@@ -1138,12 +1504,18 @@
     "id": "q-arendt-gehorchen",
     "speaker_type": "person",
     "speaker_id": "hannah-arendt",
-    "text": { "de": "Niemand hat das Recht zu gehorchen." },
+    "text": {
+      "de": "Niemand hat das Recht zu gehorchen."
+    },
     "original_lang": "de",
     "source_type": "paraphrased",
     "source_ref": "Verdichtung von Arendts Kant-Auslegung zu Gehorsam und Verantwortung",
     "source_urls": [],
-    "themes": ["freiheit", "verantwortung", "moral"],
+    "themes": [
+      "freiheit",
+      "verantwortung",
+      "moral"
+    ],
     "tone_flags": [],
     "translation_note": "Geflügelte Zuspitzung eines Arendt-Gedankens; kein wörtliches Werkzitat.",
     "status": "live",
@@ -1156,12 +1528,17 @@
     "id": "q-bruce-lee-wasser",
     "speaker_type": "person",
     "speaker_id": "bruce-lee",
-    "text": { "de": "Werde formlos und gestaltlos — wie Wasser." },
+    "text": {
+      "de": "Werde formlos und gestaltlos — wie Wasser."
+    },
     "original_lang": "en",
     "source_type": "translated",
     "source_ref": "Fernsehinterview „Pierre Berton Show“, 1971",
     "source_urls": [],
-    "themes": ["anpassung", "staerke"],
+    "themes": [
+      "anpassung",
+      "staerke"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Englischen.",
     "status": "live",
@@ -1174,12 +1551,18 @@
     "id": "q-jobs-zeit",
     "speaker_type": "person",
     "speaker_id": "steve-jobs",
-    "text": { "de": "Eure Zeit ist begrenzt. Verschwendet sie nicht damit, das Leben eines anderen zu leben." },
+    "text": {
+      "de": "Eure Zeit ist begrenzt. Verschwendet sie nicht damit, das Leben eines anderen zu leben."
+    },
     "original_lang": "en",
     "source_type": "translated",
     "source_ref": "Rede an der Stanford University, 12. Juni 2005",
     "source_urls": [],
-    "themes": ["zeit", "freiheit", "traeume"],
+    "themes": [
+      "zeit",
+      "freiheit",
+      "traeume"
+    ],
     "tone_flags": [],
     "translation_note": "Eigene Übersetzung aus dem Englischen.",
     "status": "live",
@@ -1192,12 +1575,17 @@
     "id": "q-mandela-mut",
     "speaker_type": "person",
     "speaker_id": "nelson-mandela",
-    "text": { "de": "Mut ist nicht die Abwesenheit von Furcht, sondern der Sieg über sie." },
+    "text": {
+      "de": "Mut ist nicht die Abwesenheit von Furcht, sondern der Sieg über sie."
+    },
     "original_lang": "en",
     "source_type": "paraphrased",
     "source_ref": "Der lange Weg zur Freiheit (1994) — sinngemäß",
     "source_urls": [],
-    "themes": ["mut", "angst"],
+    "themes": [
+      "mut",
+      "angst"
+    ],
     "tone_flags": [],
     "translation_note": "Sinngemäße Wiedergabe aus der Autobiografie.",
     "status": "live",
@@ -1210,12 +1598,18 @@
     "id": "q-ali-unmoeglich",
     "speaker_type": "person",
     "speaker_id": "muhammad-ali",
-    "text": { "de": "Unmöglich ist keine Tatsache. Es ist eine Meinung." },
+    "text": {
+      "de": "Unmöglich ist keine Tatsache. Es ist eine Meinung."
+    },
     "original_lang": "en",
     "source_type": "attributed",
     "source_ref": "Muhammad Ali zugeschrieben; verbreitet über eine Werbekampagne von 2004",
     "source_urls": [],
-    "themes": ["traeume", "mut", "staerke"],
+    "themes": [
+      "traeume",
+      "mut",
+      "staerke"
+    ],
     "tone_flags": [],
     "translation_note": "Zuschreibung ohne gesicherten Erstbeleg aus Alis eigenen Äußerungen.",
     "status": "live",
@@ -1228,15 +1622,960 @@
     "id": "q-musk-wichtig",
     "speaker_type": "person",
     "speaker_id": "elon-musk",
-    "text": { "de": "Wenn etwas wichtig genug ist, tust du es — auch wenn die Chancen gegen dich stehen." },
+    "text": {
+      "de": "Wenn etwas wichtig genug ist, tust du es — auch wenn die Chancen gegen dich stehen."
+    },
     "original_lang": "en",
     "source_type": "translated",
     "source_ref": "TESTFALL KLASSE C — zu verifizieren: Interview, CBS „60 Minutes“, März 2012. Vor Freigabe zwei unabhängige Belege eintragen (Regel V4).",
     "source_urls": [],
-    "themes": ["traeume", "mut"],
+    "themes": [
+      "traeume",
+      "mut"
+    ],
     "tone_flags": [],
     "translation_note": "Lebende Person: geht erst nach menschlicher Quellenprüfung und Vier-Augen-Freigabe live.",
     "status": "review",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-nami-sturm",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/nami",
+    "text": {
+      "de": "Wer eine Karte der ganzen Welt zeichnen will, darf vor keinem Sturm umkehren."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece — Namis Traum, u. a. Arlong-Park-Arc",
+    "source_urls": [],
+    "themes": [
+      "traeume",
+      "mut"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung ihres Lebensziels.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-franky-schiff",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/franky",
+    "text": {
+      "de": "Ein Schiff ist erst fertig, wenn es die Träume seiner Crew tragen kann."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Water-Seven-/Enies-Lobby-Arc — Frankys Schiffsbau-Credo",
+    "source_urls": [],
+    "themes": [
+      "traeume",
+      "handwerk"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-sabo-adel",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/sabo",
+    "text": {
+      "de": "Adlig geboren zu sein heißt noch lange nicht, als Mensch geboren zu sein."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Rückblende Goa-Königreich — Sabos Bruch mit seiner Familie",
+    "source_urls": [],
+    "themes": [
+      "gerechtigkeit",
+      "freiheit",
+      "herkunft"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-garp-gewissen",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/garp",
+    "text": {
+      "de": "Gerechtigkeit ist keine Frage des Ranges, sondern des Gewissens."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece — Garps Haltung zur Marine, u. a. Marineford",
+    "source_urls": [],
+    "themes": [
+      "gerechtigkeit",
+      "pflicht"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung der Figurenhaltung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-hancock-schoen",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/hancock",
+    "text": {
+      "de": "Was immer ich auch tue — die Welt verzeiht es mir. Weil ich schön bin!"
+    },
+    "original_lang": "ja",
+    "source_type": "translated",
+    "source_ref": "One Piece, Kapitel 518 / Episode 411 — Boa Hancocks Credo",
+    "source_urls": [],
+    "themes": [
+      "macht",
+      "stolz",
+      "taeuschung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene sinngemäße Übersetzung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-katakuri-maske",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/katakuri",
+    "text": {
+      "de": "Perfektion ist eine Maske. Irgendwann will jeder sie absetzen."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Whole-Cake-Island-Arc — Katakuris verborgenes Gesicht",
+    "source_urls": [],
+    "themes": [
+      "staerke",
+      "taeuschung",
+      "schwaeche"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-akainu-wurzel",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/akainu",
+    "text": {
+      "de": "Wer das Böse nicht mit der Wurzel ausreißt, hat es geduldet."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Marineford-Arc — Akainus „absolute Gerechtigkeit“",
+    "source_urls": [],
+    "themes": [
+      "gerechtigkeit",
+      "gewalt",
+      "macht"
+    ],
+    "tone_flags": [
+      "gewalt"
+    ],
+    "translation_note": "Sinngemäße Verdichtung der Figurenhaltung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-oden-kochen",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/oden",
+    "text": {
+      "de": "Oden wäre kein Oden, wenn man es nicht kocht!"
+    },
+    "original_lang": "ja",
+    "source_type": "translated",
+    "source_ref": "One Piece, Kapitel 972 — Odens letzte Worte im Kessel",
+    "source_urls": [],
+    "themes": [
+      "tod",
+      "mut",
+      "stolz"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene sinngemäße Übersetzung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-corazon-kinder",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/corazon",
+    "text": {
+      "de": "Kinder haften nicht für die Sünden ihrer Familie."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Dressrosa-Rückblende — Corazon über Law",
+    "source_urls": [],
+    "themes": [
+      "familie",
+      "schuld",
+      "mitgefuehl"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-zeff-hunger",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/zeff",
+    "text": {
+      "de": "Wer selbst einmal gehungert hat, weist keinen Hungrigen von der Tür."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Baratie-Arc — Zeffs Gesetz der Küche",
+    "source_urls": [],
+    "themes": [
+      "hunger",
+      "mitgefuehl"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-kureha-jugend",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/kureha",
+    "text": {
+      "de": "Das Geheimnis meiner ewigen Jugend? Das verrate ich grundsätzlich nicht."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Drumm-Arc — Dr. Kurehas Standardantwort",
+    "source_urls": [],
+    "themes": [
+      "zeit",
+      "charakter"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung ihres Running Gags.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-tiger-hass",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/fisher-tiger",
+    "text": {
+      "de": "Ich habe es nicht geschafft, die Menschen zu lieben. Aber ich weigere mich, meinen Hass an die Kinder weiterzugeben."
+    },
+    "original_lang": "ja",
+    "source_type": "translated",
+    "source_ref": "One Piece, Kapitel 622–624 — Fisher Tigers letzte Worte",
+    "source_urls": [],
+    "themes": [
+      "hass",
+      "erbe",
+      "menschlichkeit"
+    ],
+    "tone_flags": [
+      "politik-sensibel"
+    ],
+    "translation_note": "Eigene sinngemäße Übersetzung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-otohime-meer",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/otohime",
+    "text": {
+      "de": "Nicht das Meer trennt unsere Völker, sondern die Angst in unseren Herzen."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Fischmenscheninsel-Arc — Otohimes Reden",
+    "source_urls": [],
+    "themes": [
+      "angst",
+      "versoehnung",
+      "menschlichkeit"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-eneru-gott",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/eneru",
+    "text": {
+      "de": "Ein Gott bittet nicht um Zustimmung."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Skypia-Arc — Enerus Selbstverständnis",
+    "source_urls": [],
+    "themes": [
+      "macht",
+      "ordnung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung der Figurenhaltung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-stalin-statistik",
+    "speaker_type": "person",
+    "speaker_id": "stalin",
+    "text": {
+      "de": "Der Tod eines Menschen ist eine Tragödie. Der Tod von Millionen ist eine Statistik."
+    },
+    "original_lang": "ru",
+    "source_type": "attributed",
+    "source_ref": "Stalin weit verbreitet zugeschrieben; ein Erstbeleg fehlt, die Wendung geht wohl auf Kurt Tucholsky (1925) zurück",
+    "source_urls": [],
+    "themes": [
+      "tod",
+      "macht",
+      "menschlichkeit"
+    ],
+    "tone_flags": [
+      "gewalt",
+      "politik-sensibel"
+    ],
+    "translation_note": "Klassische Zuschreibung ohne gesicherten Beleg — im Spiel entsprechend gekennzeichnet.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-mao-gewehrlaeufe",
+    "speaker_type": "person",
+    "speaker_id": "mao",
+    "text": {
+      "de": "Die politische Macht kommt aus den Gewehrläufen."
+    },
+    "original_lang": "zh",
+    "source_type": "translated",
+    "source_ref": "„Probleme des Krieges und der Strategie“ (1938)",
+    "source_urls": [],
+    "themes": [
+      "macht",
+      "krieg"
+    ],
+    "tone_flags": [
+      "gewalt",
+      "politik-sensibel"
+    ],
+    "translation_note": "Eigene Übersetzung aus dem Chinesischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-louis-staat",
+    "speaker_type": "person",
+    "speaker_id": "louis-xiv",
+    "text": {
+      "de": "Der Staat bin ich."
+    },
+    "original_lang": "fr",
+    "source_type": "attributed",
+    "source_ref": "Ludwig XIV. zugeschrieben („L’État, c’est moi“); zeitgenössisch nicht belegt",
+    "source_urls": [],
+    "themes": [
+      "macht",
+      "ordnung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Berühmte Zuschreibung ohne zeitgenössischen Beleg.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-marie-kuchen",
+    "speaker_type": "person",
+    "speaker_id": "marie-antoinette",
+    "text": {
+      "de": "Wenn sie kein Brot haben, sollen sie doch Kuchen essen."
+    },
+    "original_lang": "fr",
+    "source_type": "attributed",
+    "source_ref": "Fälschlich zugeschrieben — die Anekdote steht schon in Rousseaus „Bekenntnissen“, bevor Marie-Antoinette am Hof war",
+    "source_urls": [],
+    "themes": [
+      "macht",
+      "taeuschung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eines der berühmtesten falsch zugeschriebenen Zitate der Geschichte — genau deshalb ist es hier.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-bismarck-moeglich",
+    "speaker_type": "person",
+    "speaker_id": "bismarck",
+    "text": {
+      "de": "Die Politik ist die Lehre vom Möglichen."
+    },
+    "original_lang": "de",
+    "source_type": "verified",
+    "source_ref": "Gespräch mit Friedrich Meyer von Waldeck, 11. August 1867",
+    "source_urls": [],
+    "themes": [
+      "macht",
+      "ordnung"
+    ],
+    "tone_flags": [],
+    "translation_note": null,
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-diogenes-sonne",
+    "speaker_type": "person",
+    "speaker_id": "diogenes",
+    "text": {
+      "de": "Geh mir ein wenig aus der Sonne."
+    },
+    "original_lang": "grc",
+    "source_type": "paraphrased",
+    "source_ref": "Überliefert bei Plutarch (Alexander, 14) — Antwort an Alexander den Großen",
+    "source_urls": [],
+    "themes": [
+      "freiheit",
+      "stolz"
+    ],
+    "tone_flags": [],
+    "translation_note": "Anekdotische Überlieferung, sinngemäß wiedergegeben.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-einstein-fantasie",
+    "speaker_type": "person",
+    "speaker_id": "einstein",
+    "text": {
+      "de": "Fantasie ist wichtiger als Wissen, denn Wissen ist begrenzt."
+    },
+    "original_lang": "en",
+    "source_type": "translated",
+    "source_ref": "Interview mit George Sylvester Viereck, The Saturday Evening Post, 26. Oktober 1929",
+    "source_urls": [],
+    "themes": [
+      "traeume",
+      "wahrheit"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene Übersetzung aus dem Englischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-wilde-versuchung",
+    "speaker_type": "person",
+    "speaker_id": "oscar-wilde",
+    "text": {
+      "de": "Ich kann allem widerstehen — nur der Versuchung nicht."
+    },
+    "original_lang": "en",
+    "source_type": "translated",
+    "source_ref": "Lady Windermeres Fächer (1892), 1. Akt",
+    "source_urls": [],
+    "themes": [
+      "charakter",
+      "schwaeche"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene Übersetzung aus dem Englischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-thatcher-gesellschaft",
+    "speaker_type": "person",
+    "speaker_id": "thatcher",
+    "text": {
+      "de": "So etwas wie die Gesellschaft gibt es nicht. Es gibt einzelne Männer und Frauen, und es gibt Familien."
+    },
+    "original_lang": "en",
+    "source_type": "translated",
+    "source_ref": "Interview, Woman’s Own, 23. September 1987",
+    "source_urls": [],
+    "themes": [
+      "ordnung",
+      "verantwortung"
+    ],
+    "tone_flags": [
+      "politik-sensibel"
+    ],
+    "translation_note": "Eigene Übersetzung aus dem Englischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-castro-geschichte",
+    "speaker_type": "person",
+    "speaker_id": "castro",
+    "text": {
+      "de": "Die Geschichte wird mich freisprechen."
+    },
+    "original_lang": "es",
+    "source_type": "translated",
+    "source_ref": "Verteidigungsrede nach dem Sturm auf die Moncada-Kaserne, 16. Oktober 1953",
+    "source_urls": [],
+    "themes": [
+      "geschichte",
+      "schicksal",
+      "ueberzeugung"
+    ],
+    "tone_flags": [
+      "politik-sensibel"
+    ],
+    "translation_note": "Eigene Übersetzung aus dem Spanischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-trump-fifth-avenue",
+    "speaker_type": "person",
+    "speaker_id": "trump",
+    "text": {
+      "de": "Ich könnte mitten auf der Fifth Avenue stehen und jemanden erschießen, und ich würde keine Wähler verlieren."
+    },
+    "original_lang": "en",
+    "source_type": "translated",
+    "source_ref": "Wahlkampfauftritt in Sioux Center, Iowa, 23. Januar 2016 („I could stand in the middle of Fifth Avenue and shoot somebody, and I wouldn’t lose any voters, OK?“)",
+    "source_urls": [
+      "https://en.wikiquote.org/wiki/Donald_Trump",
+      "https://edition.cnn.com/2016/01/23/politics/donald-trump-shoot-somebody-support/index.html"
+    ],
+    "themes": [
+      "macht",
+      "treue"
+    ],
+    "tone_flags": [
+      "gewalt",
+      "politik-sensibel"
+    ],
+    "translation_note": "Eigene Übersetzung; vielfach dokumentierte öffentliche Aussage (Video der Rede existiert).",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": "betreiber-weisung-2026-08-19",
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-trump-alone",
+    "speaker_type": "person",
+    "speaker_id": "trump",
+    "text": {
+      "de": "Ich allein kann es richten."
+    },
+    "original_lang": "en",
+    "source_type": "translated",
+    "source_ref": "Nominierungsrede beim Parteitag der Republikaner, 21. Juli 2016 („I alone can fix it“)",
+    "source_urls": [
+      "https://en.wikiquote.org/wiki/Donald_Trump",
+      "https://en.wikipedia.org/wiki/2016_Republican_National_Convention"
+    ],
+    "themes": [
+      "macht",
+      "fuehrung"
+    ],
+    "tone_flags": [
+      "politik-sensibel"
+    ],
+    "translation_note": "Eigene Übersetzung; vielfach dokumentierte öffentliche Aussage.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": "betreiber-weisung-2026-08-19",
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-tyson-plan",
+    "speaker_type": "person",
+    "speaker_id": "mike-tyson",
+    "text": {
+      "de": "Jeder hat einen Plan — bis er den ersten Schlag ins Gesicht bekommt."
+    },
+    "original_lang": "en",
+    "source_type": "translated",
+    "source_ref": "Vor dem Kampf gegen Tyrell Biggs, 1987 („Everybody has a plan until they get punched in the mouth“, in Varianten überliefert)",
+    "source_urls": [
+      "https://en.wikiquote.org/wiki/Mike_Tyson",
+      "https://en.wikipedia.org/wiki/Mike_Tyson"
+    ],
+    "themes": [
+      "kampf",
+      "scheitern",
+      "staerke"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene Übersetzung; das Zitat ist in leicht abweichenden Fassungen dokumentiert.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": "betreiber-weisung-2026-08-19",
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-roosevelt-knueppel",
+    "speaker_type": "person",
+    "speaker_id": "teddy-roosevelt",
+    "text": {
+      "de": "Sprich leise und trage einen großen Knüppel — du wirst weit kommen."
+    },
+    "original_lang": "en",
+    "source_type": "translated",
+    "source_ref": "Brief an Henry L. Sprague (1900) und Rede auf der Minnesota State Fair (1901); von Roosevelt als westafrikanisches Sprichwort eingeführt",
+    "source_urls": [],
+    "themes": [
+      "macht",
+      "fuehrung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene Übersetzung aus dem Englischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-freud-zigarre",
+    "speaker_type": "person",
+    "speaker_id": "freud",
+    "text": {
+      "de": "Manchmal ist eine Zigarre einfach nur eine Zigarre."
+    },
+    "original_lang": "de",
+    "source_type": "attributed",
+    "source_ref": "Freud vielfach zugeschrieben; in seinen Schriften nicht nachweisbar",
+    "source_urls": [],
+    "themes": [
+      "wahrheit",
+      "charakter"
+    ],
+    "tone_flags": [],
+    "translation_note": "Beliebte Zuschreibung ohne Werkbeleg.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-jeanne-furcht",
+    "speaker_type": "person",
+    "speaker_id": "jeanne-d-arc",
+    "text": {
+      "de": "Ich fürchte nichts — dafür bin ich geboren."
+    },
+    "original_lang": "fr",
+    "source_type": "paraphrased",
+    "source_ref": "Sinngemäß nach den Prozessakten von Rouen (1431)",
+    "source_urls": [],
+    "themes": [
+      "mut",
+      "schicksal",
+      "ueberzeugung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Wiedergabe aus den überlieferten Prozessprotokollen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-beauvoir-frau",
+    "speaker_type": "person",
+    "speaker_id": "beauvoir",
+    "text": {
+      "de": "Man kommt nicht als Frau zur Welt, man wird es."
+    },
+    "original_lang": "fr",
+    "source_type": "translated",
+    "source_ref": "Das andere Geschlecht (1949)",
+    "source_urls": [],
+    "themes": [
+      "freiheit",
+      "selbsterkenntnis"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene Übersetzung aus dem Französischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-zoro-nichts",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/zoro",
+    "text": {
+      "de": "Es ist nichts passiert."
+    },
+    "original_lang": "ja",
+    "source_type": "translated",
+    "source_ref": "One Piece, Kapitel 485 / Episode 377 — Zorro nach Thriller Bark, den Schmerz Ruffys tragend",
+    "source_urls": [],
+    "themes": [
+      "stolz",
+      "opfer",
+      "leiden"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene sinngemäße Übersetzung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-sanji-luege",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/sanji",
+    "text": {
+      "de": "Ein Mann verzeiht einer Frau ihre Lügen."
+    },
+    "original_lang": "ja",
+    "source_type": "translated",
+    "source_ref": "One Piece, Alabasta-Arc — Sanjis Maxime",
+    "source_urls": [],
+    "themes": [
+      "charakter",
+      "taeuschung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene sinngemäße Übersetzung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-luffy-lieber-sterben",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/luffy",
+    "text": {
+      "de": "Kann sein, dass ich dabei sterbe. Aber lieber sterbe ich, als aufzugeben."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece — Ruffys Haltung, u. a. im Kampf gegen Crocodile",
+    "source_urls": [],
+    "themes": [
+      "mut",
+      "traeume",
+      "tod"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-nietzsche-abgrund",
+    "speaker_type": "person",
+    "speaker_id": "nietzsche",
+    "text": {
+      "de": "Und wenn du lange in einen Abgrund blickst, blickt der Abgrund auch in dich hinein."
+    },
+    "original_lang": "de",
+    "source_type": "verified",
+    "source_ref": "Jenseits von Gut und Böse, Aphorismus 146",
+    "source_urls": [],
+    "themes": [
+      "moral",
+      "macht",
+      "selbsterkenntnis"
+    ],
+    "tone_flags": [],
+    "translation_note": null,
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-sunzi-schein",
+    "speaker_type": "person",
+    "speaker_id": "sunzi",
+    "text": {
+      "de": "Erscheine schwach, wenn du stark bist, und stark, wenn du schwach bist."
+    },
+    "original_lang": "zh",
+    "source_type": "translated",
+    "source_ref": "Die Kunst des Krieges, Kapitel 1",
+    "source_urls": [],
+    "themes": [
+      "taeuschung",
+      "krieg"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene Übersetzung aus dem Chinesischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-twain-tod",
+    "speaker_type": "person",
+    "speaker_id": "mark-twain",
+    "text": {
+      "de": "Die Berichte über meinen Tod sind stark übertrieben."
+    },
+    "original_lang": "en",
+    "source_type": "paraphrased",
+    "source_ref": "Notiz an einen Journalisten, 1897 („the report of my death was an exaggeration“) — später sprichwörtlich zugespitzt",
+    "source_urls": [],
+    "themes": [
+      "tod",
+      "taeuschung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Die geläufige Fassung ist eine Zuspitzung von Twains tatsächlicher Notiz.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-ali-schmetterling",
+    "speaker_type": "person",
+    "speaker_id": "muhammad-ali",
+    "text": {
+      "de": "Schwebe wie ein Schmetterling, stich wie eine Biene."
+    },
+    "original_lang": "en",
+    "source_type": "attributed",
+    "source_ref": "Alis Markenzeichen — geprägt gemeinsam mit seinem Cornerman Drew „Bundini“ Brown",
+    "source_urls": [],
+    "themes": [
+      "kampf",
+      "staerke"
+    ],
+    "tone_flags": [],
+    "translation_note": "Die Urheberschaft teilt sich Ali mit Bundini Brown — deshalb „zugeschrieben“.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-goethe-irrt",
+    "speaker_type": "person",
+    "speaker_id": "goethe",
+    "text": {
+      "de": "Es irrt der Mensch, so lang er strebt."
+    },
+    "original_lang": "de",
+    "source_type": "verified",
+    "source_ref": "Faust I, Prolog im Himmel (1808)",
+    "source_urls": [],
+    "themes": [
+      "scheitern",
+      "weg"
+    ],
+    "tone_flags": [],
+    "translation_note": null,
+    "status": "live",
     "created_by": "ki-vorstufe",
     "reviewed_by": null,
     "approved_by": null,

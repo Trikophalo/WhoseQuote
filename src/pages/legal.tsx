@@ -20,8 +20,8 @@ export function FaqPage() {
           <strong className={strong}>Hinweis zur Beta:</strong> Der aktuelle Zitat-Bestand stammt aus
           der Recherchephase und ist konservativ gekennzeichnet, die abschließende redaktionelle
           Quellenprüfung läuft aber noch. Rechne deshalb damit, dass einzelne Fundstellen noch
-          nachgeschärft werden. Zitate lebender Personen sind währenddessen komplett deaktiviert –
-          sie gehen erst nach vollständiger Prüfung und Freigabe ins Spiel.
+          nachgeschärft werden. Lebenden Personen ordnen wir ausschließlich wörtlich dokumentierte,
+          vielfach belegte öffentliche Aussagen zu – niemals sinngemäße oder bloß zugeschriebene.
         </p>
       )}
 

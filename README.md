@@ -8,7 +8,7 @@ Partie vorbei, Rekord bleibt gespeichert. Der Reiz: Die Zitate sind thematisch
 so gewählt (Freiheit, Verrat, Macht, Verlust …), dass echte Verwechslungsgefahr
 besteht.
 
-**Status:** Spielbares MVP mit 68 kuratierten Zitat-Paaren und 55 gezeichneten
+**Status:** Spielbares MVP mit 107 kuratierten Zitat-Paaren und 85 gezeichneten
 Porträts. Die redaktionelle Quellenprüfung und die anwaltliche Abnahme der
 Rechtstexte stehen noch aus — beides ist Voraussetzung für einen öffentlichen
 Launch (siehe [Vor dem Launch](#vor-dem-launch)).
@@ -136,6 +136,8 @@ Diese Punkte sind bewusst offen und blockieren die Veröffentlichung:
    überall leer — der Validator meldet das bei jedem Build. Schritt 3–5 der
    [Content-Pipeline](docs/03-content-pipeline.md) fehlt noch.
 3. **Anwaltliche Abnahme** der Texte aus [Dok 04](docs/04-recht.md).
-4. **Lebende Personen** sind derzeit komplett aus dem Spiel (ein Testfall steht
-   auf `review`) — sie gehen erst nach Zwei-Quellen-Beleg und Vier-Augen-Freigabe
-   live.
+4. **Lebende Personen** (aktuell Trump und Tyson, auf Betreiber-Weisung vom
+   19.08.2026) tragen ausschließlich wörtlich dokumentierte öffentliche
+   Aussagen mit je zwei Quellen — niemals Paraphrasen. Der Musk-Testfall
+   bleibt auf `review`. Der 12-Monats-Re-Check nach docs/03 gilt für alle
+   Klasse-C-Zitate.

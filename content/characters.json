@@ -240,5 +240,159 @@
     "media_id": null,
     "hue": 165,
     "search_name": "Brook"
+  },
+  {
+    "id": "one-piece/nami",
+    "universe_id": "one-piece",
+    "name": "Nami",
+    "mal_character_id": null,
+    "blurb": "Navigatorin der Strohhutbande, zeichnet die Karte der ganzen Welt",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 28,
+    "search_name": "Nami"
+  },
+  {
+    "id": "one-piece/franky",
+    "universe_id": "one-piece",
+    "name": "Franky",
+    "mal_character_id": null,
+    "blurb": "Schiffszimmermann der Strohhutbande, Cyborg und Erbauer der Thousand Sunny",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 197,
+    "search_name": "Franky"
+  },
+  {
+    "id": "one-piece/sabo",
+    "universe_id": "one-piece",
+    "name": "Sabo",
+    "mal_character_id": null,
+    "blurb": "Stabschef der Revolutionsarmee, Ruffys Ziehbruder",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 218,
+    "search_name": "Sabo"
+  },
+  {
+    "id": "one-piece/garp",
+    "universe_id": "one-piece",
+    "name": "Monkey D. Garp",
+    "mal_character_id": null,
+    "blurb": "Marineheld und Großvater von Ruffy",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 207,
+    "search_name": "Monkey D. Garp"
+  },
+  {
+    "id": "one-piece/hancock",
+    "universe_id": "one-piece",
+    "name": "Boa Hancock",
+    "mal_character_id": null,
+    "blurb": "Piratenkaiserin von Amazon Lily",
+    "popularity": "mainstream",
+    "media_id": null,
+    "hue": 338,
+    "search_name": "Boa Hancock"
+  },
+  {
+    "id": "one-piece/katakuri",
+    "universe_id": "one-piece",
+    "name": "Charlotte Katakuri",
+    "mal_character_id": null,
+    "blurb": "Kommandant der Big-Mom-Piraten, verlor nie ein Duell",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 275,
+    "search_name": "Charlotte Katakuri"
+  },
+  {
+    "id": "one-piece/akainu",
+    "universe_id": "one-piece",
+    "name": "Sakazuki",
+    "mal_character_id": null,
+    "blurb": "Genannt Akainu, Großadmiral der Marine und Verfechter kompromissloser Gerechtigkeit",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 2,
+    "search_name": "Sakazuki"
+  },
+  {
+    "id": "one-piece/oden",
+    "universe_id": "one-piece",
+    "name": "Kozuki Oden",
+    "mal_character_id": null,
+    "blurb": "Daimyo von Wano, segelte mit Whitebeard und Roger",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 88,
+    "search_name": "Kozuki Oden"
+  },
+  {
+    "id": "one-piece/corazon",
+    "universe_id": "one-piece",
+    "name": "Donquixote Rosinante",
+    "mal_character_id": null,
+    "blurb": "Genannt Corazon, Marineoffizier undercover, opferte sich für Trafalgar Law",
+    "popularity": "deep-cut",
+    "media_id": null,
+    "hue": 322,
+    "search_name": "Donquixote Rosinante"
+  },
+  {
+    "id": "one-piece/zeff",
+    "universe_id": "one-piece",
+    "name": "Zeff",
+    "mal_character_id": null,
+    "blurb": "Chefkoch des Baratie, Sanjis Ziehvater",
+    "popularity": "deep-cut",
+    "media_id": null,
+    "hue": 48,
+    "search_name": "Zeff"
+  },
+  {
+    "id": "one-piece/kureha",
+    "universe_id": "one-piece",
+    "name": "Dr. Kureha",
+    "mal_character_id": null,
+    "blurb": "Ärztin aus dem Königreich Drumm, 141 Jahre jung",
+    "popularity": "deep-cut",
+    "media_id": null,
+    "hue": 302,
+    "search_name": "Kureha"
+  },
+  {
+    "id": "one-piece/fisher-tiger",
+    "universe_id": "one-piece",
+    "name": "Fisher Tiger",
+    "mal_character_id": null,
+    "blurb": "Fischmensch-Abenteurer, befreite die Sklaven von Mary Geoise",
+    "popularity": "deep-cut",
+    "media_id": null,
+    "hue": 14,
+    "search_name": "Fisher Tiger"
+  },
+  {
+    "id": "one-piece/otohime",
+    "universe_id": "one-piece",
+    "name": "Otohime",
+    "mal_character_id": null,
+    "blurb": "Königin der Fischmenscheninsel, warb für Versöhnung mit den Menschen",
+    "popularity": "deep-cut",
+    "media_id": null,
+    "hue": 162,
+    "search_name": "Otohime"
+  },
+  {
+    "id": "one-piece/eneru",
+    "universe_id": "one-piece",
+    "name": "Eneru",
+    "mal_character_id": null,
+    "blurb": "Selbsternannter Gott von Skypia",
+    "popularity": "known",
+    "media_id": null,
+    "hue": 54,
+    "search_name": "Enel"
   }
 ]

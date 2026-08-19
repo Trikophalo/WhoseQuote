@@ -78,6 +78,22 @@ export function listCachedPhotos(): { id: string; credit: PhotoCredit }[] {
   return out.sort((a, b) => a.credit.name.localeCompare(b.credit.name))
 }
 
+/**
+ * Beim Deploy fest aufgelöstes Bildmanifest (scripts/resolve-photos.mjs).
+ * Erste Stufe der Bildsuche: zuverlässig, ein einziger Same-Origin-Abruf.
+ * Fehlt es (lokale Entwicklung) oder fehlt ein Eintrag, greifen Laufzeit-
+ * Suche und Federzeichnung wie gehabt.
+ */
+let manifestPromise: Promise<Record<string, PhotoCredit>> | null = null
+function loadManifest(): Promise<Record<string, PhotoCredit>> {
+  if (!manifestPromise) {
+    manifestPromise = fetch(`${import.meta.env.BASE_URL}photos.json`)
+      .then((response) => (response.ok ? (response.json() as Promise<Record<string, PhotoCredit>>) : {}))
+      .catch(() => ({}))
+  }
+  return manifestPromise
+}
+
 async function fetchJson(url: string): Promise<unknown> {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), 8000)
@@ -192,6 +208,15 @@ export async function loadPhoto(side: Pick<Side, 'kind' | 'id'>): Promise<PhotoC
 
   const cached = getCachedPhoto(side.id)
   if (cached) return cached
+
+  // Stufe 1: das beim Deploy aufgelöste Manifest — kein API-Roulette im Client.
+  const baked = (await loadManifest())[side.id]
+  if (baked?.src) {
+    const credit: PhotoCredit = { ...baked, ts: Date.now() }
+    writeStore(CACHE_PREFIX + side.id, credit)
+    return credit
+  }
+
   const miss = readStore<number>(MISS_PREFIX + side.id)
   if (miss && Date.now() - miss < MISS_TTL) return null
 
