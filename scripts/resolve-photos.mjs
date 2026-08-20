@@ -102,7 +102,14 @@ async function fetchGraphql(url, body, attempts = 3) {
   throw lastError
 }
 
-const words = (value) => String(value ?? '').toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean)
+// Kleinschreibung, Akzente weg (Bellemère → bellemere), an Nicht-Wortzeichen trennen.
+const words = (value) =>
+  String(value ?? '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{M}+/gu, '')
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter(Boolean)
 
 /**
  * Lädt die komplette Charakterliste eines Werks von AniList (per MAL-Media-ID).
@@ -114,7 +121,7 @@ const words = (value) => String(value ?? '').toLowerCase().split(/[^\p{L}\p{N}]+
  */
 async function fetchRoster(idMal) {
   const roster = []
-  for (let page = 1; page <= 20; page++) {
+  for (let page = 1; page <= 30; page++) {
     const data = await fetchGraphql('https://graphql.anilist.co', {
       query:
         'query($idMal:Int,$page:Int){Media(idMal:$idMal,type:ANIME){characters(page:$page,perPage:25,sort:FAVOURITES_DESC){pageInfo{hasNextPage}nodes{name{full alternative}image{large}siteUrl favourites}}}}',
@@ -131,6 +138,7 @@ async function fetchRoster(idMal) {
 /** Matcht einen Suchnamen gegen die Werksliste (Ganzwort, inkl. Alternativnamen). */
 function pickFromRoster(roster, searchName) {
   const queryTokens = words(searchName).filter((t) => t.length > 2)
+  if (queryTokens.length === 0) return null
   const nameWordSets = (node) => {
     const names = [node.name?.full, ...(node.name?.alternative ?? [])]
     return names.filter(Boolean).map((n) => new Set(words(n)))
@@ -138,10 +146,13 @@ function pickFromRoster(roster, searchName) {
   // Stufe 1: alle Suchwörter kommen in einem der Namen vor.
   let hit = roster.find((node) => nameWordSets(node).some((set) => queryTokens.every((t) => set.has(t))))
   if (hit) return { node: hit, matched: true }
-  // Stufe 2: ein markantes Suchwort genügt — innerhalb der Werksliste ist das
-  // eindeutig genug („Vinsmoke Sanji“ → „Sanji“). Liste ist nach Beliebtheit
-  // sortiert, der erste Treffer ist der prominenteste.
-  hit = roster.find((node) => nameWordSets(node).some((set) => queryTokens.some((t) => set.has(t))))
+  // Stufe 2: nur der Rufname zählt — das LETZTE Suchwort („Monkey D. Garp“ →
+  // „garp“, „Vinsmoke Sanji“ → „sanji“). Ein Familienname allein darf nie
+  // entscheiden: Über „monkey“ bekäme Garp sonst das Gesicht des
+  // beliebtesten Namensvetters — Ruffy. Genau das ist im ersten
+  // Werkslisten-Lauf passiert.
+  const givenName = queryTokens[queryTokens.length - 1]
+  hit = roster.find((node) => nameWordSets(node).some((set) => set.has(givenName)))
   return hit ? { node: hit, matched: false } : null
 }
 
@@ -187,7 +198,7 @@ async function resolveCharacterAniList(searchName, franchise) {
     license: null,
     licenseUrl: null,
     ts: 0,
-    v: 2,
+    v: 3,
     matched: Boolean(exact),
   }
 }
@@ -326,7 +337,7 @@ const universeName = new Map(universes.map((u) => [u.id, u.name]))
 const rosters = new Map()
 for (const universe of universes) {
   if (universe.status !== 'active' || !universe.mal_id) continue
-  if (characters.every((c) => c.universe_id !== universe.id || (manifest[c.id]?.src && manifest[c.id]?.v >= 2))) continue
+  if (characters.every((c) => c.universe_id !== universe.id || (manifest[c.id]?.src && manifest[c.id]?.v >= 3))) continue
   try {
     const roster = await fetchRoster(universe.mal_id)
     rosters.set(universe.id, roster)
@@ -338,9 +349,10 @@ for (const universe of universes) {
 
 for (const character of characters) {
   if (!character.search_name) continue
-  // v2-Eintraege sind serien-verifiziert; alles Aeltere wird neu aufgeloest,
-  // damit die Fehlgriffe des ersten Laufs aus dem Manifest verschwinden.
-  if (manifest[character.id]?.src && manifest[character.id]?.v >= 2) {
+  // v3-Eintraege sind rufnamen-verifiziert; alles Aeltere wird neu aufgeloest,
+  // damit die Fehlgriffe frueherer Laeufe aus dem Manifest verschwinden
+  // (v2 hatte Garp das Gesicht von Ruffy gegeben).
+  if (manifest[character.id]?.src && manifest[character.id]?.v >= 3) {
     okChars++
     continue
   }
@@ -366,7 +378,7 @@ for (const character of characters) {
           license: null,
           licenseUrl: null,
           ts: 0,
-          v: 2,
+          v: 3,
           matched: found.matched,
         }
       }

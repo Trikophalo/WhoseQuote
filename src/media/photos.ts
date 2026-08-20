@@ -32,10 +32,10 @@ export type PhotoCredit = {
   ts: number
 }
 
-// Prefix-Version 2: räumt fehlerhafte Alt-Einträge (Namensvetter-Fehlgriffe
-// der ersten Suchlogik) aus allen Browser-Caches.
-const CACHE_PREFIX = 'wq.photo2.'
-const MISS_PREFIX = 'wq.photomiss2.'
+// Prefix-Version 3: räumt fehlerhafte Alt-Einträge (Namensvetter-Fehlgriffe
+// früherer Suchlogiken, zuletzt Garp→Ruffy) aus allen Browser-Caches.
+const CACHE_PREFIX = 'wq.photo3.'
+const MISS_PREFIX = 'wq.photomiss3.'
 const CACHE_TTL = 7 * 24 * 3600 * 1000
 const MISS_TTL = 3600 * 1000
 
