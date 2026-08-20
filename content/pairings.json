@@ -1078,5 +1078,205 @@
     "difficulty_observed": null,
     "status": "live",
     "pairing_note": "Streben und Irren — der werdende Arzt als Köder."
+  },
+  {
+    "id": "p-109",
+    "quote_id": "q-op-luffy-held-fleisch",
+    "decoy_type": "person",
+    "decoy_id": "diogenes",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Der Kyniker, der nichts besaß und nichts teilte — und der Pirat, der sein Fleisch behalten will."
+  },
+  {
+    "id": "p-110",
+    "quote_id": "q-op-garp-schuetzen",
+    "decoy_type": "person",
+    "decoy_id": "teddy-roosevelt",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Der Faustheld der Marine gegen den Mann mit dem „großen Knüppel“ — beide Schutzmacht-Rhetorik."
+  },
+  {
+    "id": "p-111",
+    "quote_id": "q-op-law-schwache",
+    "decoy_type": "person",
+    "decoy_id": "machiavelli",
+    "difficulty": 4,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Kalte Machtlogik — vom Chirurgen des Todes oder vom Berater der Fürsten?"
+  },
+  {
+    "id": "p-112",
+    "quote_id": "q-op-doflamingo-spiel",
+    "decoy_type": "person",
+    "decoy_id": "al-capone",
+    "difficulty": 4,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Zwei, die „das Spiel“ von oben spielten: der Himmelsdämon und der Gangster-Unternehmer."
+  },
+  {
+    "id": "p-113",
+    "quote_id": "q-op-brook-musik",
+    "decoy_type": "person",
+    "decoy_id": "einstein",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Der geigende Physiker als Köder für das singende Skelett — Musik als das, was bleibt."
+  },
+  {
+    "id": "p-114",
+    "quote_id": "q-op-sabo-praegung",
+    "decoy_type": "person",
+    "decoy_id": "freud",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Verlorene Erinnerung, bleibende Prägung — klingt nach Tiefenpsychologie, stammt vom Revolutionär."
+  },
+  {
+    "id": "p-115",
+    "quote_id": "q-op-jinbe-steuermann",
+    "decoy_type": "person",
+    "decoy_id": "churchill",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Der Lotse im Sturm — Churchills Krisenpathos oder der Steuermann der Strohhüte?"
+  },
+  {
+    "id": "p-116",
+    "quote_id": "q-op-nami-wetter",
+    "decoy_type": "person",
+    "decoy_id": "mark-twain",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Alle reden vom Wetter — Twain wird genau das nachgesagt, Nami lebt davon."
+  },
+  {
+    "id": "p-117",
+    "quote_id": "q-op-robin-wissen",
+    "decoy_type": "person",
+    "decoy_id": "voltaire",
+    "difficulty": 4,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Aufklärer-Ton gegen Ohara: Wissen als Verbrechen — wer klagt an?"
+  },
+  {
+    "id": "p-118",
+    "quote_id": "q-op-oden-grenzen",
+    "decoy_type": "person",
+    "decoy_id": "frederick-douglass",
+    "difficulty": 4,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Abschottung als Selbst-Einkerkerung — Freiheitsrede des Abolitionisten oder des Fürsten von Wano?"
+  },
+  {
+    "id": "p-119",
+    "quote_id": "q-seneca-wagen",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/luffy",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Der Stoiker über das Wagnis — klingt wie das Lebensmotto des Strohhuts."
+  },
+  {
+    "id": "p-120",
+    "quote_id": "q-musashi-leicht",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/zoro",
+    "difficulty": 4,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Der historische Schwertheilige gegen seinen erklärten fiktiven Erben."
+  },
+  {
+    "id": "p-121",
+    "quote_id": "q-laozi-schritt",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/nami",
+    "difficulty": 2,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Die tausend Meilen und der erste Schritt — Weisheit des Daodejing oder Navigatorinnen-Spruch?"
+  },
+  {
+    "id": "p-122",
+    "quote_id": "q-konfuzius-fehler",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/kuzan",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Fehler eingestehen und den Kurs ändern — der Admiral, der ging, als Köder für den Meister."
+  },
+  {
+    "id": "p-123",
+    "quote_id": "q-twain-mut",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/usopp",
+    "difficulty": 2,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Mut trotz Furcht — die Definition des Feiglings, der trotzdem kämpft. Fast zu passend für Lysop."
+  },
+  {
+    "id": "p-124",
+    "quote_id": "q-capone-geschaeftsmann",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/crocodile",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Der „ehrbare Geschäftsmann“ mit Kasino — Rainbase oder Chicago?"
+  },
+  {
+    "id": "p-125",
+    "quote_id": "q-einstein-unendlich",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/kureha",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Spitze Zunge über die Dummheit der Menschen — Physiker oder 139-jährige Ärztin?"
+  },
+  {
+    "id": "p-126",
+    "quote_id": "q-wilde-ende",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/shanks",
+    "difficulty": 3,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Heiterer Trost — der Dandy oder der Rotschopf, der eine Ära gelassen beendet?"
+  },
+  {
+    "id": "p-127",
+    "quote_id": "q-diogenes-mensch",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/brook",
+    "difficulty": 2,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Mit der Laterne auf Menschensuche — der Kyniker oder das Skelett, das 50 Jahre allein trieb?"
+  },
+  {
+    "id": "p-128",
+    "quote_id": "q-gandhi-auge",
+    "decoy_type": "character",
+    "decoy_id": "one-piece/fisher-tiger",
+    "difficulty": 4,
+    "difficulty_observed": null,
+    "status": "live",
+    "pairing_note": "Der Kreislauf der Vergeltung — der Pazifist oder der Sklavenbefreier, der Rache verbot?"
   }
 ]

@@ -101,6 +101,13 @@ export function FaqPage() {
         uns über {SITE.contactEmail} – beanstandete Bilder werden umgehend entfernt.
       </p>
 
+      <h3 className={h3}>Kann ich den Ton ausschalten?</h3>
+      <p className={p}>
+        Ja — über das kleine Notensymbol ♪ rechts in der Kopfzeile des Spiels. Die Klänge entstehen
+        direkt im Browser (es werden keine Audiodateien geladen), und deine Wahl bleibt lokal auf
+        deinem Gerät gespeichert.
+      </p>
+
       <h3 className={h3}>Ein Zitat ist falsch zugeordnet oder verletzt Rechte – was tun?</h3>
       <p className={p}>
         Nutze „Zitat melden“ direkt an der Runde oder schreib an {SITE.contactEmail}. Wir prüfen
@@ -208,16 +215,19 @@ export function DatenschutzPage() {
         Zusammenführung dieser Daten mit anderen Datenquellen findet nicht statt.
       </p>
 
-      <h2 className={h2}>3. Highscore im lokalen Speicher (localStorage)</h2>
+      <h2 className={h2}>3. Spielstand und Einstellungen im lokalen Speicher (localStorage)</h2>
       <p className={p}>
-        Damit dein bester Punktestand beim nächsten Besuch noch da ist, speichert das Spiel ihn im{' '}
-        <strong className={strong}>localStorage</strong> deines Browsers. Diese Speicherung ist
-        funktional – sie ist für die von dir gewünschte Funktion unbedingt erforderlich und damit
-        nach § 25 Abs. 2 TDDDG einwilligungsfrei. Wichtig:
+        Damit dein bester Punktestand beim nächsten Besuch noch da ist, speichert das Spiel einige
+        Werte im <strong className={strong}>localStorage</strong> deines Browsers: den Rekord, die
+        zuletzt gezeigten Zitat-Kennungen (damit sich Fragen nicht sofort wiederholen), ob du die
+        Einführung schon gesehen hast, ob der Klang ein- oder ausgeschaltet ist sowie die Adressen
+        und Quellenangaben bereits geladener Porträtbilder (als Zwischenspeicher). Diese Speicherung
+        ist funktional – sie ist für die von dir gewünschte Funktion unbedingt erforderlich und
+        damit nach § 25 Abs. 2 TDDDG einwilligungsfrei. Wichtig:
       </p>
       <ul className={ul}>
         <li>Die Daten verlassen dein Gerät nicht und werden nicht an uns übertragen.</li>
-        <li>Es handelt sich um einen reinen Zahlenwert, nicht um ein Cookie und kein Profil.</li>
+        <li>Es handelt sich um reine Spielstand- und Einstellungswerte, nicht um Cookies und kein Profil.</li>
         <li>
           Du kannst den Eintrag jederzeit selbst löschen, indem du die Websitedaten in deinen
           Browsereinstellungen entfernst.

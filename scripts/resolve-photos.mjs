@@ -4,11 +4,13 @@
  * nach public/photos.json — der Client muss dann nicht mehr suchen.
  *
  * Läuft im Deploy-Workflow auf GitHub Actions (dort gibt es Internetzugang;
- * die Entwicklungs-Sandbox erreicht Jikan/Wikipedia nicht). Quellen:
+ * die Entwicklungs-Sandbox erreicht AniList/Wikipedia nicht). Quellen:
  *
- *  - Anime-Figuren: Jikan-Suche (MyAnimeList) über den Romaji-search_name,
- *    nach Beliebtheit sortiert — die Auswahl wird geloggt und ist so im
- *    Workflow-Log nachprüfbar.
+ *  - Anime-Figuren: zuerst die komplette Charakterliste des Werks von AniList
+ *    (per MAL-Media-ID) — dort MUSS jede Figur auftauchen, und ein
+ *    serienfremder Treffer ist unmöglich. Erst danach Einzelsuche auf AniList
+ *    und Jikan (MyAnimeList) als Ausweichquellen. Jede Auswahl wird geloggt
+ *    und ist so im Workflow-Log nachprüfbar.
  *  - Reale Personen: Artikelbild der deutschen Wikipedia (nur freie Lizenzen)
  *    plus Urheber/Lizenz von Wikimedia Commons.
  *
@@ -101,6 +103,47 @@ async function fetchGraphql(url, body, attempts = 3) {
 }
 
 const words = (value) => String(value ?? '').toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean)
+
+/**
+ * Lädt die komplette Charakterliste eines Werks von AniList (per MAL-Media-ID).
+ *
+ * Warum: Die Einzelsuche scheiterte für einzelne Namen (Sanji, Roger, Garp)
+ * in zwei Läufen deterministisch. Gegen die Werksliste gematcht kann kein
+ * Charakter mehr an einer kaputten Suche hängen — und ein serienfremder
+ * Treffer ist konstruktionsbedingt unmöglich.
+ */
+async function fetchRoster(idMal) {
+  const roster = []
+  for (let page = 1; page <= 20; page++) {
+    const data = await fetchGraphql('https://graphql.anilist.co', {
+      query:
+        'query($idMal:Int,$page:Int){Media(idMal:$idMal,type:ANIME){characters(page:$page,perPage:25,sort:FAVOURITES_DESC){pageInfo{hasNextPage}nodes{name{full alternative}image{large}siteUrl favourites}}}}',
+      variables: { idMal, page },
+    })
+    const block = data.data?.Media?.characters
+    roster.push(...(block?.nodes ?? []).filter((n) => n.image?.large))
+    if (!block?.pageInfo?.hasNextPage) break
+    await sleep(2200)
+  }
+  return roster
+}
+
+/** Matcht einen Suchnamen gegen die Werksliste (Ganzwort, inkl. Alternativnamen). */
+function pickFromRoster(roster, searchName) {
+  const queryTokens = words(searchName).filter((t) => t.length > 2)
+  const nameWordSets = (node) => {
+    const names = [node.name?.full, ...(node.name?.alternative ?? [])]
+    return names.filter(Boolean).map((n) => new Set(words(n)))
+  }
+  // Stufe 1: alle Suchwörter kommen in einem der Namen vor.
+  let hit = roster.find((node) => nameWordSets(node).some((set) => queryTokens.every((t) => set.has(t))))
+  if (hit) return { node: hit, matched: true }
+  // Stufe 2: ein markantes Suchwort genügt — innerhalb der Werksliste ist das
+  // eindeutig genug („Vinsmoke Sanji“ → „Sanji“). Liste ist nach Beliebtheit
+  // sortiert, der erste Treffer ist der prominenteste.
+  hit = roster.find((node) => nameWordSets(node).some((set) => queryTokens.some((t) => set.has(t))))
+  return hit ? { node: hit, matched: false } : null
+}
 
 /**
  * Primärquelle: AniList — stabil auch von Cloud-IPs, wo Jikan mit 504 abweist.
@@ -279,6 +322,20 @@ for (const person of persons) {
 const universes = JSON.parse(readFileSync(resolve(root, 'content/universes.json'), 'utf8'))
 const universeName = new Map(universes.map((u) => [u.id, u.name]))
 
+// Werkslisten einmal pro Universum laden (One Piece: MAL-ID 21).
+const rosters = new Map()
+for (const universe of universes) {
+  if (universe.status !== 'active' || !universe.mal_id) continue
+  if (characters.every((c) => c.universe_id !== universe.id || (manifest[c.id]?.src && manifest[c.id]?.v >= 2))) continue
+  try {
+    const roster = await fetchRoster(universe.mal_id)
+    rosters.set(universe.id, roster)
+    console.log(`   Werksliste ${universe.name}: ${roster.length} Charaktere von AniList`)
+  } catch (error) {
+    console.log(`   ⚠ Werksliste ${universe.name}: ${error.message} — falle auf Einzelsuche zurück`)
+  }
+}
+
 for (const character of characters) {
   if (!character.search_name) continue
   // v2-Eintraege sind serien-verifiziert; alles Aeltere wird neu aufgeloest,
@@ -293,9 +350,31 @@ for (const character of characters) {
   }
   try {
     const franchise = universeName.get(character.universe_id) ?? 'One Piece'
-    let credit = await resolveCharacterAniList(character.search_name, franchise).catch(() => null)
+    let credit = null
+
+    // Stufe 1: Werksliste — garantiert seriengetreu, keine Suche nötig.
+    const roster = rosters.get(character.universe_id)
+    if (roster) {
+      const found = pickFromRoster(roster, character.search_name)
+      if (found) {
+        credit = {
+          src: found.node.image.large,
+          name: found.node.name?.full ?? character.search_name,
+          pageUrl: found.node.siteUrl ?? 'https://anilist.co',
+          sourceLabel: 'AniList',
+          artist: null,
+          license: null,
+          licenseUrl: null,
+          ts: 0,
+          v: 2,
+          matched: found.matched,
+        }
+      }
+    }
+
+    // Stufe 2/3: Einzelsuche AniList, dann Jikan.
+    if (!credit) credit = await resolveCharacterAniList(character.search_name, franchise).catch(() => null)
     if (!credit) credit = await resolveCharacterJikan(character.search_name)
-    if (credit && !credit.v) delete manifest[character.id]
     if (credit) {
       const { matched, ...entry } = credit
       manifest[character.id] = entry
@@ -309,8 +388,8 @@ for (const character of characters) {
     missing.push(character.id)
     console.log(`   ⚠ ${character.id}: ${error.message}`)
   }
-  // AniList erlaubt derzeit ~30 Anfragen/Minute — 2,2 s Takt bleibt darunter.
-  await sleep(2200)
+  // Kurze Pause nur der Höflichkeit halber — Roster-Treffer machen keine Anfrage.
+  await sleep(150)
 }
 
 writeFileSync(OUT, JSON.stringify(manifest, null, 2) + '\n')

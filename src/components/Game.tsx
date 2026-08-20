@@ -8,6 +8,7 @@ import { SourceBadge } from './SourceBadge'
 import { Intro } from './Intro'
 import { navigate } from '../router'
 import { getCachedPhoto, type PhotoCredit } from '../media/photos'
+import { isSoundOn, playCorrect, playWrong, setSoundOn } from '../game/sound'
 
 type Phase = 'intro' | 'playing' | 'revealed' | 'gameover'
 type Answer = 'character' | 'person'
@@ -45,12 +46,15 @@ export function Game() {
 
       if (choice === round.answer) {
         const newScore = score + 1
+        playCorrect(newScore)
         setScore(newScore)
         if (newScore > highscore) {
           setHighscore(newScore)
           saveHighscore(newScore)
           setIsRecord(true)
         }
+      } else {
+        playWrong()
       }
     },
     [phase, round, score, highscore],
@@ -191,8 +195,33 @@ function Masthead({ score, highscore, poolSize, seenCount }: { score: number; hi
           Rekord
         </span>
         <span className="font-serif text-3xl leading-none font-bold tabular-nums text-[color:var(--gold)] md:text-4xl">{highscore}</span>
+        <SoundToggle />
       </div>
     </header>
+  )
+}
+
+/** Klang an/aus — die Wahl bleibt lokal gespeichert (wq.sound). */
+function SoundToggle() {
+  const [on, setOn] = useState(isSoundOn)
+  const toggle = () => {
+    const next = !on
+    setOn(next)
+    setSoundOn(next)
+    if (next) playCorrect(1) // kurze Hörprobe als Bestätigung
+  }
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-pressed={on}
+      title={on ? 'Klang ausschalten' : 'Klang einschalten'}
+      className={`ml-1 self-center border border-[color:var(--rule)] px-1.5 py-0.5 font-serif text-sm leading-none transition hover:border-[color:var(--ink-soft)] ${
+        on ? 'text-[color:var(--ink-soft)]' : 'text-[color:var(--ink-faint)] line-through opacity-70'
+      }`}
+    >
+      ♪
+    </button>
   )
 }
 

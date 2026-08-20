@@ -8,7 +8,7 @@ Partie vorbei, Rekord bleibt gespeichert. Der Reiz: Die Zitate sind thematisch
 so gewählt (Freiheit, Verrat, Macht, Verlust …), dass echte Verwechslungsgefahr
 besteht.
 
-**Status:** Spielbares MVP mit 107 kuratierten Zitat-Paaren und 85 gezeichneten
+**Status:** Spielbares MVP mit 127 kuratierten Zitat-Paaren und 85 gezeichneten
 Porträts. Die redaktionelle Quellenprüfung und die anwaltliche Abnahme der
 Rechtstexte stehen noch aus — beides ist Voraussetzung für einen öffentlichen
 Launch (siehe [Vor dem Launch](#vor-dem-launch)).
@@ -73,12 +73,15 @@ docs/               Die vollständige Projektplanung
 
 ## Bilder: echte Quellen mit gezeichnetem Fallback
 
-Das Spiel zeigt **echte Bilder aus öffentlichen Quellen**, geladen zur Laufzeit
-im Browser der Spielenden (`src/media/photos.ts`):
+Das Spiel zeigt **echte Bilder aus öffentlichen Quellen**. Beim Deploy löst
+`scripts/resolve-photos.mjs` sie fest auf und backt sie als `public/photos.json`
+in den Build; der Browser lädt fehlende Einträge zur Laufzeit nach
+(`src/media/photos.ts`):
 
-- **Anime-Figuren:** Charakter-Artworks aus MyAnimeList über die Jikan-API
-  (Suche per Romaji-Name aus `content/characters.json`, gedrosselt und
-  gecacht).
+- **Anime-Figuren:** Charakter-Artworks von AniList — gematcht gegen die
+  komplette Charakterliste des Werks (per MAL-ID aus `content/universes.json`),
+  damit jede Figur ein seriengetreues Bild bekommt und kein Namensvetter aus
+  einer fremden Serie. MyAnimeList (Jikan) bleibt Ausweichquelle.
 - **Reale Personen:** das Artikelbild der deutschen Wikipedia (`wiki_title` in
   `content/persons.json`) — dort sind nur frei lizenzierte Bilder zulässig;
   Urheber und Lizenz kommen von Wikimedia Commons und stehen in der Auflösung

@@ -41,11 +41,11 @@ jobs:
       - name: Content prüfen
         run: npm run validate
 
-      # Löst alle Profilbilder fest auf (Jikan/MyAnimeList + Wikipedia) und
+      # Löst alle Profilbilder fest auf (AniList-Werksliste + Wikipedia) und
       # backt sie als public/photos.json in den Build. Das Log zeigt jeden
       # Treffer — bricht nie ab, fehlende Einträge fallen auf die
       # Laufzeit-Suche und die Zeichnungen zurück.
-      - name: Profilbilder auflösen (Jikan + Wikipedia)
+      - name: Profilbilder auflösen (AniList + Wikipedia)
         run: node scripts/resolve-photos.mjs
 
       - name: Build

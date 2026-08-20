@@ -2580,5 +2580,483 @@
     "reviewed_by": null,
     "approved_by": null,
     "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-luffy-held-fleisch",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/luffy",
+    "text": {
+      "de": "Ein Held ist einer, der sein Fleisch mit anderen teilt. Ich will mein Fleisch selber essen!"
+    },
+    "original_lang": "ja",
+    "source_type": "translated",
+    "source_ref": "One Piece, Fischmenscheninsel-Arc (Kapitel 611) — Ruffys Helden-Definition",
+    "source_urls": [],
+    "themes": [
+      "eigensinn",
+      "hunger",
+      "freiheit"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene sinngemäße Übersetzung; bewusst nicht der Wortlaut der offiziellen deutschen Fassung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-garp-schuetzen",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/garp",
+    "text": {
+      "de": "Stärke bedeutet gar nichts — bis zu dem Tag, an dem sie jemanden beschützt."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece — Garps Haltung als Marineheld, sinngemäß verdichtet",
+    "source_urls": [],
+    "themes": [
+      "staerke",
+      "verantwortung",
+      "pflicht"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-law-schwache",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/law",
+    "text": {
+      "de": "Die Schwachen haben nichts zu entscheiden — nicht einmal, wie sie sterben."
+    },
+    "original_lang": "ja",
+    "source_type": "translated",
+    "source_ref": "One Piece, Marineford-Arc (Kapitel 561) — Law über die Schwachen",
+    "source_urls": [],
+    "themes": [
+      "schwaeche",
+      "macht",
+      "tod"
+    ],
+    "tone_flags": [],
+    "translation_note": "Eigene sinngemäße Übersetzung; bewusst nicht der Wortlaut der offiziellen deutschen Fassung.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-doflamingo-spiel",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/doflamingo",
+    "text": {
+      "de": "Wer die Regeln des Spiels nicht durchschaut, hat schon verloren, bevor es beginnt."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Dressrosa-Arc — De Flamingos Spott über sein „Spiel“, sinngemäß verdichtet",
+    "source_urls": [],
+    "themes": [
+      "macht",
+      "taeuschung",
+      "ordnung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-brook-musik",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/brook",
+    "text": {
+      "de": "Musik bleibt, auch wenn von uns nichts übrig ist als Knochen."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Thriller-Bark-Arc — Brooks Credo als singendes Skelett, sinngemäß verdichtet",
+    "source_urls": [],
+    "themes": [
+      "tod",
+      "erinnerung",
+      "hoffnung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-sabo-praegung",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/sabo",
+    "text": {
+      "de": "Selbst wer seine Erinnerung verliert, verliert nicht, was ihn geprägt hat."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Dressrosa-Arc — Sabos Wiederkehr nach dem Gedächtnisverlust, sinngemäß verdichtet",
+    "source_urls": [],
+    "themes": [
+      "erinnerung",
+      "herkunft",
+      "treue"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-jinbe-steuermann",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/jinbe",
+    "text": {
+      "de": "Ob einer ein Steuermann ist, zeigt sich nicht bei ruhiger See — sondern im Sturm."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Wano-Arc — Jinbei übernimmt das Ruder der Strohhüte, sinngemäß verdichtet",
+    "source_urls": [],
+    "themes": [
+      "pflicht",
+      "mut",
+      "treue"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-nami-wetter",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/nami",
+    "text": {
+      "de": "Das Wetter fragt nicht, ob es dir passt. Es belohnt die, die es lesen können."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece — Namis Navigationskunst, sinngemäß verdichtet",
+    "source_urls": [],
+    "themes": [
+      "handwerk",
+      "anpassung",
+      "wahrheit"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-robin-wissen",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/nico-robin",
+    "text": {
+      "de": "Zu wissen, was geschehen ist, ist kein Verbrechen."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Enies-Lobby-/Ohara-Handlung — der „Frevel“ der Geschichtsforschung, sinngemäß verdichtet",
+    "source_urls": [],
+    "themes": [
+      "wahrheit",
+      "geschichte",
+      "gerechtigkeit"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-op-oden-grenzen",
+    "speaker_type": "character",
+    "speaker_id": "one-piece/oden",
+    "text": {
+      "de": "Ein Land, das seine Grenzen schließt, sperrt nicht die Welt aus — es sperrt sich selbst ein."
+    },
+    "original_lang": "ja",
+    "source_type": "paraphrased",
+    "source_ref": "One Piece, Wano-Arc — Odens Traum von der Öffnung Wanos, sinngemäß verdichtet",
+    "source_urls": [],
+    "themes": [
+      "freiheit",
+      "veraenderung",
+      "traeume"
+    ],
+    "tone_flags": [],
+    "translation_note": "Sinngemäße Verdichtung, kein wörtliches Einzelzitat.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-seneca-wagen",
+    "speaker_type": "person",
+    "speaker_id": "seneca",
+    "text": {
+      "de": "Nicht weil es schwer ist, wagen wir es nicht — weil wir es nicht wagen, ist es schwer."
+    },
+    "original_lang": "la",
+    "source_type": "translated",
+    "source_ref": "Seneca, Epistulae morales 104,26",
+    "source_urls": [],
+    "themes": [
+      "mut",
+      "weg",
+      "furcht"
+    ],
+    "tone_flags": [],
+    "translation_note": "Übersetzung aus dem Lateinischen („Non quia difficilia sunt non audemus …“).",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-musashi-leicht",
+    "speaker_type": "person",
+    "speaker_id": "miyamoto-musashi",
+    "text": {
+      "de": "Denke leicht über dich selbst — und tief über die Welt."
+    },
+    "original_lang": "ja",
+    "source_type": "translated",
+    "source_ref": "Miyamoto Musashi, Dokkōdō (1645), Grundsatz 4",
+    "source_urls": [],
+    "themes": [
+      "demut",
+      "selbsterkenntnis",
+      "weg"
+    ],
+    "tone_flags": [],
+    "translation_note": "Übersetzung aus dem Japanischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-laozi-schritt",
+    "speaker_type": "person",
+    "speaker_id": "laozi",
+    "text": {
+      "de": "Auch eine Reise von tausend Meilen beginnt mit einem einzigen Schritt."
+    },
+    "original_lang": "zh",
+    "source_type": "translated",
+    "source_ref": "Laozi zugeschrieben, Daodejing, Kapitel 64",
+    "source_urls": [],
+    "themes": [
+      "weg",
+      "zeit",
+      "demut"
+    ],
+    "tone_flags": [],
+    "translation_note": "Übersetzung aus dem Chinesischen; die Zuordnung des Daodejing an die Person Laozi ist historisch umstritten.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-konfuzius-fehler",
+    "speaker_type": "person",
+    "speaker_id": "konfuzius",
+    "text": {
+      "de": "Einen Fehler zu machen und ihn nicht zu korrigieren — das erst heißt wirklich fehlen."
+    },
+    "original_lang": "zh",
+    "source_type": "translated",
+    "source_ref": "Konfuzius, Analekten 15,30",
+    "source_urls": [],
+    "themes": [
+      "scheitern",
+      "veraenderung",
+      "moral"
+    ],
+    "tone_flags": [],
+    "translation_note": "Übersetzung aus dem Chinesischen.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-twain-mut",
+    "speaker_type": "person",
+    "speaker_id": "mark-twain",
+    "text": {
+      "de": "Mut ist nicht die Abwesenheit von Furcht, sondern der Sieg über sie."
+    },
+    "original_lang": "en",
+    "source_type": "translated",
+    "source_ref": "Mark Twain, Pudd’nhead Wilson (1894), Kap. 12 — sinngemäß übersetzt",
+    "source_urls": [],
+    "themes": [
+      "mut",
+      "furcht",
+      "charakter"
+    ],
+    "tone_flags": [],
+    "translation_note": "Übersetzung aus dem Englischen („Courage is resistance to fear, mastery of fear — not absence of fear.“).",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-capone-geschaeftsmann",
+    "speaker_type": "person",
+    "speaker_id": "al-capone",
+    "text": {
+      "de": "Ich bin nur ein Geschäftsmann: Ich gebe den Leuten, was sie verlangen."
+    },
+    "original_lang": "en",
+    "source_type": "attributed",
+    "source_ref": "Al Capone vielfach zugeschrieben (Interviews der Prohibitionszeit); ein exakter Erstbeleg fehlt",
+    "source_urls": [],
+    "themes": [
+      "gier",
+      "taeuschung",
+      "moral"
+    ],
+    "tone_flags": [],
+    "translation_note": "Zuschreibung ohne gesicherten Erstbeleg — im Spiel entsprechend als „zugeschrieben“ gekennzeichnet.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-einstein-unendlich",
+    "speaker_type": "person",
+    "speaker_id": "einstein",
+    "text": {
+      "de": "Zwei Dinge sind unendlich: das Universum und die menschliche Dummheit. Beim Universum bin ich mir noch nicht ganz sicher."
+    },
+    "original_lang": "de",
+    "source_type": "attributed",
+    "source_ref": "Einstein häufig zugeschrieben; in seinen Schriften nicht nachweisbar",
+    "source_urls": [],
+    "themes": [
+      "selbsterkenntnis",
+      "wahrheit"
+    ],
+    "tone_flags": [],
+    "translation_note": "Zuschreibung ohne gesicherten Erstbeleg — im Spiel entsprechend als „zugeschrieben“ gekennzeichnet.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-wilde-ende",
+    "speaker_type": "person",
+    "speaker_id": "oscar-wilde",
+    "text": {
+      "de": "Am Ende wird alles gut. Und wenn es noch nicht gut ist, dann ist es noch nicht das Ende."
+    },
+    "original_lang": "en",
+    "source_type": "attributed",
+    "source_ref": "Oscar Wilde häufig zugeschrieben; in seinen Werken nicht nachweisbar",
+    "source_urls": [],
+    "themes": [
+      "hoffnung",
+      "zeit"
+    ],
+    "tone_flags": [],
+    "translation_note": "Zuschreibung ohne gesicherten Erstbeleg — im Spiel entsprechend als „zugeschrieben“ gekennzeichnet.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-diogenes-mensch",
+    "speaker_type": "person",
+    "speaker_id": "diogenes",
+    "text": {
+      "de": "Ich suche einen Menschen."
+    },
+    "original_lang": "grc",
+    "source_type": "translated",
+    "source_ref": "Diogenes Laertios, Leben und Meinungen berühmter Philosophen VI, 41 — die Laternen-Anekdote",
+    "source_urls": [],
+    "themes": [
+      "menschlichkeit",
+      "wahrheit",
+      "selbsterkenntnis"
+    ],
+    "tone_flags": [],
+    "translation_note": "Übersetzung aus dem Altgriechischen; überliefert als Anekdote.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
+  },
+  {
+    "id": "q-gandhi-auge",
+    "speaker_type": "person",
+    "speaker_id": "gandhi",
+    "text": {
+      "de": "Auge um Auge — und die ganze Welt wird blind sein."
+    },
+    "original_lang": "en",
+    "source_type": "attributed",
+    "source_ref": "Gandhi vielfach zugeschrieben; ein gesicherter Erstbeleg fehlt",
+    "source_urls": [],
+    "themes": [
+      "rache",
+      "gewalt",
+      "versoehnung"
+    ],
+    "tone_flags": [],
+    "translation_note": "Zuschreibung ohne gesicherten Erstbeleg — im Spiel entsprechend als „zugeschrieben“ gekennzeichnet.",
+    "status": "live",
+    "created_by": "ki-vorstufe",
+    "reviewed_by": null,
+    "approved_by": null,
+    "last_checked_at": "2026-08-19"
   }
 ]

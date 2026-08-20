@@ -42,7 +42,8 @@ body {
   overflow-x: hidden;
 }
 
-/* Vergilbte Ränder — nimmt dem Hintergrund die digitale Gleichmäßigkeit */
+/* Vergilbte Ränder — nimmt dem Hintergrund die digitale Gleichmäßigkeit.
+   Das kaum merkliche „Atmen" wirkt wie wanderndes Kerzenlicht. */
 body::before {
   content: '';
   position: fixed;
@@ -52,6 +53,61 @@ body::before {
   background:
     radial-gradient(120% 90% at 50% 0%, transparent 55%, rgba(154, 122, 63, 0.16) 100%),
     radial-gradient(80% 60% at 12% 88%, rgba(154, 122, 63, 0.12), transparent 70%);
+  animation: breathe 18s ease-in-out infinite alternate;
+}
+
+/* Papierstaub im Gegenlicht: winzige Punkte, die ganz langsam aufsteigen.
+   Jede Ebene wandert pro Durchlauf exakt eine eigene Kachelhöhe — der Loop
+   ist dadurch nahtlos, und die unterschiedlichen Kachelhöhen ergeben ein
+   leises Parallaxen-Treiben. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(2px 2px at 22% 78%, rgba(106, 96, 83, 0.35), transparent 100%),
+    radial-gradient(1.5px 1.5px at 68% 34%, rgba(106, 96, 83, 0.3), transparent 100%),
+    radial-gradient(2.5px 2.5px at 45% 55%, rgba(138, 106, 47, 0.28), transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 82%, rgba(106, 96, 83, 0.26), transparent 100%),
+    radial-gradient(2px 2px at 8% 20%, rgba(138, 106, 47, 0.22), transparent 100%);
+  background-size:
+    420px 460px,
+    560px 620px,
+    700px 780px,
+    520px 560px,
+    640px 720px;
+  animation: motes 110s linear infinite;
+}
+
+@keyframes breathe {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.72;
+  }
+}
+
+@keyframes motes {
+  from {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+  to {
+    background-position:
+      0 -460px,
+      0 -620px,
+      0 -780px,
+      0 -560px,
+      0 -720px;
+  }
 }
 
 button {
@@ -101,6 +157,13 @@ button {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+
+  /* Die Endlos-Animationen des Hintergrunds ganz aus — eine auf 0,01 ms
+     gestauchte Endlosschleife würde sonst pausenlos neu starten. */
+  body::before,
+  body::after {
+    animation: none !important;
   }
 }
 
